@@ -25,7 +25,7 @@ The two keep separate data.
 - Sign in with email + password. Only emails in `trip_members` can read or change anything; everyone else sees nothing.
 - `trip_docs` holds `base/itinerary`, `days/<date>`, `settings/main` and `pretrip/main` as JSON. Changes sync live between devices.
 - Photos, videos and note pictures go to the private `trip-media` storage bucket (20 MB per file).
-- After the first sign-in the itinerary is cached on the device, so it still opens without signal (edits sync once you're back online is **not** guaranteed: make important edits with a connection).
+- After the first sign-in the itinerary is cached on the device, so it still opens without signal. Edits made offline are **not** queued for later: the badge shows "Save failed", so make important edits with a connection.
 - The publishable key in `src/build.py` is meant to be public; security comes from row-level security (`supabase/schema.sql`).
 
 ## Files
