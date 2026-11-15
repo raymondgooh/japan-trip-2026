@@ -21,7 +21,7 @@ header .sun{position:absolute;right:-40px;top:-40px;width:170px;height:170px;bor
 header h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:26px;margin:0;position:relative;letter-spacing:.5px}
 header p{margin:4px 0 14px;color:#cfc8bd;font-size:13px;position:relative}
 #hdr{position:absolute;right:12px;top:12px;display:flex;gap:6px;align-items:center;z-index:2}
-#sync{font-size:11px;font-weight:600;background:rgba(0,0,0,.35);color:#fff;padding:3px 9px;border-radius:99px}
+#sync{font-size:11px;font-weight:600;background:rgba(0,0,0,.35);color:#fff;padding:3px 9px;border-radius:99px;border:0;cursor:pointer}
 #disp{width:auto;font:700 13px Inter,sans-serif;padding:4px 8px;border-radius:99px;border:0;background:#fff;color:var(--ink);cursor:pointer}
 nav{display:flex;gap:2px;overflow-x:auto;position:relative;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
@@ -157,7 +157,7 @@ tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--ink)}
 <body>
 <header>
   <div class="sun"></div>
-  <div id="hdr"><span id="sync">Loading…</span><select id="disp" aria-label="Show amounts in"><option>IDR</option><option>JPY</option><option>MYR</option><option>SGD</option></select></div>
+  <div id="hdr"><button id="sync" type="button">Loading…</button><select id="disp" aria-label="Show amounts in"><option>IDR</option><option>JPY</option><option>MYR</option><option>SGD</option></select></div>
   <h1>日本 Japan Trip</h1>
   <p>21 Nov – 4 Dec 2026 · Tokyo → Kawaguchiko → Kyoto → Sapporo</p>
   <nav id="nav">
@@ -167,7 +167,7 @@ tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--ink)}
 <main id="app"></main>
 <div id="modal"></div>
 <script>
-const DATA = __DATA__;
+let DATA = __DATA__;
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const clone = o => JSON.parse(JSON.stringify(o ?? null));
@@ -296,32 +296,173 @@ function patchItem(i, it, patch){
   route(); return saveDay(date);
 }
 
-async function connect(){
-  if (!window.claude || !claude.use){ setSync('This device only'); return; }
+/* ---------- backends ---------- */
+const SB_CONF = __SBCONF__;   // {url, key} in the web build; null in the Claude build
+let SB = null;
+const SIGNED = {};            // storage id -> signed URL
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+let signQ = new Set(), signT = null;
+function queueSign(id){
+  if (SIGNED[id] === undefined){ SIGNED[id] = null; signQ.add(id); }
+  clearTimeout(signT);
+  signT = setTimeout(async ()=>{
+    const ids = [...signQ]; signQ = new Set(); if (!ids.length || !SB) return;
+    const { data } = await SB.storage.from('trip-media').createSignedUrls(ids.map(x=>x.slice(3)), 60*60*24);
+    (data||[]).forEach((r,n)=>{ if (r && r.signedUrl) SIGNED[ids[n]] = r.signedUrl; });
+    if (E) renderModal(); else route();
+  }, 30);
+}
+
+function connect(){
+  if (window.claude && claude.use) return connectClaude();
+  if (SB_CONF && SB_CONF.url) return connectSupabase();
+  setSync('This device only'); route();
+}
+async function connectClaude(){
   const [db, user, assets] = await Promise.all([claude.use('db'), claude.use('user'), claude.use('assets')]);
   S.assets = assets;
   if (!db){ setSync('This device only'); route(); return; }
   S.db = db; S.mode = 'db';
   try { if (user){ const w = await user.can('data.write'); if (w === false) S.canWrite = false; } } catch(e){}
+  subscribeAll(db);
+}
+function subscribeAll(db){
   let gotDays=false, gotSet=false;
-  db.doc('pretrip/main').onSnapshot(snap=>{
-    S.pre = snap.exists ? clone(snap.data()) : {items:{}}; S.pre.items = S.pre.items || {}; ls.set('pre', S.pre);
-    if (!$('#modal').innerHTML) route();
-  }, e=>{});
   const timer = setTimeout(()=>{ if(!gotDays||!gotSet) setSync('Offline — may be out of date'); }, 10000);
   const done = ()=>{ if(gotDays&&gotSet){ clearTimeout(timer); setSync(S.canWrite ? 'Synced ✓' : 'View only'); } };
+  const redraw = ()=>{ if (!$('#modal').innerHTML) route(); };
+  db.doc('pretrip/main').onSnapshot(snap=>{
+    S.pre = snap.exists ? clone(snap.data()) : {items:{}}; S.pre.items = S.pre.items || {}; ls.set('pre', S.pre); redraw();
+  }, e=>{});
   db.collection('days').onSnapshot(snap=>{
     const next = {}; snap.docs.forEach(d=>{ if (d.exists) next[d.id] = clone(d.data()); });
     S.days = next; ls.set('days', next);
-    if (!snap.metadata.fromCache){ gotDays = true; done(); }
-    if (!$('#modal').innerHTML) route();
+    if (!snap.metadata.fromCache){ gotDays = true; done(); } redraw();
   }, e=>{ clearTimeout(timer); setSync('Sync stopped'); });
   db.doc('settings/main').onSnapshot(snap=>{
     if (snap.exists){ const v = clone(snap.data()); if (!v.cats || !v.cats.length) v.cats = DEFAULT_CATS; v.bdone = v.bdone || {}; S.settings = v; ls.set('settings', v); }
-    if (!snap.metadata.fromCache){ gotSet = true; done(); }
-    if (!$('#modal').innerHTML) route();
+    if (!snap.metadata.fromCache){ gotSet = true; done(); } redraw();
   }, e=>{ clearTimeout(timer); setSync('Sync stopped'); });
   route();
+}
+
+/* Supabase: a small adapter with the same shape the app already uses */
+function sbAdapter(sb){
+  const cache = new Map(), docL = new Map(), colL = [];
+  const snapOf = p => { const has = cache.has(p); return { id: p.split('/').slice(1).join('/'), exists: has, data: () => has ? cache.get(p) : undefined, metadata:{fromCache:false, hasPendingWrites:false} }; };
+  const emitDoc = p => (docL.get(p)||[]).forEach(f=>f(snapOf(p)));
+  const emitCol = c => colL.filter(l=>l.c===c).forEach(l=>{ const docs = [...cache.keys()].filter(k=>k.startsWith(c+'/')).map(snapOf); l.f({docs, size:docs.length, empty:!docs.length, metadata:{fromCache:false}}); });
+  const emitAll = () => { [...docL.keys()].forEach(emitDoc); [...new Set(colL.map(l=>l.c))].forEach(emitCol); };
+  const toErr = e => ({ code: (e && (e.code==='42501' || /row-level security/i.test(e.message||''))) ? 'invalid_argument' : 'unavailable', message: e && e.message });
+  async function load(){
+    const { data, error } = await sb.from('trip_docs').select('path,data');
+    if (error) throw toErr(error);
+    cache.clear(); data.forEach(r=>cache.set(r.path, r.data)); emitAll();
+  }
+  sb.channel('trip_docs').on('postgres_changes', {event:'*', schema:'public', table:'trip_docs'}, ev=>{
+    const p = (ev.new && ev.new.path) || (ev.old && ev.old.path); if (!p) return;
+    if (ev.eventType === 'DELETE') cache.delete(p); else cache.set(p, ev.new.data);
+    emitDoc(p); emitCol(p.split('/')[0]);
+  }).subscribe(st=>{ if (st==='SUBSCRIBED') load().catch(()=>{}); });
+  document.addEventListener('visibilitychange', ()=>{ if (document.visibilityState==='visible') load().catch(()=>{}); });
+  const db = {
+    doc: path => ({
+      async set(body){ cache.set(path, body); const { error } = await sb.from('trip_docs').upsert({path, data:body}); if (error) throw toErr(error); },
+      async delete(){ cache.delete(path); const { error } = await sb.from('trip_docs').delete().eq('path', path); if (error) throw toErr(error); },
+      onSnapshot(f){ docL.set(path, [...(docL.get(path)||[]), f]); if (cache.size) f(snapOf(path)); return ()=>{}; }
+    }),
+    collection: c => ({ onSnapshot(f){ colL.push({c, f}); if (cache.size) emitCol(c); return ()=>{}; } })
+  };
+  const assets = {
+    async upload(blob){
+      const ext = ((blob.type||'').split('/')[1]||'bin').replace(/[^a-z0-9]/gi,'').slice(0,5) || 'bin';
+      const key = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+      const { error } = await sb.storage.from('trip-media').upload(key, blob, {contentType: blob.type || undefined, upsert:false});
+      if (error) throw error;
+      const id = 'sb:'+key;
+      const s = await sb.storage.from('trip-media').createSignedUrl(key, 60*60*24);
+      if (s.data) SIGNED[id] = s.data.signedUrl;
+      return { id, url: undefined, sizeBytes: blob.size, contentType: blob.type };
+    },
+    async delete(id){ if (id && id.startsWith('sb:')) await sb.storage.from('trip-media').remove([id.slice(3)]); }
+  };
+  return { db, assets, load, cache };
+}
+
+function loadScript(src){ return new Promise((ok, no)=>{ const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+async function connectSupabase(){
+  setSync('Connecting…');
+  try { await loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js'); }
+  catch(e){ setSync(DATA ? 'Offline — this device only' : 'Offline'); route(); return; }
+  SB = supabase.createClient(SB_CONF.url, SB_CONF.key, { auth: { persistSession:true, storageKey:'jp26-auth', detectSessionInUrl:true } });
+  SB.auth.onAuthStateChange((ev, session)=>{
+    if (ev === 'PASSWORD_RECOVERY'){ openLogin('reset'); return; }
+    if (ev === 'SIGNED_OUT'){ S.user = null; S.db = null; S.assets = null; S.mode = 'local'; setSync('Sign in to sync'); route(); }
+  });
+  const { data:{ session } } = await SB.auth.getSession();
+  if (session) await startSupabase(session); else { setSync('Sign in to sync'); route(); }
+}
+async function startSupabase(session){
+  S.user = session.user.email;
+  const { data, error } = await SB.from('trip_members').select('email').limit(1);
+  if (error){ setSync('Offline — this device only'); route(); return; }
+  if (!data.length){ S.notMember = true; setSync('Not on the trip list'); route(); return; }
+  S.notMember = false;
+  const a = sbAdapter(SB);
+  try { await a.load(); } catch(e){ setSync('Offline — this device only'); route(); return; }
+  const base = a.cache.get('base/itinerary');
+  if (base){ DATA = base; ls.set('base', base); }
+  S.db = a.db; S.assets = a.assets; S.mode = 'db'; S.canWrite = true;
+  subscribeAll(a.db);
+}
+
+/* ---------- sign-in sheet (web build) ---------- */
+let L = null; // {mode:'in'|'up'|'forgot'|'reset', msg, err, busy}
+function openLogin(mode='in'){ L = {mode, msg:'', err:'', busy:false}; renderLogin(); }
+function renderLogin(){
+  if (!L){ $('#modal').innerHTML = ''; document.body.style.overflow=''; return; }
+  document.body.style.overflow='hidden';
+  const t = {in:'Sign in', up:'Create account', forgot:'Reset password', reset:'Set a new password'}[L.mode];
+  $('#modal').innerHTML = `<div class="ov" data-lclose><div class="sheet" role="dialog" aria-label="${t}" style="max-width:420px">
+    <h2 style="margin:0 0 6px">${t}</h2>
+    <p class="small muted" style="margin:0 0 12px">${L.mode==='reset' ? 'Choose a new password for your account.' : 'Only the two emails on the trip list can see and edit the trip.'}</p>
+    <form id="lform" class="f" style="grid-template-columns:1fr">
+      ${L.mode==='reset' ? '' : `<label>Email<input type="email" id="l_email" autocomplete="email" required value="${esc(L.email||'')}"></label>`}
+      ${L.mode==='forgot' ? '' : `<label>Password<input type="password" id="l_pw" autocomplete="${L.mode==='in'?'current-password':'new-password'}" minlength="6" required></label>`}
+      ${L.err ? `<p class="err" style="margin:0">${esc(L.err)}</p>` : ''}${L.msg ? `<p class="small" style="margin:0;color:var(--green)">${esc(L.msg)}</p>` : ''}
+      <button class="btn pri" type="submit" ${L.busy?'disabled':''}>${L.busy?'Please wait…':t}</button>
+    </form>
+    <div class="row sp small" style="margin-top:12px">
+      ${L.mode==='in' ? `<button class="lnk" data-lmode="up">Create account</button><button class="lnk" data-lmode="forgot">Forgot password?</button>`
+        : L.mode==='reset' ? '' : `<button class="lnk" data-lmode="in">Back to sign in</button>`}
+      ${S.user || DATA ? `<button class="lnk" data-lclose>Close</button>` : ''}
+    </div></div></div>`;
+  const f = $('#l_email') || $('#l_pw'); if (f) setTimeout(()=>f.focus(), 0);
+}
+async function submitLogin(){
+  const email = $('#l_email') ? $('#l_email').value.trim() : '', pw = $('#l_pw') ? $('#l_pw').value : '';
+  L.email = email; L.err = ''; L.msg = ''; L.busy = true; renderLogin();
+  const back = /^https?:/.test(location.href) ? location.href.split('#')[0] : undefined;
+  let r;
+  try {
+    if (L.mode==='in'){ r = await SB.auth.signInWithPassword({email, password:pw}); if (!r.error){ L = null; renderLogin(); setSync('Connecting…'); await startSupabase(r.data.session); return; } }
+    else if (L.mode==='up'){ r = await SB.auth.signUp({email, password:pw, options:{emailRedirectTo:back}});
+      if (!r.error){ if (r.data.session){ L = null; renderLogin(); await startSupabase(r.data.session); return; } L.mode='in'; L.msg = 'Check your inbox and tap the confirmation link, then sign in here.'; } }
+    else if (L.mode==='forgot'){ r = await SB.auth.resetPasswordForEmail(email, {redirectTo:back}); if (!r.error){ L.mode='in'; L.msg = 'If that email is registered, a reset link is on its way.'; } }
+    else if (L.mode==='reset'){ r = await SB.auth.updateUser({password:pw}); if (!r.error){ L = null; renderLogin(); const { data:{session} } = await SB.auth.getSession(); if (session) await startSupabase(session); return; } }
+    if (r && r.error) L.err = /confirm/i.test(r.error.message) ? 'Please confirm your email first — check your inbox.' : r.error.message;
+  } catch(e){ L.err = 'Could not reach the server. Check your connection.'; }
+  if (L){ L.busy = false; renderLogin(); }
+}
+function vLanding(){
+  return `<div class="card hero" style="margin-top:6px"><div class="big">Japan trip</div><div class="muted" style="margin-top:6px">Sign in to load the itinerary.</div></div>
+    ${S.notMember ? `<div class="card"><b>${esc(S.user)}</b> isn't on the trip list. Sign out and use the email that was added.<div style="margin-top:10px"><button class="btn" data-signout>Sign out</button></div></div>`
+      : `<button class="btn pri" data-login style="width:100%;padding:12px">Sign in</button>`}`;
+}
+function accountCard(){
+  if (!SB_CONF || (window.claude && claude.use)) return '';
+  return `<div class="card"><h3>Account</h3>${S.user ? `<div class="small">Signed in as <b>${esc(S.user)}</b>${S.notMember?' · <span class="err">not on the trip list</span>':''}</div><div style="margin-top:10px"><button class="btn" data-signout>Sign out</button></div>`
+    : `<div class="small muted">Not signed in — edits stay on this device only.</div><div style="margin-top:10px"><button class="btn pri" data-login>Sign in</button></div>`}</div>`;
 }
 
 /* ---------- small renderers ---------- */
@@ -335,7 +476,7 @@ function statusClass(s){
 }
 function badge(s){ return s ? `<span class="badge b-${statusClass(s)}">${esc(s)}</span>` : ''; }
 function link(src){ return /^https?:/.test(src) ? `<a href="${esc(src)}" target="_blank" rel="noopener">Source ↗</a>` : (src ? `<span class="muted">${esc(src)}</span>` : ''); }
-function mediaUrl(m){ return m.url || ('/_blob/'+m.id); }
+function mediaUrl(m){ if (m.id && m.id.startsWith('sb:')){ if (SIGNED[m.id]) return SIGNED[m.id]; queueSign(m.id); return BLANK; } return m.url || ('/_blob/'+m.id); }
 function thumbs(list, removable, field='media'){
   if (!list || !list.length) return '';
   return `<div class="media">${list.map((m,n)=>`<button class="thumb" data-view="${n}" data-src="${esc(mediaUrl(m))}" data-type="${esc(m.type)}">
@@ -505,7 +646,7 @@ function vBudget(){
 
 function vSettings(){
   const st = ST(), r = rates(), ro = !S.canWrite;
-  return `<h2>Settings</h2>
+  return `<h2>Settings</h2>${accountCard()}
   <div class="card"><h3>Show amounts in</h3>
     <div class="filters" style="margin:6px 0 0">${CURS.map(c=>`<button data-disp="${c}" class="${DISP===c?'on':''}">${c}</button>`).join('')}</div>
     <p class="small muted" style="margin:8px 0 0">Also on the top-right of every page. This choice is saved on this device only.</p></div>
@@ -710,18 +851,24 @@ function deleteEdit(){
 /* ---------- router ---------- */
 const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, settings:vSettings};
 function route(){
+  if (!DATA){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('on')); $('#app').innerHTML = vLanding(); return; }
   const h = (location.hash||'#today').slice(1), v = views[h] ? h : 'today';
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+v));
   const focus = document.activeElement && document.activeElement.id;
-  $('#app').innerHTML = views[v]() + `<div class="foot">Built from Japan_Itinerary_Final_Working_Plan_21Nov-4Dec2026.xlsm · edits ${S.db?'sync to everyone who can edit this page':'are saved on this device only'}</div>`;
+  $('#app').innerHTML = views[v]() + `<div class="foot">Built from Japan_Itinerary_Final_Working_Plan_21Nov-4Dec2026.xlsm · edits ${S.db?'sync between your devices':'are saved on this device only'}</div>`;
   if (focus==='shrange' && $('#shrange')) $('#shrange').focus();
 }
 window.addEventListener('hashchange', ()=>{ route(); window.scrollTo(0,0); });
 
 document.addEventListener('click', e=>{
-  const t = e.target.closest('button,[data-close],a,span[data-rm]'); if (!t) return;
+  const t = e.target.closest('button,[data-close],[data-lclose],a,span[data-rm]'); if (!t) return;
   const ds = t.dataset;
   // modal
+  if (ds.lclose !== undefined && (e.target === t || t.tagName==='BUTTON')){ L = null; renderLogin(); return; }
+  if (ds.lmode){ L.mode = ds.lmode; L.err = ''; L.msg = ''; renderLogin(); return; }
+  if (ds.login !== undefined){ if (SB) openLogin('in'); return; }
+  if (ds.signout !== undefined){ if (SB) SB.auth.signOut(); return; }
+  if (t.id === 'sync' && SB && !S.user){ openLogin('in'); return; }
   if (ds.close !== undefined && e.target === t){ cancelEdit(); return; }
   if (ds.ecancel !== undefined) return cancelEdit();
   if (ds.esave !== undefined) return saveEdit();
@@ -789,9 +936,11 @@ document.addEventListener('change', e=>{
   if (/^e_(est|paid)[cb]?$/.test(t.id) && E){ updConv(); return; }
 });
 document.addEventListener('keydown', e=>{ if (e.key==='Escape' && E) cancelEdit(); });
+document.addEventListener('submit', e=>{ if (e.target.id==='lform'){ e.preventDefault(); submitLogin(); } });
 
 function setDisp(c){ if (!CURS.includes(c)) return; DISP = c; ls.set('disp', c); $('#disp').value = c; route(); }
 $('#disp').value = DISP;
+if (!DATA) DATA = ls.get('base', null);
 route();
 connect();
 setInterval(()=>{ if ((location.hash||'#today')==='#today' && !E) route(); }, 60000);
