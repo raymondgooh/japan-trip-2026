@@ -2,168 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f2eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
 <title>Japan Trip Companion · 21 Nov – 4 Dec 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f7f3ec;--card:#fffdf9;--ink:#1f1b16;--muted:#6f675c;--line:#e6dfd3;
-  --red:#c0392b;--red-soft:#f6e1dc;--indigo:#2c3e63;--indigo-soft:#e2e7f1;
-  --green:#3d7a4f;--green-soft:#e0eee3;--amber:#a86b12;--amber-soft:#f6ead3;--grey-soft:#eeebe5;
+  --paper:#f5f2eb;--card:#f5f2eb;--raise:#fbf9f4;--ink:#1c1b19;--ink2:#3b3833;--muted:#8a857c;--line:#ddd7cb;--line2:#ebe6dc;
+  --accent:#c2412b;--accent-soft:rgba(194,65,43,.08);--green:#4e6a47;--indigo:#33456b;
+  --red:var(--accent);--red-soft:var(--accent-soft);--amber:#8a6a2f;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#121211;--card:#121211;--raise:#1b1a18;--ink:#ece8e0;--ink2:#cfcac0;--muted:#8d887e;--line:#2d2b28;--line2:#211f1d;
+    --accent:#e2674f;--accent-soft:rgba(226,103,79,.12);--green:#93b08a;--indigo:#a4b4d4;--amber:#c9a46a}
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--indigo)}
-button{font-family:inherit}
-header{background:var(--ink);color:#fff;padding:22px 18px 0;position:relative;overflow:hidden}
-header .sun{position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:var(--red);opacity:.9}
-header h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:26px;margin:0;position:relative;letter-spacing:.5px}
-header p{margin:4px 0 14px;color:#cfc8bd;font-size:13px;position:relative}
-#hdr{position:absolute;right:12px;top:12px;display:flex;gap:6px;align-items:center;z-index:2}
-#sync{font-size:11px;font-weight:600;background:rgba(0,0,0,.35);color:#fff;padding:3px 9px;border-radius:99px;border:0;cursor:pointer}
-#disp{width:auto;font:700 13px Inter,sans-serif;padding:4px 8px;border-radius:99px;border:0;background:#fff;color:var(--ink);cursor:pointer}
-nav{display:flex;gap:2px;overflow-x:auto;position:relative;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-nav a{color:#cfc8bd;text-decoration:none;padding:10px 14px;font-weight:600;font-size:14px;border-bottom:3px solid transparent;white-space:nowrap}
-nav a.on{color:#fff;border-color:var(--red)}
-main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
-h2{font-family:"Shippori Mincho",serif;font-size:21px;margin:18px 0 12px}
-h2:first-child{margin-top:6px}
-h3{font-size:15px;margin:0 0 6px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+html,body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.65 "Zen Kaku Gothic New",system-ui,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
+a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+button{font-family:inherit;color:inherit}
+::selection{background:var(--accent-soft)}
+
+/* header */
+header{max-width:680px;margin:0 auto;padding:22px 20px 6px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.brand{display:flex;gap:12px;align-items:baseline}
+.brand .kan{font-size:26px;font-weight:700;color:var(--accent);line-height:1}
+.brand h1{font-size:15px;font-weight:700;margin:0;letter-spacing:.06em}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted);letter-spacing:.04em}
+#hdr{display:flex;gap:10px;align-items:center;padding-top:2px}
+#sync{font-size:11px;background:none;border:0;color:var(--muted);padding:0;cursor:pointer;letter-spacing:.04em}
+#disp{width:auto;font:500 12px var(--mono);padding:2px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);cursor:pointer}
+
+/* bottom tabs */
+nav#nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}
+nav#nav a{flex:1;max-width:120px;text-align:center;text-decoration:none;color:var(--muted);padding:16px 0 18px;display:flex;flex-direction:column;align-items:center;gap:1px;position:relative}
+nav#nav a b{font-size:16px;font-weight:500;line-height:1.2}
+nav#nav a span{font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+nav#nav a.on{color:var(--ink)}
+nav#nav a.on:before{content:"";position:absolute;top:-1px;left:30%;right:30%;height:2px;background:var(--accent)}
+
+main{max-width:680px;margin:0 auto;padding:8px 20px 110px}
+h2{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:36px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+h2:first-child{margin-top:14px}
+h3{font-size:15px;font-weight:700;margin:0 0 2px}
+.card{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 0;margin:0}
 .muted{color:var(--muted)}
 .small{font-size:13px}
-.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .sp{justify-content:space-between}
-.badge{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--grey-soft);color:var(--muted);white-space:nowrap}
-.b-fixed{background:var(--indigo-soft);color:var(--indigo)}
-.b-book{background:var(--red-soft);color:var(--red)}
-.b-flex{background:var(--green-soft);color:var(--green)}
-.b-opt{background:var(--amber-soft);color:var(--amber)}
-.b-custom{background:var(--ink);color:#fff}
-.btn{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:7px 12px;font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink)}
-.btn.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
-.btn.red{color:var(--red);border-color:var(--red-soft)}
-.btn.red.arm{background:var(--red);color:#fff}
-.lnk{background:none;border:0;color:var(--indigo);font-weight:600;font-size:12.5px;cursor:pointer;padding:0}
+.lbl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.kanji{font-weight:500;letter-spacing:.05em}
+
+/* status: words, not pills */
+.badge{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;padding:0;white-space:nowrap}
+.b-book{color:var(--accent)}
+.b-fixed{color:var(--ink2)}
+.b-flex{color:var(--muted)}
+.b-opt{color:var(--muted);font-weight:500}
+.b-custom{color:var(--indigo)}
+
+/* buttons */
+.btn{border:1px solid var(--ink);background:transparent;border-radius:2px;padding:7px 14px;font-weight:500;font-size:13px;cursor:pointer;letter-spacing:.04em}
+.btn.pri{background:var(--ink);color:var(--paper)}
+.btn:disabled{opacity:.4}
+.btn.red{color:var(--accent);border-color:var(--accent)}
+.btn.red.arm{background:var(--accent);color:var(--paper)}
+.lnk{background:none;border:0;color:var(--ink2);font-weight:500;font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+
 /* day strip */
-.strip{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 -2px 6px;scrollbar-width:thin}
-.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:7px 11px;cursor:pointer;text-align:center;min-width:62px;color:inherit}
-.chip b{display:block;font-size:16px}
-.chip span{font-size:11px;color:var(--muted)}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.chip.on span{color:#cfc8bd}
-.chip.today{box-shadow:0 0 0 2px var(--red)}
-.dayhead{border-left:5px solid var(--red)}
-.dayhead .route{font-weight:600}
+.strip{display:flex;gap:2px;overflow-x:auto;padding:4px 0 2px;margin:4px -20px 0;padding-left:20px;padding-right:20px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:0;background:none;padding:6px 8px 8px;cursor:pointer;text-align:center;min-width:46px;color:var(--muted);border-bottom:2px solid transparent}
+.chip span{display:block;font-size:11px;line-height:1.3}
+.chip b{display:block;font:400 20px/1.25 var(--mono)}
+.chip.on{color:var(--ink);border-bottom-color:var(--ink)}
+.chip.today b{color:var(--accent)}
+
+/* day header */
+.dayhead{border-bottom:1px solid var(--ink);padding:26px 0 18px}
+.dayhead .place{display:flex;align-items:baseline;gap:14px}
+.dayhead .place .kanji{font-size:40px;line-height:1.1;font-weight:500}
+.dayhead .place .rom{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.dayhead .route{font-size:13px;color:var(--ink2);margin-top:10px}
+.dayhead .theme{font-size:16px;margin-top:2px}
+
 /* shift panel */
-.shift{background:var(--indigo-soft);border:0}
-.shift input[type=range]{width:100%;accent-color:var(--indigo)}
-.shift select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--line);max-width:100%;background:#fff}
-.shiftval{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--indigo)}
-/* timeline */
-.tl{position:relative;margin-left:8px}
-.tl:before{content:"";position:absolute;left:52px;top:6px;bottom:6px;width:2px;background:var(--line)}
-.it{display:grid;grid-template-columns:46px 1fr;gap:0 18px;padding:4px 0;position:relative}
-.it .t{font-weight:700;font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px;text-align:right}
+.shift{background:var(--raise);border:1px solid var(--line);padding:16px;margin:14px 0}
+.shift input[type=range]{width:100%;accent-color:var(--ink)}
+.shiftval{font:400 22px var(--mono);color:var(--ink)}
+.tools{display:flex;gap:18px;margin:14px 0 4px}
+
+/* timetable */
+.tl{margin:0}
+.it{display:grid;grid-template-columns:58px 1fr;gap:0 14px;padding:14px 0;border-bottom:1px solid var(--line2);position:relative}
+.it .t{font:400 15px/1.5 var(--mono);color:var(--ink);padding-top:1px}
 .it .t.moved{color:var(--indigo)}
-.it .t s{display:block;font-weight:500;font-size:11px;color:var(--muted)}
-.it:before{content:"";position:absolute;left:47px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--muted)}
-.it.s-book:before{border-color:var(--red);background:var(--red)}
-.it.s-fixed:before{border-color:var(--indigo)}
-.it.s-custom:before{border-color:var(--ink);background:var(--ink)}
-.it.done .body{opacity:.55}
-.it.done .act{text-decoration:line-through}
-.it.now:before{box-shadow:0 0 0 4px var(--red-soft);border-color:var(--red)}
-.body{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.it.shifting .body{border-color:var(--indigo);box-shadow:0 0 0 1px var(--indigo)}
-.act{font-weight:600}
-.meta{font-size:12.5px;color:var(--muted);margin-top:3px}
-.note{font-size:13px;margin-top:6px;display:none}
+.it .t s{display:block;font-size:11px;color:var(--muted)}
+.it.s-book .t{color:var(--accent)}
+.it.done .body{opacity:.45}
+.it.done .act{text-decoration:line-through;text-decoration-color:var(--muted)}
+.it.now .t:before{content:"";position:absolute;left:-12px;top:22px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.it.shifting .t{color:var(--indigo)}
+.body{background:none;border:0;padding:0}
+.act{font-weight:500;font-size:15px;line-height:1.5}
+.meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.note{font-size:13px;margin-top:8px;display:none;color:var(--ink2);border-left:1px solid var(--line);padding-left:12px}
 .body.open .note{display:block}
-.tick{appearance:none;width:20px;height:20px;border:2px solid var(--line);border-radius:6px;cursor:pointer;flex:0 0 auto;margin:0;background:var(--card)}
-.tick:checked{background:var(--green);border-color:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='white' stroke-width='2.4' fill='none'/%3E%3C/svg%3E")}
-.tick:disabled{opacity:.6;cursor:default}
-.acts{display:flex;gap:14px;margin-top:6px}
-.cost{font-variant-numeric:tabular-nums;font-size:12.5px;white-space:nowrap;text-align:right}
-.cost b{font-weight:700}
-.cost .paid{color:var(--green);font-weight:700}
-.catpill{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 7px}
-.add{display:grid;grid-template-columns:46px 1fr;gap:0 18px;height:16px;position:relative}
-.add button{grid-column:2;justify-self:start;margin-left:-29px;width:22px;height:22px;border-radius:50%;border:1.5px dashed var(--muted);background:var(--paper);color:var(--muted);font-size:15px;line-height:1;cursor:pointer;position:relative;top:-3px;z-index:1;padding:0}
-.add button:hover{border-style:solid;border-color:var(--ink);color:#fff;background:var(--ink)}
-.media{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.thumb{width:64px;height:64px;border-radius:8px;overflow:hidden;position:relative;background:var(--grey-soft);cursor:pointer;border:0;padding:0;flex:0 0 auto}
+.tick{appearance:none;width:18px;height:18px;border:1px solid var(--muted);border-radius:50%;cursor:pointer;flex:0 0 auto;margin:3px 0 0;background:transparent}
+.tick:checked{background:var(--ink);border-color:var(--ink);box-shadow:inset 0 0 0 3px var(--paper)}
+.tick:disabled{opacity:.5;cursor:default}
+.acts{display:flex;gap:16px;margin-top:6px}
+.cost{font:400 12px/1.6 var(--mono);white-space:nowrap;text-align:right;color:var(--ink2)}
+.cost b{font-weight:500}
+.cost .paid,.paid{color:var(--green)}
+.orig{color:var(--muted)}
+.catpill{font-size:11px;color:var(--muted)}
+.add{height:0;position:relative}
+.add button{position:absolute;left:22px;top:-11px;width:22px;height:22px;border:0;background:var(--paper);color:var(--line);font:300 18px/22px var(--mono);cursor:pointer;padding:0;z-index:1}
+.add button:hover,.add button:focus{color:var(--accent)}
+.media{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.thumb{width:68px;height:68px;overflow:hidden;position:relative;background:var(--line2);cursor:pointer;border:0;padding:0;flex:0 0 auto;border-radius:1px}
 .thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}
-.thumb .pl{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:20px;text-shadow:0 1px 4px #000;pointer-events:none}
-.thumb .x{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;border:0;font-size:12px;cursor:pointer;line-height:1}
+.thumb .pl{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:16px;text-shadow:0 1px 4px #000;pointer-events:none}
+.thumb .x{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;border:0;font-size:11px;cursor:pointer;line-height:20px;text-align:center}
+
 /* today */
-.hero{background:var(--ink);color:#fff;border:0}
-.hero .muted{color:#cfc8bd}
-.big{font-family:"Shippori Mincho",serif;font-size:34px;font-weight:800;line-height:1.1}
-.next{border-left:5px solid var(--red)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.kv{display:grid;grid-template-columns:110px 1fr;gap:3px 10px;font-size:13.5px}
-.kv dt{color:var(--muted)}
+.hero{border-bottom:1px solid var(--ink);padding:30px 0 24px}
+.big{font-size:44px;font-weight:300;line-height:1.1;letter-spacing:-.01em}
+.big.num{font:300 72px/1 var(--mono);letter-spacing:-.04em}
+.next{padding:22px 0}
+.next .when{font:400 32px/1.1 var(--mono);color:var(--accent)}
+.next h3{font-size:19px;font-weight:500;margin:6px 0 2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:4px 12px;font-size:13.5px;margin:10px 0 0}
+.kv dt{color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
 .kv dd{margin:0}
-.bk{display:flex;gap:12px;align-items:flex-start}
-.bk.done .bt{text-decoration:line-through;color:var(--muted)}
-.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.filters button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 12px;font-weight:600;font-size:13px;cursor:pointer;color:var(--ink)}
-.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-/* budget */
-.inputs{display:flex;gap:14px;flex-wrap:wrap}
-.inputs label,.f label{font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
-input[type=number],input[type=text],input[type=time],select,textarea{font:500 15px Inter,sans-serif;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);width:100%}
-.inputs input,.inputs select{width:150px;font-weight:600}
-textarea{min-height:70px;resize:vertical}
-table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
-th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right}
-th:first-child,td:first-child{text-align:left;white-space:nowrap}
-th{font-size:12px;color:var(--muted);font-weight:600}
-tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--ink)}
-.over{color:var(--red)}.under{color:var(--green)}
-.tot{font-family:"Shippori Mincho",serif;font-size:26px;font-weight:800}
-.cbar{display:grid;grid-template-columns:1fr;gap:3px;margin:4px 0 12px}
-.cbar .tr{height:9px;border-radius:5px;background:var(--grey-soft);position:relative;overflow:hidden}
-.cbar .e{position:absolute;left:0;top:0;bottom:0;background:#c9bfae;border-radius:5px}
-.cbar .p{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:5px}
-.legend{display:flex;gap:14px;font-size:12px;color:var(--muted)}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.catrow{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.bk{display:flex;gap:14px;align-items:flex-start}
+.bk.done .bt{text-decoration:line-through;text-decoration-color:var(--muted);color:var(--muted)}
+.filters{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 4px}
+.filters button{border:0;background:none;padding:2px 0;font-weight:500;font-size:13px;cursor:pointer;color:var(--muted);border-bottom:1px solid transparent}
+.filters button.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* forms */
+.inputs{display:flex;gap:18px;flex-wrap:wrap}
+.inputs label,.f label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+input[type=number],input[type=text],input[type=email],input[type=password],input[type=time],select,textarea{font:400 15px "Zen Kaku Gothic New",sans-serif;letter-spacing:normal;text-transform:none;padding:8px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--ink)}
+input[type=number],input[type=time]{font-family:var(--mono)}
+.inputs input,.inputs select{width:150px}
+textarea{min-height:70px;resize:vertical;border:1px solid var(--line);padding:8px 10px}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 55%,calc(100% - 5px) 55%;background-size:4px 4px;background-repeat:no-repeat;padding-right:18px}
+
+/* tables & budget */
+table{width:100%;border-collapse:collapse;font:400 12.5px var(--mono)}
+th,td{padding:9px 4px;border-bottom:1px solid var(--line2);text-align:right}
+th:first-child,td:first-child{text-align:left;white-space:nowrap;font-family:"Zen Kaku Gothic New",sans-serif}
+th{font:500 10.5px "Zen Kaku Gothic New",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+tfoot td{font-weight:500;border-bottom:0;border-top:1px solid var(--ink)}
+.over{color:var(--accent)}.under{color:var(--green)}
+.tot{font:300 30px/1.2 var(--mono);letter-spacing:-.02em;margin:4px 0}
+.cbar{display:grid;gap:3px;margin:6px 0 16px}
+.cbar .tr{height:3px;background:var(--line2);position:relative}
+.cbar .e{position:absolute;left:0;top:0;bottom:0;background:var(--muted)}
+.cbar .p{position:absolute;left:0;top:0;bottom:0;background:var(--accent)}
+.legend{display:flex;gap:16px;font-size:11px;color:var(--muted);letter-spacing:.06em}
+.legend i{display:inline-block;width:12px;height:3px;margin-right:6px;vertical-align:middle}
+.catrow{display:flex;gap:10px;align-items:center;margin-bottom:6px}
 .catrow input{flex:1}
-.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:24px}
-/* modal */
-.ov{position:fixed;inset:0;background:rgba(31,27,22,.55);display:flex;align-items:flex-end;justify-content:center;z-index:50}
-.sheet{background:var(--paper);width:100%;max-width:620px;max-height:92vh;overflow-y:auto;border-radius:18px 18px 0 0;padding:18px 16px 22px}
-@media(min-width:640px){.ov{align-items:center}.sheet{border-radius:18px}}
-.f{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.foot{font-size:11px;color:var(--muted);text-align:center;margin-top:40px;letter-spacing:.04em}
+.more a{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.more a .kanji{font-size:22px}
+.more a span{color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+/* sheet */
+.ov{position:fixed;inset:0;background:rgba(20,19,17,.45);display:flex;align-items:flex-end;justify-content:center;z-index:50}
+.sheet{background:var(--paper);width:100%;max-width:620px;max-height:92vh;overflow-y:auto;padding:22px 20px 28px;border-top:2px solid var(--ink)}
+.sheet h2{border:0;margin:0;padding:0;font-size:12px}
+@media(min-width:640px){.ov{align-items:center}.sheet{border:1px solid var(--line);border-top:2px solid var(--ink)}}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
 .f .full{grid-column:1/-1}
-.money{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.money{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
 .money input{grid-column:1/-1}
-.orig{color:var(--muted);font-weight:500}
-.fs{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--card)}
-.fs legend{font-weight:700;font-size:13px;padding:0 4px}
+.fs{border:0;border-top:1px solid var(--line);padding:14px 0 0;margin:0;background:none}
+.fs legend{font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 8px 0 0}
 .upl{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 .upl input{display:none}
-.err{color:var(--red);font-size:12.5px}
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:60;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:16px}
-.lb img,.lb video{max-width:100%;max-height:85vh;border-radius:8px}
-.lb button{margin-top:12px}
-@media(max-width:520px){.tl:before{left:44px}.it,.add{grid-template-columns:38px 1fr;gap:0 16px}.it:before{left:39px}.kv{grid-template-columns:90px 1fr}.add button{margin-left:-27px}}
+.err{color:var(--accent);font-size:12.5px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:60;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+.lb img,.lb video{max-width:100%;max-height:85vh}
+.lb button{margin-top:14px;color:#fff;border-color:#fff}
+@media(max-width:420px){main{padding-left:16px;padding-right:16px}.big.num{font-size:60px}.dayhead .place .kanji{font-size:34px}}
+.upl,.f label.upl{display:inline-flex;flex-direction:row;width:auto;text-transform:none;letter-spacing:.04em;font-size:13px;color:var(--ink);padding:7px 14px}
+#e_estconv,#e_paidconv{text-transform:none;letter-spacing:normal;font-family:var(--mono);font-size:11.5px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}.tot{font-size:26px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="sun"></div>
+  <div class="brand"><span class="kan">旅</span><div><h1>JAPAN 2026</h1><p>21.11 — 04.12 · 東京 河口湖 京都 札幌</p></div></div>
   <div id="hdr"><button id="sync" type="button">Loading…</button><select id="disp" aria-label="Show amounts in"><option>IDR</option><option>JPY</option><option>MYR</option><option>SGD</option></select></div>
-  <h1>日本 Japan Trip</h1>
-  <p>21 Nov – 4 Dec 2026 · Tokyo → Kawaguchiko → Kyoto → Sapporo</p>
-  <nav id="nav">
-    <a href="#today">Today</a><a href="#itinerary">Itinerary</a><a href="#budget">Budget</a><a href="#bookings">Bookings</a><a href="#stays">Stays &amp; flights</a><a href="#tips">Tips</a><a href="#settings">Settings</a>
-  </nav>
 </header>
+<nav id="nav">
+  <a href="#today"><span>Today</span></a><a href="#itinerary"><span>Plan</span></a><a href="#budget"><span>Budget</span></a><a href="#bookings"><span>Bookings</span></a><a href="#more"><span>More</span></a>
+</nav>
 <main id="app"></main>
 <div id="modal"></div>
 <script>
@@ -272,7 +315,7 @@ function writeDoc(path, body){
       if (e && e.code==='unavailable'){ await new Promise(r=>setTimeout(r, 600+Math.random()*800)); await S.db.doc(path).set(body); }
       else { throw e; }
     }
-    setSync('Saved ✓');
+    setSync('Saved');
   }).catch(e=>{
     if (e && e.code==='invalid_argument'){ S.canWrite=false; setSync('View only'); route(); }
     else if (e && e.code==='quota_exceeded'){ setSync('Storage full'); }
@@ -329,7 +372,7 @@ async function connectClaude(){
 function subscribeAll(db){
   let gotDays=false, gotSet=false;
   const timer = setTimeout(()=>{ if(!gotDays||!gotSet) setSync('Offline — may be out of date'); }, 10000);
-  const done = ()=>{ if(gotDays&&gotSet){ clearTimeout(timer); setSync(S.canWrite ? 'Synced ✓' : 'View only'); } };
+  const done = ()=>{ if(gotDays&&gotSet){ clearTimeout(timer); setSync(S.canWrite ? 'Synced' : 'View only'); } };
   const redraw = ()=>{ if (!$('#modal').innerHTML) route(); };
   db.doc('pretrip/main').onSnapshot(snap=>{
     S.pre = snap.exists ? clone(snap.data()) : {items:{}}; S.pre.items = S.pre.items || {}; ls.set('pre', S.pre); redraw();
@@ -491,6 +534,19 @@ function jpNow(){
   return { date:`${g('year')}-${g('month')}-${g('day')}`, mins:(+g('hour')%24)*60 + +g('minute'), hm:`${String(+g('hour')%24).padStart(2,'0')}:${g('minute')}` };
 }
 const dayIndexForDate = d => DATA.days.findIndex(x=>x.date===d);
+const WK_JA = ['日','月','火','水','木','金','土'];
+const wkJa = d => WK_JA[new Date(d+'T00:00:00').getDay()];
+function region(d){
+  const n = DATA.days.findIndex(x=>x.date===d);
+  if (n<=0) return ['移動','Travel'];
+  if (n===DATA.days.length-1) return ['帰路','Homeward'];
+  const s = (DATA.days[n].stay||'').toLowerCase();
+  if (s.includes('akabane')) return ['東京','Tokyo'];
+  if (s.includes('eirin')) return ['河口湖','Kawaguchiko'];
+  if (s.includes('webase')) return ['京都','Kyoto'];
+  if (s.includes('quintessa')) return ['札幌','Sapporo'];
+  return ['旅','Japan'];
+}
 
 /* ---------- views ---------- */
 function vToday(){
@@ -499,23 +555,30 @@ function vToday(){
     if (now.date < DATA.days[0].date){
       const n = Math.ceil((new Date('2026-11-21T00:00:00+08:00') - new Date())/86400000);
       const nb = DATA.bookings.filter(b => /HIGH/.test(b.Priority) && !/LOCKED/.test(b.Status) && !ST().bdone[b.Item]);
-      return `<div class="card hero"><div class="muted small">Departure from KUL · Sat 21 Nov, 13:35</div>
-        <div class="big">${n} day${n===1?'':'s'} to go</div><div class="muted small" style="margin-top:6px">Japan time now ${now.hm}</div></div>
-        <h2>Still to sort out</h2>${nb.length ? nb.map(bkRow).join('') : '<div class="card">All high-priority bookings are ticked off. 🎉</div>'}
+      return `<div class="hero"><div class="lbl">Departure · KUL · Sat 21 Nov 13:35</div>
+        <div class="row" style="align-items:baseline;gap:14px;margin-top:10px"><div class="big num">${n}</div><div class="big" style="font-size:22px">day${n===1?'':'s'} to go</div></div>
+        <div class="muted small" style="margin-top:12px">Japan time <span style="font-family:var(--mono)">${now.hm}</span></div></div>
+        <h2>Still to sort out</h2>${nb.length ? nb.map(bkRow).join('') : '<div class="card">All high-priority bookings are done.</div>'}
         <h2>First day</h2>${dayCard(0)}`;
     }
-    return `<div class="card hero"><div class="big">おかえり</div><div class="muted">Trip finished — welcome home.</div></div>`;
+    return `<div class="hero"><div class="big">おかえり</div><div class="muted" style="margin-top:8px">Welcome home.</div></div>`;
   }
-  const d = DATA.days[idx], list = items(idx);
+  const d = DATA.days[idx], list = items(idx), [kj, rom] = region(d.date);
   const ni = list.findIndex(it => (toMin(it.time) ?? -1) >= now.mins);
   const cur = ni === -1 ? list.length-1 : Math.max(0, ni-1);
   const nxt = ni === -1 ? null : list[ni];
-  return `<div class="card hero"><div class="muted small">${esc(d.title)} · Japan time ${now.hm}</div>
-      <div class="big">${esc(d.theme)}</div><div class="muted small" style="margin-top:6px">🛏 ${esc(d.stay)}</div></div>
-    ${nxt ? `<div class="card next"><div class="muted small">Up next · ${esc(nxt.time)}</div><h3 style="font-size:17px;margin:2px 0">${esc(nxt.act)}</h3>
-      <div class="meta">${esc(nxt.mode||'')} ${badge(nxt.status)}</div>${nxt.note?`<div class="small" style="margin-top:6px">${esc(nxt.note)}</div>`:''}</div>`
-      : `<div class="card">Nothing else scheduled today — rest up.</div>`}
-    <h2>Today's plan</h2>${timeline(idx, cur)}`;
+  const mins = nxt ? toMin(nxt.time) - now.mins : 0;
+  const inTxt = !nxt ? '' : mins < 1 ? 'now' : mins < 60 ? `in ${mins} min` : `in ${Math.floor(mins/60)} h ${mins%60} min`;
+  return `<div class="hero"><div class="lbl">${esc(d.title)}</div>
+      <div class="row" style="align-items:baseline;gap:14px;margin-top:8px"><span class="kanji" style="font-size:40px;line-height:1.1">${kj}</span><span class="lbl">${rom}</span></div>
+      <div class="theme" style="font-size:16px;margin-top:6px">${esc(d.theme)}</div>
+      <div class="small muted" style="margin-top:8px"><span class="lbl">Stay</span>${esc(d.stay)}</div></div>
+    ${nxt ? `<div class="card next"><div class="lbl">Next · ${inTxt}</div>
+      <div class="row" style="align-items:baseline;gap:16px;margin-top:6px"><span class="when">${esc(nxt.time)}</span>${badge(nxt.status)}</div>
+      <h3>${esc(nxt.act)}</h3><div class="meta">${esc([nxt.area, nxt.mode].filter(x=>x && x!=='—').join(' · '))}</div>
+      ${nxt.note?`<div class="small" style="margin-top:8px;color:var(--ink2)">${esc(nxt.note)}</div>`:''}</div>`
+      : `<div class="card">Nothing else scheduled today.</div>`}
+    <h2>Today</h2>${timeline(idx, cur)}`;
 }
 
 function dayTotals(i){
@@ -526,24 +589,26 @@ function dayTotals(i){
   return {est, paid, estPaid};
 }
 function dayCard(i){
-  const d = DATA.days[i], t = dayTotals(i);
-  return `<div class="card dayhead">
-    <div class="muted small">${esc(d.title)}</div><div class="route">${esc(d.route)}</div>
-    <div class="small" style="margin-top:2px">${esc(d.theme)}</div>
-    <div class="row small sp" style="margin-top:8px"><span>🛏 ${esc(d.stay)}</span>
-      <span class="cost">Est <b>${fmtR(t.est)}</b> for ${ST().people}${t.paid ? ` · Paid <span class="paid">${fmtR(t.paid)}</span>`:''}</span></div>
+  const d = DATA.days[i], t = dayTotals(i), [kj, rom] = region(d.date);
+  return `<div class="dayhead">
+    <div class="lbl">${esc(d.title)}</div>
+    <div class="place" style="margin-top:6px"><span class="kanji">${kj}</span><span class="rom">${rom}</span></div>
+    <div class="theme">${esc(d.theme)}</div>
+    <div class="route">${esc(d.route)}</div>
+    <div class="row sp small" style="margin-top:14px;align-items:flex-end"><span><span class="lbl">Stay</span>${esc(d.stay)}</span>
+      <span class="cost">est ${fmtR(t.est)}${t.paid ? `<br><span class="paid">paid ${fmtR(t.paid)}</span>`:''}</span></div>
   </div>`;
 }
 
 function shiftPanel(i, list){
   const sh = S.ui.shift;
-  if (!sh || sh.day !== i) return S.canWrite ? `<div class="row" style="margin-bottom:10px"><button class="btn" data-shiftopen="${i}">⇅ Shift times</button><button class="btn" data-add="${i}|end">＋ Add stop</button></div>` : '';
+  if (!sh || sh.day !== i) return S.canWrite ? `<div class="tools"><button class="lnk" data-shiftopen="${i}">Shift times</button><button class="lnk" data-add="${i}|end">Add a stop</button></div>` : '';
   const m = sh.mins;
   return `<div class="card shift">
     <div class="row sp"><h3 style="margin:0">Shift the schedule</h3><button class="lnk" data-shiftcancel>Close</button></div>
     <label class="small muted" style="display:block;margin:8px 0 4px">Move this stop and everything after it</label>
     <select id="shfrom">${list.filter(x=>toMin(x.time)!==null).map(x=>`<option value="${esc(x.id)}" ${x.id===sh.from?'selected':''}>${esc(x.time)} · ${esc(x.act.slice(0,48))}</option>`).join('')}</select>
-    <div class="row sp" style="margin-top:10px"><span class="small muted">Earlier</span><span class="shiftval">${m>0?'+':''}${m} min</span><span class="small muted">Later</span></div>
+    <div class="row sp" style="margin-top:10px"><span class="small muted">Earlier</span><span class="shiftval">${m>0?'+':''}${m}′</span><span class="small muted">Later</span></div>
     <input type="range" id="shrange" min="-180" max="180" step="5" value="${m}">
     <div class="row" style="margin-top:8px"><button class="btn" data-nudge="-15">−15</button><button class="btn" data-nudge="-5">−5</button><button class="btn" data-nudge="5">+5</button><button class="btn" data-nudge="15">+15</button>
       <span style="flex:1"></span><button class="btn pri" data-shiftapply ${m?'':'disabled'}>Apply</button></div>
@@ -581,7 +646,7 @@ function tlBody(i, nowIdx=-1){
           ${(it.est.amt||it.paid.amt) ? `<span class="cost">${showMoney(it.est,'Est')}${it.snowOpt&&!countsEst(it)?' <span class="muted">(not chosen)</span>':''}${it.paid.amt?'<br>'+showMoney(it.paid,'Paid','paid'):''}</span>`:''}
         </div>
         ${thumbs(it.media, false)}
-        <div class="acts">${hasMore?`<button class="lnk" data-open="${key}">${open?'Hide':'Details'}${it.noteMedia.length?` · 📎${it.noteMedia.length}`:''}</button>`:''}${ro?'':`<button class="lnk" data-edit="${i}|${esc(it.id)}">✎ Edit</button>`}</div>
+        <div class="acts">${hasMore?`<button class="lnk" data-open="${key}">${open?'Hide':'Details'}${it.noteMedia.length?` · ${it.noteMedia.length} picture${it.noteMedia.length>1?'s':''}`:''}</button>`:''}${ro?'':`<button class="lnk" data-edit="${i}|${esc(it.id)}">Edit</button>`}</div>
         ${hasMore?`<div class="note">${it.ticket && it.ticket!=='—' ? `<div><b>Ticket:</b> ${esc(it.ticket)}</div>`:''}${it.note?`<div style="white-space:pre-wrap">${esc(it.note)}</div>`:''}${thumbs(it.noteMedia,false)}${it.src?`<div style="margin-top:4px">${link(it.src)}</div>`:''}</div>`:''}
       </div></div>${addBtn(n)}`;
   }).join('')}</div>
@@ -594,11 +659,11 @@ function vItin(){
   if (S.ui.day === null){ const t = dayIndexForDate(now.date); S.ui.day = t < 0 ? 0 : t; }
   const i = S.ui.day;
   return `<div class="strip">${DATA.days.map((d,n)=>`<button class="chip ${n===i?'on':''} ${d.date===now.date?'today':''}" data-day="${n}">
-      <span>${wk(d.date)}</span><b>${new Date(d.date+'T00:00:00').getDate()}</b><span>${n===0?'Travel':'Day '+n}</span></button>`).join('')}</div>
+      <span>${wkJa(d.date)}</span><b>${new Date(d.date+'T00:00:00').getDate()}</b><span>${region(d.date)[0]}</span></button>`).join('')}</div>
     ${dayCard(i)}${timeline(i)}
     <div class="row sp" style="margin-top:14px">
-      <button class="lnk" style="font-size:14px" data-step="-1" ${i===0?'hidden':''}>← Previous day</button>
-      <button class="lnk" style="font-size:14px" data-step="1" ${i===DATA.days.length-1?'hidden':''}>Next day →</button>
+      <button class="lnk" style="font-size:13px" data-step="-1" ${i===0?'hidden':''}>← Previous day</button>
+      <button class="lnk" style="font-size:13px" data-step="1" ${i===DATA.days.length-1?'hidden':''}>Next day →</button>
     </div>`;
 }
 
@@ -618,7 +683,7 @@ function vBudget(){
   <p class="small muted" style="margin-top:-6px">Amounts shown in ${DISP} · ${st.people} people · change rates in <a href="#settings">Settings</a></p>
   <div class="grid2">
     <div class="card"><div class="muted small">Estimated · whole trip</div><div class="tot">${fmtR(est)}</div><div class="small muted">${fmtR(est/st.people)} per person</div></div>
-    <div class="card"><div class="muted small">Actually paid so far</div><div class="tot" style="color:var(--green)">${fmtR(paid)}</div><div class="small muted">${paid ? Math.round(paid/est*100)+'% of the estimate · '+fmtR(paid/st.people)+' pp' : 'Enter costs with ✎ Edit'}</div></div>
+    <div class="card"><div class="muted small">Actually paid so far</div><div class="tot" style="color:var(--green)">${fmtR(paid)}</div><div class="small muted">${paid ? Math.round(paid/est*100)+'% of the estimate · '+fmtR(paid/st.people)+' pp' : 'Add costs with Edit on any stop'}</div></div>
   </div>
   <h2>Before the trip</h2>
   <p class="small muted" style="margin-top:-6px">Hotels, flights, insurance, visa, SIM, rail passes — anything paid or planned before you leave.</p>
@@ -626,8 +691,8 @@ function vBudget(){
       <div style="min-width:0"><h3 style="margin:0">${esc(x.name)}</h3><div class="meta">${esc(catName(x.cat))}${x.date?' · '+esc(x.date):''}${x.note?' · '+esc(x.note.slice(0,60)):''}</div></div>
       <span class="cost">${x.est.amt?showMoney(x.est,'Est'):'<span class="muted">No estimate</span>'}${x.paid.amt?'<br>'+showMoney(x.paid,'Paid','paid'):''}</span></div>
       ${thumbs(x.noteMedia,false)}
-      ${ro?'':`<div class="acts"><button class="lnk" data-preedit="${esc(x.id)}">✎ Edit</button></div>`}</div>`).join('') || '<div class="card small muted">Nothing yet.</div>'}
-  ${ro?'':`<button class="btn" data-preadd>＋ Add pre-trip cost</button>`}
+      ${ro?'':`<div class="acts"><button class="lnk" data-preedit="${esc(x.id)}">Edit</button></div>`}</div>`).join('') || '<div class="card small muted">Nothing yet.</div>'}
+  ${ro?'':`<div style="margin-top:14px"><button class="btn" data-preadd>Add pre-trip cost</button></div>`}
   <h2>By day</h2>
   <div class="card" style="overflow-x:auto"><table>
     <thead><tr><th>Day</th><th>Estimated</th><th>Paid</th><th>Over / under*</th></tr></thead>
@@ -673,8 +738,8 @@ function bkRow(b){
     <div style="flex:1">
       <div class="row sp"><h3 class="bt">${esc(b.Item)}</h3><span><span class="badge ${pc}">${esc(b.Priority)}</span> <span class="badge ${locked?'b-fixed':''}">${esc(b.Status)}</span></span></div>
       <div class="small">${esc(b['Current plan'])}</div>
-      <div class="meta">📅 ${esc(b['Target date'])}${b['Target time'] && b['Target time']!=='—' ? ' · '+esc(b['Target time']):''} · <b>Book when:</b> ${esc(b['Book when'])}</div>
-      ${b['Decision trigger']?`<div class="meta">💡 ${esc(b['Decision trigger'])}</div>`:''}
+      <div class="meta">${esc(b['Target date'])}${b['Target time'] && b['Target time']!=='—' ? ' · '+esc(b['Target time']):''} · <b>Book when:</b> ${esc(b['Book when'])}</div>
+      ${b['Decision trigger']?`<div class="meta" style="font-style:italic">${esc(b['Decision trigger'])}</div>`:''}
       ${b.Source?`<div class="meta">${link(b.Source)}</div>`:''}
     </div></div>`;
 }
@@ -693,7 +758,7 @@ function vBookings(){
 function vStays(){
   const fl = [['Sat 21 Nov','VietJet VJ826','KUL T1 13:35 → SGN 14:30','Booked'],['Sat 21 Nov','VietJet VJ820','SGN 17:20 → HND T3 01:00 (+1)','Booked'],
     ['Mon 30 Nov','Peach MM115','KIX T2 16:15 → CTS 18:10 · 1×20kg','Selected · purchase TBD'],['Fri 4 Dec','PAL PR405 + PR509','CTS 13:30 → MNL T1 → SIN 23:45 · 2×23kg','Pending purchase']];
-  return `<h2>Flights</h2><div class="grid2">${fl.map(f=>`<div class="card"><div class="muted small">${f[0]}</div><h3>${f[1]}</h3><div class="small">${f[2]}</div><div style="margin-top:6px">${badge(/Booked/.test(f[3])?'Fixed':'Book')} <span class="small muted">${f[3]}</span></div></div>`).join('')}</div>
+  return `<h2>Flights</h2><div>${fl.map(f=>`<div class="card"><div class="lbl">${f[0]}</div><h3 style="margin-top:4px">${f[1]}</h3><div class="small" style="font-family:var(--mono);font-size:12px">${f[2]}</div><div style="margin-top:6px">${badge(/Booked/.test(f[3])?'Fixed':'Book')} <span class="small muted">${f[3]}</span></div></div>`).join('')}</div>
   <h2>Stays</h2>
   ${DATA.hotels.map(h=>`<div class="card"><div class="row sp"><h3>${esc(h.Property)}</h3><span class="badge ${/LOCKED|FIXED/.test(h['Booking status'])?'b-fixed':'b-flex'}">${esc(h['Booking status'])}</span></div>
     <div class="muted small" style="margin-bottom:8px">${esc(h.Stay)} · ${esc(h['Check-in'])} → ${esc(h['Check-out'])} · ${h.Nights} night${h.Nights==1?'':'s'}</div>
@@ -706,8 +771,8 @@ function vStays(){
 function vTips(){
   const cats = [...new Set(DATA.tips.map(t=>t.Category))];
   return `<h2>Tips &amp; notes</h2>
-  ${cats.map(c=>`<h3 style="margin:16px 0 8px;color:var(--red);letter-spacing:1px;font-size:12px">${esc(c)}</h3>
-    ${DATA.tips.filter(t=>t.Category===c).map(t=>`<div class="card"><div class="muted small">${esc(t['When / Where'])}</div><div class="small" style="margin:3px 0">${esc(t['Practical tip'])}</div><div class="meta">⏱ ${esc(t['Cost / timing'])} · ${link(t['Source / note'])}</div></div>`).join('')}`).join('')}
+  ${cats.map(c=>`<div class="lbl" style="display:block;margin:28px 0 0;color:var(--accent)">${esc(c)}</div>
+    ${DATA.tips.filter(t=>t.Category===c).map(t=>`<div class="card"><div class="muted small">${esc(t['When / Where'])}</div><div class="small" style="margin:3px 0">${esc(t['Practical tip'])}</div><div class="meta">${esc(t['Cost / timing'])} · ${link(t['Source / note'])}</div></div>`).join('')}`).join('')}
   <h2>What changed already</h2>
   <div class="card"><ol class="small" style="margin:0;padding-left:20px">${DATA.revisions.map(r=>`<li>${esc(r[1])}</li>`).join('')}</ol></div>`;
 }
@@ -759,15 +824,15 @@ function renderModal(){
         <label>Transport<input type="text" id="e_mode" value="${esc(d.mode)}" placeholder="e.g. Walk / JR"></label>`}
       <fieldset class="fs full"><legend>Notes</legend>
         <textarea id="e_note" placeholder="Anything to remember…">${esc(d.note)}</textarea>
-        <div style="margin-top:8px">${uploadUI('noteMedia', '📎 Add pictures to notes', 'image/*', 'Tickets, booking confirmations, maps, screenshots, receipts.')}</div>
+        <div style="margin-top:8px">${uploadUI('noteMedia', 'Add pictures', 'image/*', 'Tickets, booking confirmations, maps, screenshots, receipts.')}</div>
       </fieldset>
       <fieldset class="fs full"><legend>Cost</legend><div class="f">
         <label>Estimated<div class="money"><input type="number" min="0" step="any" id="e_est" value="${d.est.amt||''}" placeholder="0"><select id="e_estc">${curOpts(d.est.cur)}</select><select id="e_estb">${basisOpts(d.est.basis)}</select></div>${conv(d.est,'e_estconv')}</label>
         <label>Actually paid<div class="money"><input type="number" min="0" step="any" id="e_paid" value="${d.paid.amt||''}" placeholder="0"><select id="e_paidc">${curOpts(d.paid.cur)}</select><select id="e_paidb">${basisOpts(d.paid.basis)}</select></div>${conv(d.paid,'e_paidconv')}</label>
-        <label class="full">Category<select id="e_cat">${ST().cats.map(c=>`<option value="${esc(c.id)}" ${c.id===d.cat?'selected':''}>${esc(c.name)}</option>`).join('')}<option value="__new">＋ New category…</option></select></label>
+        <label class="full">Category<select id="e_cat">${ST().cats.map(c=>`<option value="${esc(c.id)}" ${c.id===d.cat?'selected':''}>${esc(c.name)}</option>`).join('')}<option value="__new">New category…</option></select></label>
         ${E.newCat?`<div class="full catrow" style="margin:0"><input type="text" id="e_newcat" placeholder="New category name"><button class="btn pri" data-enewcat>Add</button></div>`:''}
       </div></fieldset>
-      ${pre ? '' : `<fieldset class="fs full"><legend>Trip photos &amp; videos</legend>${uploadUI('media','📷 Add photos / videos','image/*,video/*','Up to 20 MB per file; large photos are resized automatically.')}</fieldset>`}
+      ${pre ? '' : `<fieldset class="fs full"><legend>Trip photos &amp; videos</legend>${uploadUI('media','Add photos / videos','image/*,video/*','Up to 20 MB per file; large photos are resized automatically.')}</fieldset>`}
     </div>
     ${E.err?`<p class="err">${esc(E.err)}</p>`:''}
     <div class="row sp" style="margin-top:16px">
@@ -849,13 +914,20 @@ function deleteEdit(){
 }
 
 /* ---------- router ---------- */
-const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, settings:vSettings};
+function vMore(){
+  return `<h2>More</h2><div class="more">
+    <a href="#stays"><span class="kanji">宿 · 便</span><span>Stays &amp; flights</span></a>
+    <a href="#tips"><span class="kanji">心得</span><span>Tips</span></a>
+    <a href="#settings"><span class="kanji">設定</span><span>Settings</span></a></div>`;
+}
+const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, settings:vSettings, more:vMore};
+const TAB_OF = {stays:'more', tips:'more', settings:'more'};
 function route(){
   if (!DATA){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('on')); $('#app').innerHTML = vLanding(); return; }
   const h = (location.hash||'#today').slice(1), v = views[h] ? h : 'today';
-  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+v));
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+(TAB_OF[v]||v)));
   const focus = document.activeElement && document.activeElement.id;
-  $('#app').innerHTML = views[v]() + `<div class="foot">Built from Japan_Itinerary_Final_Working_Plan_21Nov-4Dec2026.xlsm · edits ${S.db?'sync between your devices':'are saved on this device only'}</div>`;
+  $('#app').innerHTML = views[v]() + `<div class="foot">${S.db?'Edits sync between your devices':'Edits are saved on this device only'}</div>`;
   if (focus==='shrange' && $('#shrange')) $('#shrange').focus();
 }
 window.addEventListener('hashchange', ()=>{ route(); window.scrollTo(0,0); });
@@ -917,7 +989,7 @@ document.addEventListener('click', e=>{
 document.addEventListener('input', e=>{
   if (/^e_(est|paid)$/.test(e.target.id) && E){ updConv(); return; }
   if (e.target.id==='shrange'){ const sh = S.ui.shift; sh.mins = +e.target.value;
-    $('.shiftval').textContent = (sh.mins>0?'+':'')+sh.mins+' min';
+    $('.shiftval').textContent = (sh.mins>0?'+':'')+sh.mins+'′';
     $('[data-shiftapply]').disabled = !sh.mins;
     $('#tlwrap').innerHTML = tlBody(sh.day); }
 });
