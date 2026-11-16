@@ -206,9 +206,36 @@ tfoot td{font-weight:500;border-bottom:0;border-top:1px solid var(--ink)}
 @media(max-width:520px){.grid2{grid-template-columns:1fr}.tot{font-size:26px}}
 .fxlist{margin:0;padding-left:22px}.fxlist li{margin:0 0 10px;font-size:14px;line-height:1.6}.fxlist li::marker{color:var(--muted);font:12px var(--mono)}
 .card.fx{border-left:2px solid var(--accent);padding-left:14px}
+
+/* day moods */
+html,body{transition:background-color .7s ease}
+header,main,.foot{position:relative;z-index:1}
+.vfx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.vfx i{position:absolute;display:block;left:calc(var(--x)*1%);top:0;will-change:transform}
+.k-snow i{width:var(--s);height:var(--s);border-radius:50%;background:var(--c);opacity:.5;animation:vfall var(--d) linear var(--t) infinite}
+.k-petal i{width:var(--s);height:calc(var(--s)*.7);border-radius:80% 0 80% 0;background:var(--c);opacity:.55;animation:vfall var(--d) linear var(--t) infinite}
+.k-leaf i{width:var(--s);height:var(--s);border-radius:0 100% 0 100%;background:var(--c);opacity:.5;animation:vfall var(--d) linear var(--t) infinite}
+.k-bamboo i{width:calc(var(--s)*.35);height:calc(var(--s)*1.7);border-radius:100% 0;background:var(--c);opacity:.5;animation:vfall var(--d) linear var(--t) infinite}
+.k-glow i,.k-mote i{top:auto;bottom:-70px;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,var(--c),transparent 70%);opacity:0;animation:vrise var(--d) ease-in var(--t) infinite}
+.k-mote i{background:var(--c);filter:blur(1px)}
+.k-twinkle i{top:calc(var(--y)*1%);width:var(--s);height:var(--s);border-radius:50%;background:var(--c);box-shadow:0 0 9px var(--c);opacity:.1;animation:vtw var(--d) ease-in-out var(--t) infinite}
+.k-mist i,.k-cloud i{top:calc(var(--y)*1%);width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,var(--c),transparent 68%);opacity:.4;animation:vdrift var(--d) ease-in-out var(--t) infinite alternate}
+.k-cloud i{height:calc(var(--s)*.22)}
+.k-streak i{left:-240px;top:calc(var(--y)*1%);width:var(--s);height:1.5px;background:linear-gradient(90deg,transparent,var(--c));opacity:.6;animation:vstreak var(--d) linear var(--t) infinite}
+.k-ripple i{top:calc(var(--y)*1%);width:10px;height:10px;border:1.5px solid var(--c);border-radius:50%;opacity:0;animation:vrip var(--d) ease-out var(--t) infinite}
+@keyframes vfall{from{transform:translate3d(0,-8vh,0) rotate(0)}50%{transform:translate3d(calc(var(--dx)*.4),50vh,0) rotate(calc(var(--r)*.6))}to{transform:translate3d(var(--dx),108vh,0) rotate(var(--r))}}
+@keyframes vrise{0%{transform:translate3d(0,0,0);opacity:0}15%{opacity:.55}85%{opacity:.4}100%{transform:translate3d(var(--dx),-112vh,0);opacity:0}}
+@keyframes vtw{0%,100%{opacity:.05;transform:scale(.6)}50%{opacity:.85;transform:scale(1.25)}}
+@keyframes vdrift{from{transform:translateX(-14vw)}to{transform:translateX(20vw)}}
+@keyframes vstreak{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 480px))}}
+@keyframes vrip{0%{transform:scale(.3);opacity:.6}100%{transform:scale(var(--sc));opacity:0}}
+.dayhead{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 11%,transparent),transparent 78%);padding-left:12px;padding-right:12px;margin:0 -12px;transition:background .7s}
+.dayhead .mood{display:inline-block;margin-left:10px;font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.vfx{display:none}html,body{transition:none}}
 </style>
 </head>
 <body>
+<div class="vfx" id="vfx" aria-hidden="true"></div>
 <header>
   <div class="brand"><span class="kan">旅</span><div><h1>JAPAN 2026</h1><p>21.11 — 04.12 · 東京 河口湖 京都 札幌</p></div></div>
   <div id="hdr"><button id="sync" type="button">Loading…</button><select id="disp" aria-label="Show amounts in"><option>IDR</option><option>JPY</option><option>MYR</option><option>SGD</option></select></div>
@@ -617,7 +644,7 @@ function dayTotals(i){
 function dayCard(i){
   const d = DATA.days[i], t = dayTotals(i), [kj, rom] = region(d.date);
   return `<div class="dayhead">
-    <div class="lbl">${esc(d.title)}</div>
+    <div class="lbl">${esc(d.title)}${vibeFor(i)?`<span class="mood">${esc(vibeFor(i).n)}</span>`:''}</div>
     <div class="place" style="margin-top:6px"><span class="kanji">${kj}</span><span class="rom">${rom}</span></div>
     <div class="theme">${esc(d.theme)}</div>
     <div class="route">${esc(d.route)}</div>
@@ -740,7 +767,9 @@ function vSettings(){
   return `<h2>Settings</h2>${accountCard()}
   <div class="card"><h3>Appearance</h3>
     <div class="filters" style="margin:6px 0 0">${[['light','Light'],['dark','Dark'],['auto','Auto']].map(([k,l])=>`<button data-theme-set="${k}" class="${THEME===k?'on':''}">${l}</button>`).join('')}</div>
-    <p class="small muted" style="margin:8px 0 0">Auto follows your phone. Saved on this device only.</p></div>
+    <div class="lbl" style="margin-top:16px">Day moods</div>
+    <div class="filters" style="margin:6px 0 0"><button data-mood-set="on" class="${MOOD?'on':''}">On</button><button data-mood-set="off" class="${MOOD?'':'on'}">Off</button></div>
+    <p class="small muted" style="margin:8px 0 0">Each day gets its own colour and gentle animation (snow, maple leaves, lanterns…). Auto follows your phone. Saved on this device only.</p></div>
   <div class="card"><h3>Show amounts in</h3>
     <div class="filters" style="margin:6px 0 0">${CURS.map(c=>`<button data-disp="${c}" class="${DISP===c?'on':''}">${c}</button>`).join('')}</div>
     <p class="small muted" style="margin:8px 0 0">Also on the top-right of every page. This choice is saved on this device only.</p></div>
@@ -998,13 +1027,68 @@ function vMore(){
 }
 const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, settings:vSettings, more:vMore};
 const TAB_OF = {stays:'more', tips:'more', facts:'more', settings:'more'};
+/* ---------- day moods ---------- */
+const VIBES = [
+ {n:'Sky miles',k:'streak',c:['#9db6d1','#b8c9dc'],L:['#eff2f5','#3b6ea5'],D:['#12161b','#7fa6d4'],cnt:9},
+ {n:'Soft landing',k:'petal',c:['#e8a9b8','#f0c4cf'],L:['#f7f0ee','#b5546b'],D:['#1a1416','#e08aa0'],cnt:14},
+ {n:'Lantern glow',k:'glow',c:['#e8603c','#f0a24a'],L:['#f7eee2','#c2412b'],D:['#1a1411','#ee7a55'],cnt:12},
+ {n:'Neon sunset',k:'twinkle',c:['#e8764a','#9a6fd0','#f0b24a'],L:['#f6eeee','#d2552f'],D:['#17131c','#f0875f'],cnt:24},
+ {n:'Lakeside mist',k:'mist',c:['#a9bfd4','#c4d3e0'],L:['#eef2f4','#33577e'],D:['#11161b','#8fb0d6'],cnt:6},
+ {n:'First light',k:'streak',c:['#e9b983','#f0cfa6'],L:['#f7f0e6','#b8683a'],D:['#191512','#e0a070'],cnt:8},
+ {n:'Maple evening',k:'leaf',c:['#c2412b','#d9822b','#a5321f'],L:['#f6ece0','#c2412b'],D:['#1a1411','#ee7a55'],cnt:16},
+ {n:'Bamboo sway',k:'bamboo',c:['#6f9a63','#8fb383'],L:['#eef1e6','#4e7a4a'],D:['#121611','#93b08a'],cnt:14},
+ {n:'Matcha morning',k:'mote',c:['#9fb15a','#b9c77c'],L:['#f0f1e0','#6b7f2a'],D:['#141610','#b0c56a'],cnt:16},
+ {n:'Northbound',k:'cloud',c:['#9fb4cc','#bccbdd'],L:['#eceff3','#4a6fa5'],D:['#101319','#86a6d2'],cnt:5},
+ {n:'City snow',k:'snow',c:['#aebdcc','#c5d0dc'],L:['#f2f1ee','#d2692b'],D:['#141414','#ee8a50'],cnt:24},
+ {n:'Canal glow',k:'ripple',c:['#2f6f78','#d9a65a'],L:['#edf1f0','#2f6f78'],D:['#10161a','#6fb3bd'],cnt:7},
+ {n:'Snow chase',k:'snow',c:['#9db8d0','#c3d3e2'],L:['#eef3f7','#4e86b8'],D:['#10151b','#86b4dc'],cnt:44},
+ {n:'Farewell dusk',k:'snow',c:['#b9a9c6','#cfc3d9'],L:['#f1eef2','#7a5c8a'],D:['#16131a','#b497c4'],cnt:12},
+];
+let MOOD = (()=>{try{return localStorage.getItem('jp26:mood')!=='off'}catch(e){return true}})();
+let _vfxKey = '';
+const rnd = (a,b)=>a+Math.random()*(b-a);
+function vibeFor(i){ return MOOD && i!==null && i!==undefined ? VIBES[i] : null; }
+function applyVibe(i){
+  const v = vibeFor(i), r = document.documentElement, fx = document.getElementById('vfx');
+  const dark = r.dataset.theme==='dark';
+  ['--paper','--card','--accent','--accent-soft'].forEach(k=>r.style.removeProperty(k));
+  const meta = document.getElementById('themeColor');
+  if (!v){ if (fx){ fx.className='vfx'; fx.innerHTML=''; } _vfxKey=''; if(meta) meta.setAttribute('content', dark?'#121211':'#f5f2eb'); return; }
+  const [paper, acc] = dark ? v.D : v.L;
+  r.style.setProperty('--paper',paper); r.style.setProperty('--card',paper); r.style.setProperty('--accent',acc);
+  r.style.setProperty('--accent-soft',`color-mix(in srgb, ${acc} 12%, transparent)`);
+  if (meta) meta.setAttribute('content', paper);
+  if (!fx) return;
+  const key = i+'|'+dark; if (key===_vfxKey) return; _vfxKey = key;
+  fx.className = 'vfx k-'+v.k;
+  const big = v.k==='mist'||v.k==='cloud', dots = [];
+  for (let n=0;n<v.cnt;n++){
+    const c = v.c[n % v.c.length], t = '-'+rnd(0,30).toFixed(1)+'s';
+    let st = `--x:${rnd(0,100).toFixed(1)};--y:${rnd(4,96).toFixed(1)};--c:${c};--t:${t};--dx:${rnd(-14,14).toFixed(0)}vw;--r:${rnd(-360,360).toFixed(0)}deg;`;
+    if (v.k==='snow') st += `--s:${rnd(3,7).toFixed(1)}px;--d:${rnd(9,18).toFixed(1)}s;`;
+    else if (v.k==='petal') st += `--s:${rnd(9,15).toFixed(0)}px;--d:${rnd(12,22).toFixed(1)}s;`;
+    else if (v.k==='leaf') st += `--s:${rnd(11,18).toFixed(0)}px;--d:${rnd(10,18).toFixed(1)}s;`;
+    else if (v.k==='bamboo') st += `--s:${rnd(9,15).toFixed(0)}px;--d:${rnd(9,16).toFixed(1)}s;`;
+    else if (v.k==='glow') st += `--s:${rnd(30,64).toFixed(0)}px;--d:${rnd(10,20).toFixed(1)}s;`;
+    else if (v.k==='mote') st += `--s:${rnd(4,9).toFixed(0)}px;--d:${rnd(14,26).toFixed(1)}s;`;
+    else if (v.k==='twinkle') st += `--s:${rnd(3,6).toFixed(1)}px;--d:${rnd(2.5,6).toFixed(1)}s;`;
+    else if (big) st += `--s:${rnd(200,340).toFixed(0)}px;--d:${rnd(28,52).toFixed(0)}s;`;
+    else if (v.k==='streak') st += `--s:${rnd(70,160).toFixed(0)}px;--d:${rnd(2.4,5).toFixed(1)}s;`;
+    else if (v.k==='ripple') st += `--sc:${rnd(6,12).toFixed(1)};--d:${rnd(5,9).toFixed(1)}s;--y:${rnd(40,92).toFixed(0)};`;
+    dots.push(`<i style="${st}"></i>`);
+  }
+  fx.innerHTML = dots.join('');
+}
+function setMood(on){ MOOD = on; try{localStorage.setItem('jp26:mood', on?'on':'off')}catch(e){} _vfxKey=''; route(); }
+
 function route(){
-  if (!DATA){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('on')); $('#app').innerHTML = vLanding(); return; }
+  if (!DATA){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('on')); $('#app').innerHTML = vLanding(); applyVibe(null); return; }
   const h = (location.hash||'#today').slice(1), v = views[h] ? h : 'today';
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+(TAB_OF[v]||v)));
   const focus = document.activeElement && document.activeElement.id;
   $('#app').innerHTML = views[v]() + `<div class="foot">${S.db?'Edits sync between your devices':'Edits are saved on this device only'}</div>`;
   if (focus==='shrange' && $('#shrange')) $('#shrange').focus();
+  applyVibe(v==='itinerary' ? S.ui.day : v==='today' ? (t=>t<0?null:t)(dayIndexForDate(jpNow().date)) : null);
 }
 window.addEventListener('hashchange', ()=>{ route(); window.scrollTo(0,0); });
 
@@ -1033,6 +1117,7 @@ document.addEventListener('click', e=>{
   if (ds.preedit){ openPre(ds.preedit); return; }
   if (ds.fx !== undefined){ S.ui.fx[ds.fx] = (S.ui.fx[ds.fx] + 1 + Math.floor(Math.random()*(+ds.fxn-1))) % +ds.fxn; route(); return; }
   if (ds.fxplace){ S.ui.fxPlace = ds.fxplace; route(); return; }
+  if (ds.moodSet){ setMood(ds.moodSet==='on'); return; }
   if (ds.themeSet){ setTheme(ds.themeSet); return; }
   if (ds.disp){ setDisp(ds.disp); return; }
   if (ds.enewcat !== undefined){ const n = ($('#e_newcat').value||'').trim(); if (!n) return; readForm();
