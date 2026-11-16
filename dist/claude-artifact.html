@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f5f2eb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" id="themeColor" content="#f5f2eb">
+<script>
+(function(){var t='light';try{t=localStorage.getItem('jp26:theme')||'light'}catch(e){}
+window.__applyTheme=function(t){var d=t==='dark'||(t==='auto'&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+document.documentElement.setAttribute('data-theme',d?'dark':'light');
+var m=document.getElementById('themeColor');if(m)m.setAttribute('content',d?'#121211':'#f5f2eb')};
+window.__applyTheme(t);
+try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){var x='light';try{x=localStorage.getItem('jp26:theme')||'light'}catch(e){}if(x==='auto')window.__applyTheme('auto')})}catch(e){}})();
+</script>
 <title>Japan Trip Companion · 21 Nov – 4 Dec 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -15,10 +22,10 @@
   --red:var(--accent);--red-soft:var(--accent-soft);--amber:#8a6a2f;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{--paper:#121211;--card:#121211;--raise:#1b1a18;--ink:#ece8e0;--ink2:#cfcac0;--muted:#8d887e;--line:#2d2b28;--line2:#211f1d;
-    --accent:#e2674f;--accent-soft:rgba(226,103,79,.12);--green:#93b08a;--indigo:#a4b4d4;--amber:#c9a46a}
-}
+html{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark;--paper:#121211;--card:#121211;--raise:#1b1a18;--ink:#ece8e0;--ink2:#cfcac0;--muted:#8d887e;--line:#2d2b28;--line2:#211f1d;
+  --accent:#e2674f;--accent-soft:rgba(226,103,79,.12);--green:#93b08a;--indigo:#a4b4d4;--amber:#c9a46a}
+select option,select optgroup{background:var(--raise);color:var(--ink)}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.65 "Zen Kaku Gothic New",system-ui,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
 a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
@@ -712,6 +719,9 @@ function vBudget(){
 function vSettings(){
   const st = ST(), r = rates(), ro = !S.canWrite;
   return `<h2>Settings</h2>${accountCard()}
+  <div class="card"><h3>Appearance</h3>
+    <div class="filters" style="margin:6px 0 0">${[['light','Light'],['dark','Dark'],['auto','Auto']].map(([k,l])=>`<button data-theme-set="${k}" class="${THEME===k?'on':''}">${l}</button>`).join('')}</div>
+    <p class="small muted" style="margin:8px 0 0">Auto follows your phone. Saved on this device only.</p></div>
   <div class="card"><h3>Show amounts in</h3>
     <div class="filters" style="margin:6px 0 0">${CURS.map(c=>`<button data-disp="${c}" class="${DISP===c?'on':''}">${c}</button>`).join('')}</div>
     <p class="small muted" style="margin:8px 0 0">Also on the top-right of every page. This choice is saved on this device only.</p></div>
@@ -953,6 +963,7 @@ document.addEventListener('click', e=>{
     dropAssets(E.uploaded); E = null; renderModal(); route(); saveDay(date); return; }
   if (ds.preadd !== undefined){ openPre(null); return; }
   if (ds.preedit){ openPre(ds.preedit); return; }
+  if (ds.themeSet){ setTheme(ds.themeSet); return; }
   if (ds.disp){ setDisp(ds.disp); return; }
   if (ds.enewcat !== undefined){ const n = ($('#e_newcat').value||'').trim(); if (!n) return; readForm();
     const id = 'c'+Date.now().toString(36); S.settings = clone(ST()); S.settings.cats.push({id, name:n}); E.draft.cat = id; E.newCat = false; saveSettings(); renderModal(); return; }
@@ -1010,6 +1021,8 @@ document.addEventListener('change', e=>{
 document.addEventListener('keydown', e=>{ if (e.key==='Escape' && E) cancelEdit(); });
 document.addEventListener('submit', e=>{ if (e.target.id==='lform'){ e.preventDefault(); submitLogin(); } });
 
+let THEME = (()=>{try{return localStorage.getItem('jp26:theme')||'light'}catch(e){return 'light'}})();
+function setTheme(t){ THEME=t; try{localStorage.setItem('jp26:theme',t)}catch(e){} window.__applyTheme(t); route(); }
 function setDisp(c){ if (!CURS.includes(c)) return; DISP = c; ls.set('disp', c); $('#disp').value = c; route(); }
 $('#disp').value = DISP;
 if (!DATA) DATA = ls.get('base', null);
