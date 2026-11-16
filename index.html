@@ -308,10 +308,24 @@ function normMoney(it){
   it.est = Object.assign({amt:0, cur:'JPY'}, it.est); it.est.basis = it.est.basis || 'pp';
   it.paid = Object.assign({amt:0, cur:'JPY'}, it.paid); it.paid.basis = it.paid.basis || 'total';
   it.media = it.media || []; it.noteMedia = it.noteMedia || [];
+  it.extra = (it.extra || []).map(x=>({id:x.id||'x'+Math.random().toString(36).slice(2,7), name:x.name||'', cat:x.cat||'other',
+    est:Object.assign({amt:0,cur:'JPY',basis:'pp'}, x.est), paid:Object.assign({amt:0,cur:'JPY',basis:'total'}, x.paid)}));
   return it;
 }
+// every expense on an item: the main one plus any extras
+const exps = it => [{name:'', cat:it.cat, est:it.est, paid:it.paid}, ...(it.extra||[])];
+const sumEst = (it)=> exps(it).reduce((a,x)=>a+mTotal(x.est),0);
+const sumPaid = (it)=> exps(it).reduce((a,x)=>a+mTotal(x.paid),0);
+const sumEstPaid = (it)=> exps(it).filter(x=>x.paid.amt).reduce((a,x)=>a+mTotal(x.est),0);
+const hasCost = it => exps(it).some(x=>x.est.amt||x.paid.amt);
+function costBlock(it, notChosen=false){
+  const nc = notChosen ? ' <span class="muted">(not chosen)</span>' : '';
+  if (!(it.extra||[]).length) return `<span class="cost">${showMoney(it.est,'Est')}${nc}${it.paid.amt?'<br>'+showMoney(it.paid,'Paid','paid'):''}</span>`;
+  const one = (x,main) => (x.est.amt||x.paid.amt) ? `<div class="row sp small" style="gap:10px;flex-wrap:nowrap"><span>${esc(x.name || (main?'Main':'Expense'))} <span class="catpill">${esc(catName(x.cat))}</span></span><span class="cost">${showMoney(x.est,'Est')}${x.paid.amt?'<br>'+showMoney(x.paid,'Paid','paid'):''}</span></div>` : '';
+  return `<div style="width:100%;margin-top:4px">${exps(it).map((x,n)=>one(x,n===0)).join('')}<div class="row sp small" style="border-top:1px solid var(--line2);padding-top:4px;margin-top:4px"><b>Total${nc}</b><span class="cost">est ${fmtR(sumEst(it))}${sumPaid(it)?`<br><span class="paid">paid ${fmtR(sumPaid(it))}</span>`:''}</span></div></div>`;
+}
 function preItems(){ return Object.entries(S.pre.items || {}).map(([id,x])=>normMoney(Object.assign({id, kind:'pre', name:'', cat:'other', note:''}, clone(x)))).sort((a,b)=>(a.order||0)-(b.order||0) || a.name.localeCompare(b.name)); }
-function preTotals(){ const l = preItems(); return { est: l.reduce((a,x)=>a+mTotal(x.est),0), paid: l.reduce((a,x)=>a+mTotal(x.paid),0), estPaid: l.filter(x=>x.paid.amt).reduce((a,x)=>a+mTotal(x.est),0) }; }
+function preTotals(){ const l = preItems(); return { est: l.reduce((a,x)=>a+sumEst(x),0), paid: l.reduce((a,x)=>a+sumPaid(x),0), estPaid: l.reduce((a,x)=>a+sumEstPaid(x),0) }; }
 
 /* ---------- persistence ---------- */
 const queues = {};
@@ -595,9 +609,9 @@ function vToday(){
 
 function dayTotals(i){
   const list = items(i, {withShift:false});
-  const est = list.filter(countsEst).reduce((a,it)=>a+mTotal(it.est),0);
-  const paid = list.reduce((a,it)=>a+mTotal(it.paid),0);
-  const estPaid = list.filter(it=>it.paid.amt).reduce((a,it)=>a+mTotal(it.est),0);
+  const est = list.filter(countsEst).reduce((a,it)=>a+sumEst(it),0);
+  const paid = list.reduce((a,it)=>a+sumPaid(it),0);
+  const estPaid = list.reduce((a,it)=>a+sumEstPaid(it),0);
   return {est, paid, estPaid};
 }
 function dayCard(i){
@@ -654,8 +668,8 @@ function tlBody(i, nowIdx=-1){
           <input type="checkbox" class="tick" data-done="${i}|${esc(it.id)}" ${it.done?'checked':''} ${ro?'disabled':''} aria-label="Mark done">
         </div>
         <div class="row sp" style="margin-top:6px;align-items:flex-end">
-          <span class="row" style="gap:6px">${badge(it.status)}${(it.est.amt||it.paid.amt)?`<span class="catpill">${esc(catName(it.cat))}</span>`:''}</span>
-          ${(it.est.amt||it.paid.amt) ? `<span class="cost">${showMoney(it.est,'Est')}${it.snowOpt&&!countsEst(it)?' <span class="muted">(not chosen)</span>':''}${it.paid.amt?'<br>'+showMoney(it.paid,'Paid','paid'):''}</span>`:''}
+          <span class="row" style="gap:6px">${badge(it.status)}${(it.est.amt||it.paid.amt)&&!(it.extra||[]).length?`<span class="catpill">${esc(catName(it.cat))}</span>`:''}</span>
+          ${hasCost(it) ? costBlock(it, !!(it.snowOpt&&!countsEst(it))) : ''}
         </div>
         ${thumbs(it.media, false)}
         <div class="acts">${hasMore?`<button class="lnk" data-open="${key}">${open?'Hide':'Details'}${it.noteMedia.length?` · ${it.noteMedia.length} picture${it.noteMedia.length>1?'s':''}`:''}</button>`:''}${ro?'':`<button class="lnk" data-edit="${i}|${esc(it.id)}">Edit</button>`}</div>
@@ -684,7 +698,7 @@ function vBudget(){
   const rows = DATA.days.map((d,i)=>({d,i,...dayTotals(i)}));
   const est = pt.est + rows.reduce((a,r)=>a+r.est,0), paid = pt.paid + rows.reduce((a,r)=>a+r.paid,0), estPaid = pt.estPaid + rows.reduce((a,r)=>a+r.estPaid,0);
   const byCat = {};
-  const addCat = (it, inc) => { const c = catExists(it.cat) ? it.cat : 'other'; byCat[c] = byCat[c] || {est:0, paid:0}; if (inc) byCat[c].est += mTotal(it.est); byCat[c].paid += mTotal(it.paid); };
+  const addCat = (it, inc) => exps(it).forEach(x=>{ const c = catExists(x.cat) ? x.cat : 'other'; byCat[c] = byCat[c] || {est:0, paid:0}; if (inc) byCat[c].est += mTotal(x.est); byCat[c].paid += mTotal(x.paid); });
   pre.forEach(it=>addCat(it, true));
   DATA.days.forEach((d,i)=> items(i,{withShift:false}).forEach(it=>addCat(it, countsEst(it))));
   const cats = st.cats.filter(c=>byCat[c.id] && (byCat[c.id].est || byCat[c.id].paid));
@@ -701,7 +715,7 @@ function vBudget(){
   <p class="small muted" style="margin-top:-6px">Hotels, flights, insurance, visa, SIM, rail passes — anything paid or planned before you leave.</p>
   ${pre.map(x=>`<div class="card"><div class="row sp" style="align-items:flex-start;flex-wrap:nowrap">
       <div style="min-width:0"><h3 style="margin:0">${esc(x.name)}</h3><div class="meta">${esc(catName(x.cat))}${x.date?' · '+esc(x.date):''}${x.note?' · '+esc(x.note.slice(0,60)):''}</div></div>
-      <span class="cost">${x.est.amt?showMoney(x.est,'Est'):'<span class="muted">No estimate</span>'}${x.paid.amt?'<br>'+showMoney(x.paid,'Paid','paid'):''}</span></div>
+      ${(x.extra||[]).length ? '' : `<span class="cost">${x.est.amt?showMoney(x.est,'Est'):'<span class="muted">No estimate</span>'}${x.paid.amt?'<br>'+showMoney(x.paid,'Paid','paid'):''}</span>`}</div>${(x.extra||[]).length ? costBlock(x) : ''}
       ${thumbs(x.noteMedia,false)}
       ${ro?'':`<div class="acts"><button class="lnk" data-preedit="${esc(x.id)}">Edit</button></div>`}</div>`).join('') || '<div class="card small muted">Nothing yet.</div>'}
   ${ro?'':`<div style="margin-top:14px"><button class="btn" data-preadd>Add pre-trip cost</button></div>`}
@@ -801,12 +815,12 @@ function openEdit(i, id, time){
   let it = id ? list.find(x=>x.id===id) : null;
   const isNew = !it;
   if (isNew) it = normMoney({ id:'c'+Date.now().toString(36), base:false, time: time||'12:00', area:'', act:'', mode:'', note:'', status:'Custom', est:{amt:0,cur:'JPY',basis:'pp'}, paid:{amt:0,cur:'JPY',basis:'total'}, cat:'other' });
-  startE({ kind:'item', i, id:it.id, isNew, base:it.base, draft: clone({time:it.time, act:it.act, area:it.area, mode:it.mode, note:it.note, status:it.status, est:it.est, paid:it.paid, cat:catExists(it.cat)?it.cat:'other', media:it.media, noteMedia:it.noteMedia}) });
+  startE({ kind:'item', i, id:it.id, isNew, base:it.base, draft: clone({time:it.time, act:it.act, area:it.area, mode:it.mode, note:it.note, status:it.status, est:it.est, paid:it.paid, extra:it.extra, cat:catExists(it.cat)?it.cat:'other', media:it.media, noteMedia:it.noteMedia}) });
 }
 function openPre(id){
   const x = id ? preItems().find(p=>p.id===id) : null;
   const d = x || normMoney({name:'', cat:'accommodation', date:'', note:'', est:{amt:0,cur:'IDR',basis:'total'}, paid:{amt:0,cur:'IDR',basis:'total'}});
-  startE({ kind:'pre', id: x ? x.id : 'p'+Date.now().toString(36), isNew:!x, draft: clone({name:d.name, cat:catExists(d.cat)?d.cat:'other', date:d.date||'', note:d.note||'', est:d.est, paid:d.paid, noteMedia:d.noteMedia||[], order:d.order||Date.now()}) });
+  startE({ kind:'pre', id: x ? x.id : 'p'+Date.now().toString(36), isNew:!x, draft: clone({name:d.name, cat:catExists(d.cat)?d.cat:'other', date:d.date||'', note:d.note||'', est:d.est, paid:d.paid, extra:d.extra||[], noteMedia:d.noteMedia||[], order:d.order||Date.now()}) });
 }
 function convText(m){ if (!m.amt) return ''; const one = fmtR(toIdr(m)); return (m.cur!==DISP ? '≈ '+one : '') + (m.basis==='pp' ? ` pp · ${fmtR(toIdr(m)*ST().people)} for ${ST().people}` : ''); }
 function updConv(){ const v = id => $('#'+id).value;
@@ -846,7 +860,15 @@ function renderModal(){
         <label>Actually paid<div class="money"><input type="number" min="0" step="any" id="e_paid" value="${d.paid.amt||''}" placeholder="0"><select id="e_paidc">${curOpts(d.paid.cur)}</select><select id="e_paidb">${basisOpts(d.paid.basis)}</select></div>${conv(d.paid,'e_paidconv')}</label>
         <label class="full">Category<select id="e_cat">${ST().cats.map(c=>`<option value="${esc(c.id)}" ${c.id===d.cat?'selected':''}>${esc(c.name)}</option>`).join('')}<option value="__new">New category…</option></select></label>
         ${E.newCat?`<div class="full catrow" style="margin:0"><input type="text" id="e_newcat" placeholder="New category name"><button class="btn pri" data-enewcat>Add</button></div>`:''}
-      </div></fieldset>
+      </div>
+      ${(d.extra||[]).map((x,n)=>`<div class="xrow" style="border-top:1px solid var(--line);margin-top:14px;padding-top:12px"><div class="row sp"><b class="small">Expense ${n+2}</b><button class="lnk small" data-xdel="${n}" type="button">Remove</button></div><div class="f">
+        <label class="full">What for<input type="text" id="x${n}_name" value="${esc(x.name)}" placeholder="e.g. Souvenirs, Taxi, Ticket"></label>
+        <label>Estimated<div class="money"><input type="number" min="0" step="any" id="x${n}_est" value="${x.est.amt||''}" placeholder="0"><select id="x${n}_estc">${curOpts(x.est.cur)}</select><select id="x${n}_estb">${basisOpts(x.est.basis)}</select></div></label>
+        <label>Actually paid<div class="money"><input type="number" min="0" step="any" id="x${n}_paid" value="${x.paid.amt||''}" placeholder="0"><select id="x${n}_paidc">${curOpts(x.paid.cur)}</select><select id="x${n}_paidb">${basisOpts(x.paid.basis)}</select></div></label>
+        <label class="full">Category<select id="x${n}_cat">${ST().cats.map(c=>`<option value="${esc(c.id)}" ${c.id===x.cat?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
+      </div></div>`).join('')}
+      <button class="btn" data-xadd type="button" style="margin-top:14px">+ Add another expense</button>
+      </fieldset>
       ${pre ? '' : `<fieldset class="fs full"><legend>Trip photos &amp; videos</legend>${uploadUI('media','Add photos / videos','image/*,video/*','Up to 20 MB per file; large photos are resized automatically.')}</fieldset>`}
     </div>
     ${E.err?`<p class="err">${esc(E.err)}</p>`:''}
@@ -866,6 +888,10 @@ function readForm(){
   d.est = {amt: +v('e_est') || 0, cur: v('e_estc'), basis: v('e_estb')};
   d.paid = {amt: +v('e_paid') || 0, cur: v('e_paidc'), basis: v('e_paidb')};
   const c = v('e_cat'); if (c && c!=='__new') d.cat = c;
+  d.extra = (d.extra||[]).map((x,n)=>({id:x.id, name:(v('x'+n+'_name')??x.name).trim(),
+    cat: v('x'+n+'_cat') || x.cat,
+    est:{amt:+v('x'+n+'_est')||0, cur:v('x'+n+'_estc')||x.est.cur, basis:v('x'+n+'_estb')||x.est.basis},
+    paid:{amt:+v('x'+n+'_paid')||0, cur:v('x'+n+'_paidc')||x.paid.cur, basis:v('x'+n+'_paidb')||x.paid.basis}}));
 }
 async function compress(file){
   if (!file.type.startsWith('image/') || file.size < 1.5e6 || /gif|svg/.test(file.type)) return file;
@@ -905,13 +931,13 @@ function saveEdit(){
   if (E.kind==='pre'){
     if (!d.name){ E.err = 'Give it a name.'; renderModal(); return; }
     S.pre = clone(S.pre) || {items:{}}; S.pre.items = S.pre.items || {};
-    S.pre.items[E.id] = {name:d.name, cat:d.cat, date:d.date, note:d.note, est:d.est, paid:d.paid, noteMedia:d.noteMedia, order:d.order};
+    S.pre.items[E.id] = {name:d.name, cat:d.cat, date:d.date, note:d.note, est:d.est, paid:d.paid, extra:d.extra, noteMedia:d.noteMedia, order:d.order};
     dropAssets(E.removed); E = null; renderModal(); route(); savePre(); return;
   }
   if (!d.act){ E.err = 'Give the stop a name.'; renderModal(); return; }
   const date = DATA.days[E.i].date;
   const doc = S.days[date] = clone(dayDoc(date)); doc.ov = doc.ov || {}; doc.custom = doc.custom || {};
-  const patch = {time:d.time, act:d.act, area:d.area, mode:d.mode, note:d.note, status:d.status, est:d.est, paid:d.paid, cat:d.cat, media:d.media, noteMedia:d.noteMedia};
+  const patch = {time:d.time, act:d.act, area:d.area, mode:d.mode, note:d.note, status:d.status, est:d.est, paid:d.paid, extra:d.extra, cat:d.cat, media:d.media, noteMedia:d.noteMedia};
   if (E.base) doc.ov[E.id] = Object.assign(doc.ov[E.id]||{}, patch);
   else doc.custom[E.id] = Object.assign(doc.custom[E.id]||{done:false}, patch);
   dropAssets(E.removed); E = null; renderModal(); route(); saveDay(date);
@@ -999,8 +1025,10 @@ document.addEventListener('click', e=>{
     renderModal(); return; }
   if (ds.edel !== undefined){ readForm(); if (!E.delArm){ E.delArm = true; renderModal(); return; } deleteEdit(); return; }
   if (ds.ereset !== undefined){ const i = E.i, date = DATA.days[i].date, doc = S.days[date] = clone(dayDoc(date)); doc.ov = doc.ov||{};
-    const o = doc.ov[E.id] || {}; doc.ov[E.id] = {media:o.media||[], noteMedia:o.noteMedia||[], paid:o.paid, done:o.done};
+    const o = doc.ov[E.id] || {}; doc.ov[E.id] = {media:o.media||[], noteMedia:o.noteMedia||[], paid:o.paid, extra:o.extra, done:o.done};
     dropAssets(E.uploaded); E = null; renderModal(); route(); saveDay(date); return; }
+  if (ds.xadd !== undefined){ readForm(); E.draft.extra = [...(E.draft.extra||[]), {id:'x'+Date.now().toString(36), name:'', cat:E.draft.cat||'other', est:{amt:0,cur:'JPY',basis:'pp'}, paid:{amt:0,cur:'JPY',basis:'total'}}]; renderModal(); setTimeout(()=>{ const n=E.draft.extra.length-1, el=$('#x'+n+'_name'); if(el) el.focus(); },0); return; }
+  if (ds.xdel !== undefined){ readForm(); E.draft.extra.splice(+ds.xdel,1); renderModal(); return; }
   if (ds.preadd !== undefined){ openPre(null); return; }
   if (ds.preedit){ openPre(ds.preedit); return; }
   if (ds.fx !== undefined){ S.ui.fx[ds.fx] = (S.ui.fx[ds.fx] + 1 + Math.floor(Math.random()*(+ds.fxn-1))) % +ds.fxn; route(); return; }
