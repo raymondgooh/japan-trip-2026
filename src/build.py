@@ -23,8 +23,15 @@ for f in sorted((root / "facts").glob("*.txt")):
     facts[f.stem] = [l.strip() for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
 template = template.replace("__FACTS__", json.dumps(facts, ensure_ascii=False))
 
-web = template.replace("__DATA__", "null").replace("__SBCONF__", supabase)
-artifact = template.replace("__DATA__", data).replace("__SBCONF__", "null")
+head = """<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Japan 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">"""
+web = template.replace("__HEAD__", head).replace("__DATA__", "null").replace("__SBCONF__", supabase)
+artifact = template.replace("__HEAD__", "").replace("__DATA__", data).replace("__SBCONF__", "null")
 
 (root.parent / "index.html").write_text(web, encoding="utf-8")
 (root.parent / "dist").mkdir(exist_ok=True)

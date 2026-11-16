@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" id="themeColor" content="#f5f2eb">
+__HEAD__
 <script>
 (function(){var t='light';try{t=localStorage.getItem('jp26:theme')||'light'}catch(e){}
 window.__applyTheme=function(t){var d=t==='dark'||(t==='auto'&&window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -232,6 +233,10 @@ header,main,.foot{position:relative;z-index:1}
 .dayhead{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 11%,transparent),transparent 78%);padding-left:12px;padding-right:12px;margin:0 -12px;transition:background .7s}
 .dayhead .mood{display:inline-block;margin-left:10px;font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.vfx{display:none}html,body{transition:none}}
+.wx{font-size:12.5px;margin-top:8px;color:var(--ink2)}.wx b{font-weight:500}
+.phr{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line2);padding:13px 0;cursor:pointer}
+.phr .en{display:block;font-size:14px}.phr .ja{display:block;font-size:17px;margin-top:2px;color:var(--ink2)}.phr .ro{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.phr.on{background:var(--raise);border:1px solid var(--ink);padding:18px 14px;margin:8px 0}.phr.on .ja{font-size:34px;line-height:1.35;font-weight:500;color:var(--ink);margin:10px 0 8px}
 </style>
 </head>
 <body>
@@ -357,8 +362,15 @@ function preTotals(){ const l = preItems(); return { est: l.reduce((a,x)=>a+sumE
 /* ---------- persistence ---------- */
 const queues = {};
 function setSync(t){ $('#sync').textContent = t; }
+const dirty = ls.get('dirty', {});   // edits made offline, waiting to be sent
+function markDirty(path, on=true){ if (on) dirty[path] = 1; else delete dirty[path]; ls.set('dirty', dirty); }
+const bodyOf = path => path.startsWith('days/') ? (S.days[path.slice(5)] || {ov:{}, custom:{}}) : path==='pretrip/main' ? S.pre : S.settings;
+async function flushDirty(db){
+  for (const p of Object.keys(dirty)){ try { await db.doc(p).set(bodyOf(p)); markDirty(p, false); } catch(e){ return false; } }
+  return true;
+}
 function writeDoc(path, body){
-  if (!S.db){ return Promise.resolve(); }
+  if (!S.db){ if (SB_CONF && SB_CONF.url){ markDirty(path); setSync('Saved on this device'); } return Promise.resolve(); }
   queues[path] = (queues[path] || Promise.resolve()).then(async ()=>{
     setSync('Saving…');
     try { await S.db.doc(path).set(body); }
@@ -366,11 +378,11 @@ function writeDoc(path, body){
       if (e && e.code==='unavailable'){ await new Promise(r=>setTimeout(r, 600+Math.random()*800)); await S.db.doc(path).set(body); }
       else { throw e; }
     }
-    setSync('Saved');
+    markDirty(path, false); setSync('Saved');
   }).catch(e=>{
     if (e && e.code==='invalid_argument'){ S.canWrite=false; setSync('View only'); route(); }
     else if (e && e.code==='quota_exceeded'){ setSync('Storage full'); }
-    else setSync('Save failed — retry');
+    else { if (SB_CONF && SB_CONF.url){ markDirty(path); setSync('Saved on this device'); } else setSync('Save failed — retry'); }
   });
   return queues[path];
 }
@@ -503,6 +515,7 @@ async function startSupabase(session){
   if (!data.length){ S.notMember = true; setSync('Not on the trip list'); route(); return; }
   S.notMember = false;
   const a = sbAdapter(SB);
+  if (Object.keys(dirty).length){ setSync('Sending offline edits…'); await flushDirty(a.db); }
   try { await a.load(); } catch(e){ setSync('Offline — this device only'); route(); return; }
   const base = a.cache.get('base/itinerary');
   if (base){ DATA = base; ls.set('base', base); }
@@ -569,6 +582,17 @@ function statusClass(s){
   return s ? 'flex' : '';
 }
 function badge(s){ return s ? `<span class="badge b-${statusClass(s)}">${esc(s)}</span>` : ''; }
+const mapQ = q => encodeURIComponent(q.replace(/\s*\/\s*/g,' ').trim());
+function mapLink(it, i){
+  const city = region(DATA.days[i].date)[1] || 'Japan', a = (it.area||'').trim();
+  if (!a || /flex day|^(KUL|SGN|MNL|SIN)\b/i.test(a)) return '';
+  const parts = a.split('→').map(x=>x.trim()).filter(Boolean);
+  const tag = x => /\b(HND|KIX|CTS)\b/.test(x) ? x.replace('HND','Haneda Airport').replace('KIX','Kansai Airport').replace('CTS','New Chitose Airport') : x+', '+city+', Japan';
+  const url = parts.length > 1
+    ? `https://www.google.com/maps/dir/?api=1&origin=${mapQ(tag(parts[0]))}&destination=${mapQ(tag(parts[parts.length-1]))}&travelmode=transit`
+    : `https://www.google.com/maps/search/?api=1&query=${mapQ(tag(a))}`;
+  return `<a class="lnk" href="${url}" target="_blank" rel="noopener">${parts.length>1?'Route':'Map'} ↗</a>`;
+}
 function link(src){ return /^https?:/.test(src) ? `<a href="${esc(src)}" target="_blank" rel="noopener">Source ↗</a>` : (src ? `<span class="muted">${esc(src)}</span>` : ''); }
 function mediaUrl(m){ if (m.id && m.id.startsWith('sb:')){ if (SIGNED[m.id]) return SIGNED[m.id]; queueSign(m.id); return BLANK; } return m.url || ('/_blob/'+m.id); }
 function thumbs(list, removable, field='media'){
@@ -647,7 +671,7 @@ function dayCard(i){
     <div class="lbl">${esc(d.title)}${vibeFor(i)?`<span class="mood">${esc(vibeFor(i).n)}</span>`:''}</div>
     <div class="place" style="margin-top:6px"><span class="kanji">${kj}</span><span class="rom">${rom}</span></div>
     <div class="theme">${esc(d.theme)}</div>
-    <div class="route">${esc(d.route)}</div>
+    <div class="route">${esc(d.route)}</div>${wxLine(i)}
     <div class="row sp small" style="margin-top:14px;align-items:flex-end"><span><span class="lbl">Stay</span>${esc(d.stay)}</span>
       <span class="cost">est ${fmtR(t.est)}${t.paid ? `<br><span class="paid">paid ${fmtR(t.paid)}</span>`:''}</span></div>
   </div>`;
@@ -699,7 +723,7 @@ function tlBody(i, nowIdx=-1){
           ${hasCost(it) ? costBlock(it, !!(it.snowOpt&&!countsEst(it))) : ''}
         </div>
         ${thumbs(it.media, false)}
-        <div class="acts">${hasMore?`<button class="lnk" data-open="${key}">${open?'Hide':'Details'}${it.noteMedia.length?` · ${it.noteMedia.length} picture${it.noteMedia.length>1?'s':''}`:''}</button>`:''}${ro?'':`<button class="lnk" data-edit="${i}|${esc(it.id)}">Edit</button>`}</div>
+        <div class="acts">${hasMore?`<button class="lnk" data-open="${key}">${open?'Hide':'Details'}${it.noteMedia.length?` · ${it.noteMedia.length} picture${it.noteMedia.length>1?'s':''}`:''}</button>`:''}${ro?'':`<button class="lnk" data-edit="${i}|${esc(it.id)}">Edit</button>`}${mapLink(it,i)}</div>
         ${hasMore?`<div class="note">${it.ticket && it.ticket!=='—' ? `<div><b>Ticket:</b> ${esc(it.ticket)}</div>`:''}${it.note?`<div style="white-space:pre-wrap">${esc(it.note)}</div>`:''}${thumbs(it.noteMedia,false)}${it.src?`<div style="margin-top:4px">${link(it.src)}</div>`:''}</div>`:''}
       </div></div>${addBtn(n)}`;
   }).join('')}</div>
@@ -818,7 +842,7 @@ function vStays(){
     ['Mon 30 Nov','Peach MM115','KIX T2 16:15 → CTS 18:10 · 1×20kg','Selected · purchase TBD'],['Fri 4 Dec','PAL PR405 + PR509','CTS 13:30 → MNL T1 → SIN 23:45 · 2×23kg','Pending purchase']];
   return `<h2>Flights</h2><div>${fl.map(f=>`<div class="card"><div class="lbl">${f[0]}</div><h3 style="margin-top:4px">${f[1]}</h3><div class="small" style="font-family:var(--mono);font-size:12px">${f[2]}</div><div style="margin-top:6px">${badge(/Booked/.test(f[3])?'Fixed':'Book')} <span class="small muted">${f[3]}</span></div></div>`).join('')}</div>
   <h2>Stays</h2>
-  ${DATA.hotels.map(h=>`<div class="card"><div class="row sp"><h3>${esc(h.Property)}</h3><span class="badge ${/LOCKED|FIXED/.test(h['Booking status'])?'b-fixed':'b-flex'}">${esc(h['Booking status'])}</span></div>
+  ${DATA.hotels.map(h=>`<div class="card"><div class="row sp"><h3>${esc(h.Property)}${/^No hotel/.test(h.Property)?'':` <a class="lnk small" style="font-weight:400" href="https://www.google.com/maps/search/?api=1&query=${mapQ(h.Property.replace(/\s\d+$/,'')+' '+h.Stay+' Japan')}" target="_blank" rel="noopener">Map ↗</a>`}</h3><span class="badge ${/LOCKED|FIXED/.test(h['Booking status'])?'b-fixed':'b-flex'}">${esc(h['Booking status'])}</span></div>
     <div class="muted small" style="margin-bottom:8px">${esc(h.Stay)} · ${esc(h['Check-in'])} → ${esc(h['Check-out'])} · ${h.Nights} night${h.Nights==1?'':'s'}</div>
     <dl class="kv"><dt>Access</dt><dd>${esc(h['Location / access'])}</dd><dt>Bathroom</dt><dd>${esc(h.Bathroom)}</dd><dt>Luggage</dt><dd>${esc(h['Luggage plan'])}</dd><dt>Price</dt><dd>${esc(h['Price / payment'])}</dd><dt>Cancellation</dt><dd>${esc(h.Cancellation)}</dd>${h.Notes?`<dt>Notes</dt><dd>${esc(h.Notes)}</dd>`:''}</dl></div>`).join('')}
   <h2>Arrival transport (22 Nov)</h2>
@@ -1018,15 +1042,82 @@ function vFacts(){
     <div class="filters">${FX_PLACES.map(p=>`<button data-fxplace="${p.id}" class="${p.id===sel?'on':''}">${esc(p.name)} <span class="muted">${(FACTS[p.id]||[]).length}</span></button>`).join('')}</div>
     <div class="card"><ol class="fxlist">${list.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
 }
+
+/* ---------- weather ---------- */
+const WXP = {tokyo:[35.68,139.69,'Tokyo',9,17], fuji:[35.50,138.76,'Kawaguchiko',1,12], kyoto:[35.01,135.77,'Kyoto',6,15], sapporo:[43.06,141.35,'Sapporo',-3,3], otaru:[43.19,141.00,'Otaru',-3,3]};
+const WXDAY = ['tokyo','tokyo','tokyo','tokyo','fuji','kyoto','kyoto','kyoto','kyoto','sapporo','sapporo','otaru','sapporo','sapporo'];
+let WX = ls.get('wx', null), _wxBusy = false;
+const wxWord = c => c===0?'Clear':c<=2?'Partly cloudy':c===3?'Cloudy':c<=48?'Fog':c<=57?'Drizzle':c<=67?'Rain':c<=77?'Snow':c<=82?'Showers':c<=86?'Snow showers':'Thunderstorm';
+function wxLine(i){
+  const k = WXDAY[i], p = WXP[k]; if (!p) return '';
+  const f = WX && WX.d && WX.d[k] && WX.d[k][DATA.days[i].date];
+  if (f) return `<div class="wx"><b>${esc(wxWord(f[0]))}</b> · ${Math.round(f[2])}° to ${Math.round(f[1])}°C${f[3]!=null?` · ${f[3]}% chance of rain or snow`:''} <span class="muted">· ${p[2]} forecast</span></div>`;
+  return `<div class="wx"><span class="muted">Usually about ${p[3]}° to ${p[4]}°C in ${p[2]} this time of year · forecast appears closer to the day</span></div>`;
+}
+async function fetchWx(){
+  if (!DATA || _wxBusy || (WX && Date.now()-WX.t < 3*3600e3)) return;
+  const iso = d => d.toISOString().slice(0,10), today = jpNow().date;
+  const start = today > DATA.days[0].date ? today : DATA.days[0].date;
+  const lim = iso(new Date(Date.parse(today+'T00:00:00Z') + 15*86400e3)), last = DATA.days[DATA.days.length-1].date;
+  const end = lim < last ? lim : last;
+  if (start > end) return;
+  _wxBusy = true;
+  try {
+    const ks = Object.keys(WXP);
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${ks.map(k=>WXP[k][0]).join(',')}&longitude=${ks.map(k=>WXP[k][1]).join(',')}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&start_date=${start}&end_date=${end}`);
+    if (!r.ok) throw 0;
+    let j = await r.json(); if (!Array.isArray(j)) j = [j];
+    const d = {};
+    j.forEach((loc,n)=>{ const k = ks[n], x = loc.daily; if (!k || !x) return; d[k] = {};
+      x.time.forEach((dt,m)=>{ if (x.temperature_2m_max[m]!=null) d[k][dt] = [x.weather_code[m], x.temperature_2m_max[m], x.temperature_2m_min[m], x.precipitation_probability_max ? x.precipitation_probability_max[m] : null]; }); });
+    WX = {t:Date.now(), d}; ls.set('wx', WX);
+    if (!$('#modal').innerHTML && /^#?(today|itinerary)?$/.test(location.hash.replace('#',''))) route();
+  } catch(e){}
+  _wxBusy = false;
+}
+
+/* ---------- converter ---------- */
+function cvOut(){
+  const c = S.ui.cv || (S.ui.cv = {amt:1000, cur:'JPY'}), idr = (c.amt||0) * (rates()[c.cur]||1), n = ST().people;
+  return CURS.filter(x=>x!==c.cur).map(x=>`<div class="row sp" style="padding:12px 0;border-bottom:1px solid var(--line2)"><span class="lbl">${x}</span><span style="font:500 22px var(--mono)">${fmtCur(idr/rates()[x], x)}</span></div>`).join('')
+    + `<p class="small muted" style="margin:12px 0 0">Split between ${n}: ${fmtCur((c.amt||0)/n, c.cur)} each. Rates come from Settings, so check them before the trip.</p>`;
+}
+function vConv(){
+  const c = S.ui.cv || (S.ui.cv = {amt:1000, cur:'JPY'});
+  return `<h2>Converter</h2><div class="card">
+    <div class="money" style="align-items:flex-end"><input type="number" inputmode="decimal" min="0" step="any" id="cv_amt" value="${c.amt||''}" placeholder="0" style="font:500 28px var(--mono)"><select id="cv_cur" style="width:90px">${curOpts(c.cur)}</select></div>
+    <div class="filters" style="margin:12px 0 0">${(c.cur==='JPY'?[500,1000,3000,5000,10000]:c.cur==='IDR'?[50000,100000,500000,1000000]:[5,10,50,100]).map(v=>`<button data-cvq="${v}">${v.toLocaleString('en-US')}</button>`).join('')}</div>
+    <div id="cv_out" style="margin-top:10px">${cvOut()}</div></div>`;
+}
+
+/* ---------- phrases ---------- */
+const PHRASES = [
+ ['Basics', [['Hello','こんにちは','Konnichiwa'],['Thank you','ありがとうございます','Arigatō gozaimasu'],['Excuse me / Sorry','すみません','Sumimasen'],['Yes / No','はい / いいえ','Hai / Iie'],['I don\'t understand Japanese','日本語がわかりません','Nihongo ga wakarimasen'],['Do you speak English?','英語を話せますか？','Eigo o hanasemasu ka?'],['Please (when asking for something)','お願いします','Onegaishimasu']]],
+ ['Eating', [['A table for two, please','二人です','Futari desu'],['Do you have an English menu?','英語のメニューはありますか？','Eigo no menyū wa arimasu ka?'],['This one, please (point at it)','これをお願いします','Kore o onegaishimasu'],['What do you recommend?','おすすめは何ですか？','Osusume wa nan desu ka?'],['Water, please','お水をお願いします','Omizu o onegaishimasu'],['The bill, please','お会計をお願いします','Okaikei o onegaishimasu'],['It was delicious, thank you','ごちそうさまでした','Gochisōsama deshita'],['Can I take this to go?','持ち帰りできますか？','Mochikaeri dekimasu ka?']]],
+ ['Shopping', [['How much is this?','これはいくらですか？','Kore wa ikura desu ka?'],['Can I pay by card?','カードで払えますか？','Kādo de haraemasu ka?'],['Tax-free, please','免税でお願いします','Menzei de onegaishimasu'],['Can I try this on?','試着してもいいですか？','Shichaku shite mo ii desu ka?'],['Do you have a bigger size?','もっと大きいサイズはありますか？','Motto ōkii saizu wa arimasu ka?'],['Do you have a smaller size?','もっと小さいサイズはありますか？','Motto chiisai saizu wa arimasu ka?'],['I don\'t need a bag','袋はいりません','Fukuro wa irimasen'],['I\'m just looking','見ているだけです','Mite iru dake desu']]],
+ ['Getting around', [['Where is the station?','駅はどこですか？','Eki wa doko desu ka?'],['Where is the toilet?','トイレはどこですか？','Toire wa doko desu ka?'],['Does this train go to … ?','この電車は…に行きますか？','Kono densha wa … ni ikimasu ka?'],['Which platform?','何番線ですか？','Nanban-sen desu ka?'],['Where are the coin lockers?','コインロッカーはどこですか？','Koin rokkā wa doko desu ka?'],['Please take me to this address (taxi)','この住所までお願いします','Kono jūsho made onegaishimasu'],['Could you take our photo?','写真を撮ってもらえますか？','Shashin o totte moraemasu ka?']]],
+ ['Hotel', [['I have a reservation','予約しています','Yoyaku shite imasu'],['Can you keep our luggage?','荷物を預かってもらえますか？','Nimotsu o azukatte moraemasu ka?'],['Check-out, please','チェックアウトをお願いします','Chekkuauto o onegaishimasu']]],
+ ['Help', [['Please help me','助けてください','Tasukete kudasai'],['I\'m lost','道に迷いました','Michi ni mayoimashita'],['I lost my passport','パスポートをなくしました','Pasupōto o nakushimashita'],['I feel sick','気分が悪いです','Kibun ga warui desu'],['Where is a pharmacy?','薬局はどこですか？','Yakkyoku wa doko desu ka?'],['Please call an ambulance','救急車を呼んでください','Kyūkyūsha o yonde kudasai']]],
+];
+function vPhrases(){
+  const open = S.ui.ph;
+  return `<h2>Phrases</h2><p class="small muted" style="margin:-6px 0 4px">Tap a phrase to show it large, so you can hold your phone up to staff.</p>
+  ${PHRASES.map(([cat, list], a)=>`<div class="lbl" style="display:block;margin:26px 0 4px;color:var(--accent)">${cat}</div>
+    ${list.map(([en, ja, ro], b)=>{ const k = a+'-'+b, on = open===k;
+      return `<button class="phr ${on?'on':''}" data-ph="${k}"><span class="en">${esc(en)}</span><span class="ja" lang="ja">${esc(ja)}</span><span class="ro">${esc(ro)}</span></button>`; }).join('')}`).join('')}
+  <div class="card" style="margin-top:26px"><h3>Emergency numbers</h3><div class="small">Police <b>110</b> · Ambulance and fire <b>119</b>. Both are free to call from any phone.</div></div>`;
+}
 function vMore(){
   return `<h2>More</h2><div class="more">
     <a href="#stays"><span class="kanji">宿 · 便</span><span>Stays &amp; flights</span></a>
     <a href="#tips"><span class="kanji">心得</span><span>Tips</span></a>
+    <a href="#convert"><span class="kanji">両替</span><span>Converter</span></a>
+    <a href="#phrases"><span class="kanji">会話</span><span>Phrases</span></a>
     <a href="#facts"><span class="kanji">豆知識</span><span>Fun facts</span></a>
     <a href="#settings"><span class="kanji">設定</span><span>Settings</span></a></div>`;
 }
-const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, settings:vSettings, more:vMore};
-const TAB_OF = {stays:'more', tips:'more', facts:'more', settings:'more'};
+const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, convert:vConv, phrases:vPhrases, settings:vSettings, more:vMore};
+const TAB_OF = {stays:'more', tips:'more', facts:'more', convert:'more', phrases:'more', settings:'more'};
 /* ---------- day moods ---------- */
 const VIBES = [
  {n:'Sky miles',k:'streak',c:['#9db6d1','#b8c9dc'],L:['#eff2f5','#3b6ea5'],D:['#12161b','#7fa6d4'],cnt:9},
@@ -1117,6 +1208,8 @@ document.addEventListener('click', e=>{
   if (ds.preedit){ openPre(ds.preedit); return; }
   if (ds.fx !== undefined){ S.ui.fx[ds.fx] = (S.ui.fx[ds.fx] + 1 + Math.floor(Math.random()*(+ds.fxn-1))) % +ds.fxn; route(); return; }
   if (ds.fxplace){ S.ui.fxPlace = ds.fxplace; route(); return; }
+  if (ds.ph){ S.ui.ph = S.ui.ph===ds.ph ? null : ds.ph; const y = window.scrollY; route(); window.scrollTo(0,y); return; }
+  if (ds.cvq){ S.ui.cv.amt = +ds.cvq; route(); return; }
   if (ds.moodSet){ setMood(ds.moodSet==='on'); return; }
   if (ds.themeSet){ setTheme(ds.themeSet); return; }
   if (ds.disp){ setDisp(ds.disp); return; }
@@ -1153,6 +1246,7 @@ document.addEventListener('click', e=>{
   if (ds.catadd !== undefined){ const n = ($('#newcat').value||'').trim(); if (!n) return; S.settings = clone(ST()); S.settings.cats.push({id:'c'+Date.now().toString(36), name:n}); saveSettings(); route(); return; }
 });
 document.addEventListener('input', e=>{
+  if (e.target.id==='cv_amt'){ S.ui.cv.amt = +e.target.value || 0; $('#cv_out').innerHTML = cvOut(); return; }
   if (/^e_(est|paid)$/.test(e.target.id) && E){ updConv(); return; }
   if (e.target.id==='shrange'){ const sh = S.ui.shift; sh.mins = +e.target.value;
     $('.shiftval').textContent = (sh.mins>0?'+':'')+sh.mins+'′';
@@ -1166,6 +1260,7 @@ document.addEventListener('change', e=>{
   if (ds.catname){ const n = t.value.trim(); if (!n) { route(); return; } S.settings = clone(ST()); const c = S.settings.cats.find(c=>c.id===ds.catname); if (c && c.name!==n){ c.name = n; saveSettings(); } return; }
   if (t.id==='shfrom'){ S.ui.shift.from = t.value; route(); return; }
   if (/^rate_/.test(t.id)){ const c = t.id.slice(5), v = +t.value; if (!(v>0)) { route(); return; } S.settings = clone(ST()); S.settings.rates = Object.assign({}, rates(), S.settings.rates||{}); delete S.settings.rates.IDR; S.settings.rates[c] = v; saveSettings(); route(); return; }
+  if (t.id==='cv_cur'){ S.ui.cv.cur = t.value; route(); return; }
   if (t.id==='disp'){ setDisp(t.value); return; }
   if (t.id==='ppl'){ S.settings = clone(ST()); S.settings.people = Math.max(1, Math.round(+t.value) || 1); saveSettings(); route(); return; }
   if (t.id==='snow'){ S.settings = clone(ST()); S.settings.snow = t.value; saveSettings(); route(); return; }
@@ -1184,6 +1279,15 @@ if (!DATA) DATA = ls.get('base', null);
 route();
 connect();
 setInterval(()=>{ if ((location.hash||'#today')==='#today' && !E) route(); }, 60000);
+window.addEventListener('online', async ()=>{
+  if (!(SB_CONF && SB_CONF.url)) return;
+  if (!SB) return connectSupabase();
+  if (!S.db){ const { data:{ session } } = await SB.auth.getSession(); if (session) startSupabase(session); return; }
+  if (Object.keys(dirty).length && await flushDirty(S.db)) setSync('Synced');
+});
+window.addEventListener('offline', ()=>{ if (SB_CONF && SB_CONF.url) setSync('Offline — saved on this device'); });
+if (SB_CONF && SB_CONF.url && 'serviceWorker' in navigator && location.protocol==='https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+fetchWx();
 </script>
 </body>
 </html>
