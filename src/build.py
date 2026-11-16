@@ -18,6 +18,11 @@ supabase = json.dumps({
     "key": "sb_publishable_NjbB_3tU424OkS7jL1_Utw_4m00lOAH",
 })
 
+facts = {}
+for f in sorted((root / "facts").glob("*.txt")):
+    facts[f.stem] = [l.strip() for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+template = template.replace("__FACTS__", json.dumps(facts, ensure_ascii=False))
+
 web = template.replace("__DATA__", "null").replace("__SBCONF__", supabase)
 artifact = template.replace("__DATA__", data).replace("__SBCONF__", "null")
 

@@ -204,6 +204,8 @@ tfoot td{font-weight:500;border-bottom:0;border-top:1px solid var(--ink)}
 .upl,.f label.upl{display:inline-flex;flex-direction:row;width:auto;text-transform:none;letter-spacing:.04em;font-size:13px;color:var(--ink);padding:7px 14px}
 #e_estconv,#e_paidconv{text-transform:none;letter-spacing:normal;font-family:var(--mono);font-size:11.5px}
 @media(max-width:520px){.grid2{grid-template-columns:1fr}.tot{font-size:26px}}
+.fxlist{margin:0;padding-left:22px}.fxlist li{margin:0 0 10px;font-size:14px;line-height:1.6}.fxlist li::marker{color:var(--muted);font:12px var(--mono)}
+.card.fx{border-left:2px solid var(--accent);padding-left:14px}
 </style>
 </head>
 <body>
@@ -218,6 +220,7 @@ tfoot td{font-weight:500;border-bottom:0;border-top:1px solid var(--ink)}
 <div id="modal"></div>
 <script>
 let DATA = __DATA__;
+const FACTS = __FACTS__;
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const clone = o => JSON.parse(JSON.stringify(o ?? null));
@@ -566,6 +569,7 @@ function vToday(){
         <div class="row" style="align-items:baseline;gap:14px;margin-top:10px"><div class="big num">${n}</div><div class="big" style="font-size:22px">day${n===1?'':'s'} to go</div></div>
         <div class="muted small" style="margin-top:12px">Japan time <span style="font-family:var(--mono)">${now.hm}</span></div></div>
         <h2>Still to sort out</h2>${nb.length ? nb.map(bkRow).join('') : '<div class="card">All high-priority bookings are done.</div>'}
+        ${funCard('pre', FX_PLACES.map(p=>p.id))}
         <h2>First day</h2>${dayCard(0)}`;
     }
     return `<div class="hero"><div class="big">おかえり</div><div class="muted" style="margin-top:8px">Welcome home.</div></div>`;
@@ -585,6 +589,7 @@ function vToday(){
       <h3>${esc(nxt.act)}</h3><div class="meta">${esc([nxt.area, nxt.mode].filter(x=>x && x!=='—').join(' · '))}</div>
       ${nxt.note?`<div class="small" style="margin-top:8px;color:var(--ink2)">${esc(nxt.note)}</div>`:''}</div>`
       : `<div class="card">Nothing else scheduled today.</div>`}
+    ${funCard('t'+idx, fxPlacesForDay(idx))}
     <h2>Today</h2>${timeline(idx, cur)}`;
 }
 
@@ -667,7 +672,7 @@ function vItin(){
   const i = S.ui.day;
   return `<div class="strip">${DATA.days.map((d,n)=>`<button class="chip ${n===i?'on':''} ${d.date===now.date?'today':''}" data-day="${n}">
       <span>${wkJa(d.date)}</span><b>${new Date(d.date+'T00:00:00').getDate()}</b><span>${region(d.date)[0]}</span></button>`).join('')}</div>
-    ${dayCard(i)}${timeline(i)}
+    ${dayCard(i)}${funCard('d'+i, fxPlacesForDay(i))}${timeline(i)}
     <div class="row sp" style="margin-top:14px">
       <button class="lnk" style="font-size:13px" data-step="-1" ${i===0?'hidden':''}>← Previous day</button>
       <button class="lnk" style="font-size:13px" data-step="1" ${i===DATA.days.length-1?'hidden':''}>Next day →</button>
@@ -924,14 +929,49 @@ function deleteEdit(){
 }
 
 /* ---------- router ---------- */
+
+/* ---------- fun facts ---------- */
+const FX_PLACES = [
+  {id:'tokyo', name:'Tokyo', kw:/tokyo|akabane|shinjuku|harajuku|asakusa|ueno|ginza|marunouchi|shimokitazawa|shibuya|hnd/i},
+  {id:'fuji', name:'Kawaguchiko & Mt Fuji', kw:/kawaguchiko|fuji|mishima/i},
+  {id:'kyoto', name:'Kyoto', kw:/kyoto|shijo|fushimi|higashiyama|arashiyama/i},
+  {id:'uji', name:'Uji', kw:/\buji\b/i},
+  {id:'nara', name:'Nara', kw:/\bnara\b/i},
+  {id:'sapporo', name:'Sapporo & Hokkaido', kw:/sapporo|susukino|odori|tanukikoji|cts|hokkaido/i},
+  {id:'otaru', name:'Otaru', kw:/otaru/i},
+];
+function fxPlacesForDay(i){
+  const d = DATA.days[i], txt = [d.route, d.stay, d.title, d.theme].join(' ');
+  if (i===0) return ['tokyo'];
+  return FX_PLACES.filter(p=>p.kw.test(txt)).map(p=>p.id);
+}
+function fxPool(ids){ const out=[]; ids.forEach(id=>(FACTS[id]||[]).forEach(t=>out.push({id,t}))); return out; }
+function fxName(id){ return (FX_PLACES.find(p=>p.id===id)||{}).name||id; }
+function funCard(key, ids){
+  const pool = fxPool(ids); if (!pool.length) return '';
+  S.ui.fx = S.ui.fx || {};
+  if (S.ui.fx[key] === undefined){ let h=0; for (const c of String(key)+jpNow().date) h=(h*31+c.charCodeAt(0))>>>0; S.ui.fx[key] = h % pool.length; }
+  const f = pool[S.ui.fx[key] % pool.length];
+  return `<div class="card fx"><div class="row sp" style="align-items:baseline"><span class="lbl" style="color:var(--accent)">Did you know · ${esc(fxName(f.id))}</span>
+    <button class="lnk small" data-fx="${esc(String(key))}" data-fxn="${pool.length}">Another →</button></div>
+    <div style="margin-top:6px">${esc(f.t)}</div></div>`;
+}
+function vFacts(){
+  const sel = S.ui.fxPlace || 'tokyo', list = FACTS[sel] || [];
+  const total = FX_PLACES.reduce((a,p)=>a+(FACTS[p.id]||[]).length,0);
+  return `<h2>Fun facts</h2><p class="small muted" style="margin:-6px 0 12px">${total} facts about the places on your trip.</p>
+    <div class="filters">${FX_PLACES.map(p=>`<button data-fxplace="${p.id}" class="${p.id===sel?'on':''}">${esc(p.name)} <span class="muted">${(FACTS[p.id]||[]).length}</span></button>`).join('')}</div>
+    <div class="card"><ol class="fxlist">${list.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
+}
 function vMore(){
   return `<h2>More</h2><div class="more">
     <a href="#stays"><span class="kanji">宿 · 便</span><span>Stays &amp; flights</span></a>
     <a href="#tips"><span class="kanji">心得</span><span>Tips</span></a>
+    <a href="#facts"><span class="kanji">豆知識</span><span>Fun facts</span></a>
     <a href="#settings"><span class="kanji">設定</span><span>Settings</span></a></div>`;
 }
-const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, settings:vSettings, more:vMore};
-const TAB_OF = {stays:'more', tips:'more', settings:'more'};
+const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, settings:vSettings, more:vMore};
+const TAB_OF = {stays:'more', tips:'more', facts:'more', settings:'more'};
 function route(){
   if (!DATA){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('on')); $('#app').innerHTML = vLanding(); return; }
   const h = (location.hash||'#today').slice(1), v = views[h] ? h : 'today';
@@ -963,6 +1003,8 @@ document.addEventListener('click', e=>{
     dropAssets(E.uploaded); E = null; renderModal(); route(); saveDay(date); return; }
   if (ds.preadd !== undefined){ openPre(null); return; }
   if (ds.preedit){ openPre(ds.preedit); return; }
+  if (ds.fx !== undefined){ S.ui.fx[ds.fx] = (S.ui.fx[ds.fx] + 1 + Math.floor(Math.random()*(+ds.fxn-1))) % +ds.fxn; route(); return; }
+  if (ds.fxplace){ S.ui.fxPlace = ds.fxplace; route(); return; }
   if (ds.themeSet){ setTheme(ds.themeSet); return; }
   if (ds.disp){ setDisp(ds.disp); return; }
   if (ds.enewcat !== undefined){ const n = ($('#e_newcat').value||'').trim(); if (!n) return; readForm();
