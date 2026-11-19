@@ -291,8 +291,8 @@ const catName = id => (ST().cats.find(c=>c.id===id) || ST().cats.find(c=>c.id===
 const catExists = id => ST().cats.some(c=>c.id===id);
 
 const CURS = ['IDR','JPY','MYR','SGD'];
-const DEFAULT_RATES = {JPY:110, MYR:4400, SGD:13900};
-function rates(){ const r = ST().rates || {}; return {IDR:1, JPY:+r.JPY || +ST().fx || 110, MYR:+r.MYR || 4400, SGD:+r.SGD || 13900}; }
+const DEFAULT_RATES = {JPY:110, MYR:3850, SGD:13900};
+function rates(){ const r = ST().rates || {}; return {IDR:1, JPY:+r.JPY || +ST().fx || 110, MYR:+r.MYR || 3850, SGD:+r.SGD || 13900}; }
 let DISP = ls.get('disp','IDR'); if (!CURS.includes(DISP)) DISP = 'IDR';
 function fmtCur(a, cur){
   if (cur==='IDR') return 'Rp' + Math.round(a).toLocaleString('id-ID');
@@ -827,20 +827,22 @@ function bkRow(b){
 }
 function vBookings(){
   const f = S.ui.bfilter;
-  const isDone = b => /LOCKED|RESERVED/.test(b.Status) || ST().bdone[b.Item];
+  const isDone = b => (/LOCKED|RESERVED|PAID|BOOKED|FLEX/.test(b.Status) && !/PENDING|NOT PAID/.test(b.Status)) || ST().bdone[b.Item];
   const list = DATA.bookings.filter(b => f==='all' || (f==='todo' && !isDone(b)) || (f==='done' && isDone(b)));
   const todo = DATA.bookings.filter(b=>!isDone(b)).length;
   return `<h2>Booking checklist</h2><p class="small muted">${todo} item${todo===1?'':'s'} still open.</p>
     <div class="filters">${['all','todo','done'].map(x=>`<button data-bf="${x}" class="${f===x?'on':''}">${{all:'All',todo:'To do',done:'Done / locked'}[x]}</button>`).join('')}</div>
     ${list.map(bkRow).join('')}
+    ${(DATA.changelog||[]).length ? `<h2>Latest changes</h2><div class="card">${DATA.changelog.map(c=>`<div style="padding:8px 0;border-bottom:1px solid var(--line2)"><div class="small muted">${esc(c.Date)}</div><div class="small">${esc(c['What changed'])}</div>${c['Cost / booking impact']?`<div class="small muted">${esc(c['Cost / booking impact'])}</div>`:''}</div>`).join('')}</div>`:''}
     <h2>Optional swaps</h2>${DATA.swaps.map(s=>`<div class="card"><h3>${esc(s[0])}</h3><div class="small">${esc(s[1])}</div></div>`).join('')}
     <div class="card" style="border-left:5px solid var(--amber)"><h3>Return-flight TripFlex</h3><div class="small">${esc(DATA.tripflex)}</div></div>`;
 }
 
 function vStays(){
-  const fl = [['Sat 21 Nov','VietJet VJ826','KUL T1 13:35 → SGN 14:30','Booked'],['Sat 21 Nov','VietJet VJ820','SGN 17:20 → HND T3 01:00 (+1)','Booked'],
+  const mj = (DATA.major||[]).map(m=>[m.date, `${m.mode} · ${m.route}`, `${m.dep}${m.arr?' → '+m.arr:''}${m.seats&&m.seats!=='—'?' · '+m.seats:''}`, `${m.status}${m.paid?' · '+m.paid:''}`, m.note]);
+  const fl = mj.length ? mj : [['Sat 21 Nov','VietJet VJ826','KUL T1 13:35 → SGN 14:30','Booked'],['Sat 21 Nov','VietJet VJ820','SGN 17:20 → HND T3 01:00 (+1)','Booked'],
     ['Mon 30 Nov','Peach MM115','KIX T2 16:15 → CTS 18:10 · 1×20kg','Selected · purchase TBD'],['Fri 4 Dec','PAL PR405 + PR509','CTS 13:30 → MNL T1 → SIN 23:45 · 2×23kg','Pending purchase']];
-  return `<h2>Flights</h2><div>${fl.map(f=>`<div class="card"><div class="lbl">${f[0]}</div><h3 style="margin-top:4px">${f[1]}</h3><div class="small" style="font-family:var(--mono);font-size:12px">${f[2]}</div><div style="margin-top:6px">${badge(/Booked/.test(f[3])?'Fixed':'Book')} <span class="small muted">${f[3]}</span></div></div>`).join('')}</div>
+  return `<h2>Flights &amp; transfers</h2><div>${fl.map(f=>`<div class="card"><div class="lbl">${f[0]}</div><h3 style="margin-top:4px">${f[1]}</h3><div class="small" style="font-family:var(--mono);font-size:12px">${f[2]}</div><div style="margin-top:6px">${badge(/Booked|PAID/.test(f[3])?'Fixed':'Book')} <span class="small muted">${esc(f[3])}</span>${f[4]?`<div class="small muted" style="margin-top:4px">${esc(f[4])}</div>`:''}</div></div>`).join('')}</div>
   <h2>Stays</h2>
   ${DATA.hotels.map(h=>`<div class="card"><div class="row sp"><h3>${esc(h.Property)}${/^No hotel/.test(h.Property)?'':` <a class="lnk small" style="font-weight:400" href="https://www.google.com/maps/search/?api=1&query=${mapQ(h.Property.replace(/\s\d+$/,'')+' '+h.Stay+' Japan')}" target="_blank" rel="noopener">Map ↗</a>`}</h3><span class="badge ${/LOCKED|FIXED/.test(h['Booking status'])?'b-fixed':'b-flex'}">${esc(h['Booking status'])}</span></div>
     <div class="muted small" style="margin-bottom:8px">${esc(h.Stay)} · ${esc(h['Check-in'])} → ${esc(h['Check-out'])} · ${h.Nights} night${h.Nights==1?'':'s'}</div>
@@ -1107,17 +1109,29 @@ function vPhrases(){
       return `<button class="phr ${on?'on':''}" data-ph="${k}"><span class="en">${esc(en)}</span><span class="ja" lang="ja">${esc(ja)}</span><span class="ro">${esc(ro)}</span></button>`; }).join('')}`).join('')}
   <div class="card" style="margin-top:26px"><h3>Emergency numbers</h3><div class="small">Police <b>110</b> · Ambulance and fire <b>119</b>. Both are free to call from any phone.</div></div>`;
 }
+
+function vShop(){
+  const list = DATA.shopping || [], pend = (DATA.pending||[]).filter(p=>p.status==='PENDING');
+  const tone = st => /DONE|RECEIVED|BOOKED|PAID/.test(st) ? 'var(--green)' : /BOOK|SHOP/.test(st) ? 'var(--accent)' : 'var(--muted)';
+  return `<h2>Shopping &amp; gear</h2><p class="small muted" style="margin:-6px 0 4px">Planning list from the sheet. Prices are targets or example quotes, not spending.</p>
+    ${list.map(x=>`<div class="card"><div class="row sp" style="align-items:baseline"><span class="lbl">${esc(x.Date)} · ${esc(x['City / area'])}</span><span class="lbl" style="color:${tone(x.Status)}">${esc(x.Status)}</span></div>
+      <h3 style="margin-top:4px">${esc(x['Purchase / activity'])}</h3><div class="small">${esc(x['Shopping focus / specification'])}</div>
+      ${x['Target cap JPY']||x['Quote / estimate JPY']?`<div class="small" style="margin-top:6px;font-family:var(--mono)">${x['Target cap JPY']?'Target up to ¥'+esc(x['Target cap JPY']).replace(/\./g,','):''}${x['Quote / estimate JPY']?' Quote ¥'+esc(x['Quote / estimate JPY']).replace(/\./g,','):''}</div>`:''}
+      ${x['Trade-off / verification']?`<div class="small muted" style="margin-top:6px">${esc(x['Trade-off / verification'])}</div>`:''}</div>`).join('')}
+    ${pend.length?`<h2>Still to book</h2>${pend.map(p=>`<div class="card" style="border-left:2px solid var(--accent)"><h3>${esc(p.item)}</h3><div class="small">${esc(p.note)}</div><div class="small" style="margin-top:6px;font-family:var(--mono)">about ${p.cur==='JPY'?fmtJ(p.amt):fmtR(p.amt)}</div></div>`).join('')}`:''}`;
+}
 function vMore(){
   return `<h2>More</h2><div class="more">
     <a href="#stays"><span class="kanji">宿 · 便</span><span>Stays &amp; flights</span></a>
     <a href="#tips"><span class="kanji">心得</span><span>Tips</span></a>
+    <a href="#shop"><span class="kanji">買物</span><span>Shopping</span></a>
     <a href="#convert"><span class="kanji">両替</span><span>Converter</span></a>
     <a href="#phrases"><span class="kanji">会話</span><span>Phrases</span></a>
     <a href="#facts"><span class="kanji">豆知識</span><span>Fun facts</span></a>
     <a href="#settings"><span class="kanji">設定</span><span>Settings</span></a></div>`;
 }
-const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, convert:vConv, phrases:vPhrases, settings:vSettings, more:vMore};
-const TAB_OF = {stays:'more', tips:'more', facts:'more', convert:'more', phrases:'more', settings:'more'};
+const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, convert:vConv, phrases:vPhrases, shop:vShop, settings:vSettings, more:vMore};
+const TAB_OF = {stays:'more', tips:'more', facts:'more', convert:'more', phrases:'more', shop:'more', settings:'more'};
 /* ---------- day moods ---------- */
 const VIBES = [
  {n:'Sky miles',k:'streak',c:['#9db6d1','#b8c9dc'],L:['#eff2f5','#3b6ea5'],D:['#12161b','#7fa6d4'],cnt:9},

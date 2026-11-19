@@ -1,1 +1,2686 @@
-{"days":[{"title":"Sat 21 Nov • Travel Day (not Japan Day 1)","route":"KUL → SGN → HND","stay":"No hotel • Overnight flight","theme":"Kuala Lumpur → Tokyo travel only","items":[{"time":"10:30","area":"Kuala Lumpur","act":"Arrive KUL Terminal 1; check in / baggage drop","jpy":0,"idr":0,"mode":"Airport transfer from KL stay","dur":"—","ticket":"VietJet booking","status":"Fixed","note":"Allow generous buffer for international departure.","src":""},{"time":"13:35","area":"KUL → SGN","act":"VJ826 KUL → SGN","jpy":0,"idr":0,"mode":"Flight","dur":"1h55","ticket":"Booked","status":"Fixed","note":"Flight departs 13:35; arrives SGN 14:30.","src":""},{"time":"14:30","area":"SGN Airport","act":"Transit at SGN","jpy":0,"idr":0,"mode":"Walk / airport transfer","dur":"2h50","ticket":"Same itinerary","status":"Fixed","note":"Stay airside if instructed; follow transfer signage.","src":""},{"time":"17:20","area":"SGN → HND","act":"VJ820 SGN → Tokyo Haneda","jpy":0,"idr":0,"mode":"Flight","dur":"5h40","ticket":"Booked","status":"Fixed","note":"Overnight flight; arrival is 01:00 on 22 Nov.","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-21"},{"title":"Sun 22 Nov • Japan Day 1","route":"HND T3 → Akabane → Shinjuku / Harajuku","stay":"Miki Hall Akabane 305 • Night 1/3","theme":"Airport rest + gentle first Tokyo day","items":[{"time":"01:00","area":"Haneda Terminal 3","act":"Land at HND; immigration + baggage","jpy":0,"idr":0,"mode":"Airport procedures","dur":"~45–75 min","ticket":"—","status":"Fixed","note":"No hotel tonight. Keep the first morning intentionally light.","src":""},{"time":"02:00","area":"Haneda Terminal 3","act":"Finish arrival procedures; find a comfortable public-area rest spot","jpy":0,"idr":0,"mode":"Walk within T3","dur":"—","ticket":"—","status":"Fixed-ish","note":"Terminal 3 is open 24h and international passengers may stay overnight after using a flight.","src":"https://www.tokyo-haneda.com/en/faq/terminal_details.html"},{"time":"02:30","area":"Haneda Terminal 3","act":"Rest in Terminal 3 until morning","jpy":0,"idr":0,"mode":"—","dur":"~4h","ticket":"—","status":"Flexible","note":"Public seating is not a hotel bed; expect lights / announcements and prioritize recovery.","src":""},{"time":"06:30","area":"Haneda Terminal 3","act":"Shower + breakfast before leaving the airport","jpy":2200,"idr":242000,"mode":"Walk within T3","dur":"45–60 min","ticket":"Pay on site","status":"Flexible","note":"T3 shower room is 24h; Tokyo Sky Kitchen food court and Air LAWSON have 24h options.","src":"https://tokyo-haneda.com/en/service/facilities/shower_room.html"},{"time":"07:30","area":"HND T3 → Akabane","act":"Travel to Akabane Station","jpy":700,"idr":77000,"mode":"Keikyu / JR (1–2 transfers)","dur":"~55–70 min","ticket":"IC card","status":"Flexible","note":"Exact route depends on morning service; avoid taxis unless exhausted.","src":""},{"time":"08:45","area":"Akabane Station","act":"Store suitcases in coin lockers / Multi-Ecube","jpy":800,"idr":88000,"mode":"Walk","dur":"10–20 min","ticket":"Locker","status":"Fixed-ish","note":"Host confirmed no early luggage drop. Large lockers are limited; reservable Multi-Ecube is worth considering.","src":"https://www.jreast.co.jp/e/stations/e34.html"},{"time":"09:15","area":"Akabane → Shinjuku","act":"JR to Shinjuku; walk to Shinjuku Gyoen","jpy":260,"idr":28600,"mode":"JR","dur":"~15–20 min + walk","ticket":"IC card","status":"Fixed-ish","note":"Akabane is a strong JR base; this is a short direct/near-direct west-Tokyo trip.","src":""},{"time":"09:45","area":"Shinjuku","act":"Shinjuku Gyoen autumn walk","jpy":500,"idr":55000,"mode":"Walk","dur":"~1h45","ticket":"Entry ticket","status":"Fixed-ish","note":"Open Sun 22 Nov; 24 Nov is a closed day.","src":"https://policies.env.go.jp/national-garden/shinjukugyoen/english/event/calendar/202611.html"},{"time":"12:00","area":"Shinjuku → Meiji Jingu / Harajuku","act":"Simple lunch → Meiji Jingu → Harajuku / Omotesando","jpy":1500,"idr":165000,"mode":"JR / walk","dur":"~3h","ticket":"IC card","status":"Flexible","note":"Keep Cat Street / shopping light. The goal is a pleasant first day, not maximum coverage.","src":""},{"time":"15:30","area":"Harajuku → Akabane","act":"Return to Akabane → collect luggage → self check-in / rest; local dinner later","jpy":3000,"idr":330000,"mode":"JR + walk","dur":"~25–35 min","ticket":"IC card","status":"Fixed-ish","note":"No onsite staff. After check-in, keep the evening local and sleep early.","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-22"},{"title":"Mon 23 Nov • Japan Day 2","route":"Akabane → Asakusa / Ueno → Ginza / Marunouchi","stay":"Miki Hall Akabane 305 • Night 2/3","theme":"East Tokyo classics + Ginza / Marunouchi","items":[{"time":"07:15","area":"Akabane → Asakusa","act":"Depart hotel for Asakusa","jpy":300,"idr":33000,"mode":"JR / subway","dur":"~35–45 min","ticket":"IC card","status":"Flexible","note":"Labor Thanksgiving Day national holiday; go early to reduce crowds.","src":""},{"time":"08:00","area":"Asakusa","act":"Senso-ji + Kaminarimon before peak crowds","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Temple grounds are best before tour groups arrive.","src":""},{"time":"09:30","area":"Asakusa","act":"Nakamise / Asakusa snack & coffee","jpy":800,"idr":88000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Shops open progressively through the morning.","src":""},{"time":"11:00","area":"Asakusa → Ueno","act":"Ueno / Ameyoko market stroll & shopping","jpy":300,"idr":33000,"mode":"Tokyo Metro Ginza Line / walk","dur":"10–15 min","ticket":"IC card","status":"Flexible","note":"Food stalls + budget shopping; skip if too crowded on holiday.","src":""},{"time":"12:30","area":"Ueno","act":"Budget lunch around Ueno","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Ramen / soba / curry / donburi.","src":""},{"time":"14:00","area":"Ueno → Ginza","act":"Ginza shopping: Itoya / MUJI / department-store basements","jpy":300,"idr":33000,"mode":"Tokyo Metro Ginza Line","dur":"15–20 min","ticket":"IC card","status":"Flexible","note":"Choose stores based on interest; no need to visit all.","src":""},{"time":"17:00","area":"Ginza → Marunouchi","act":"Tokyo Station / Marunouchi evening walk","jpy":0,"idr":0,"mode":"Tokyo Metro / walk","dur":"10–15 min","ticket":"—","status":"Flexible","note":"Seasonal illuminations if operating; otherwise architecture + food halls.","src":""},{"time":"18:30","area":"Marunouchi / Tokyo Station","act":"Nicer dinner around Tokyo Station / Ginza","jpy":3000,"idr":330000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Good day for sushi / yakiniku / izakaya.","src":""},{"time":"20:30","area":"Tokyo Station → Akabane","act":"Return to hotel","jpy":300,"idr":33000,"mode":"JR / subway","dur":"~20–30 min","ticket":"IC card","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-23"},{"title":"Tue 24 Nov • Japan Day 3","route":"Akabane → Shimokitazawa → Shibuya","stay":"Miki Hall Akabane 305 • Night 3/3","theme":"Shimokitazawa thrifting + SHIBUYA SKY sunset","items":[{"time":"09:00","area":"Akabane","act":"Slow breakfast / pack purchases","jpy":600,"idr":66000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Many Shimokitazawa shops open around 11:00, so no need to rush.","src":""},{"time":"10:15","area":"Akabane → Shimokitazawa","act":"Travel to Shimokitazawa","jpy":300,"idr":33000,"mode":"Odakyu / Keio Inokashira / subway","dur":"~40–50 min","ticket":"IC card","status":"Flexible","note":"Route depends on hotel.","src":""},{"time":"10:45","area":"Shimokitazawa","act":"Shimokitazawa thrift / vintage / café crawl","jpy":2000,"idr":220000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Browse rather than over-schedule. Focus on shops you actually like.","src":""},{"time":"13:15","area":"Shimokitazawa","act":"Budget lunch in Shimokitazawa","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Curry / ramen / café lunch.","src":""},{"time":"14:20","area":"Shimokitazawa → Shibuya","act":"Train Shimokitazawa → Shibuya","jpy":180,"idr":19800,"mode":"Keio Inokashira Line","dur":"~10 min","ticket":"IC card","status":"Fixed-ish","note":"Very easy transfer; keeps the day geographically logical.","src":""},{"time":"14:45","area":"Shibuya","act":"Hachiko / Shibuya Crossing / quick shopping","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Keep this short so you are not late for SHIBUYA SKY.","src":""},{"time":"15:20","area":"Shibuya","act":"Arrive at SHIBUYA SKY entrance / lockers","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"Timed entry","status":"Book","note":"Target 15:40–16:00 entry. Tokyo sunset on 24 Nov is ~16:29.","src":"https://www.timeanddate.com/sun/japan/tokyo?month=11"},{"time":"15:40","area":"Shibuya","act":"SHIBUYA SKY: daylight → sunset → blue hour","jpy":3400,"idr":374000,"mode":"Elevator / walk","dur":"~1h30","ticket":"Advance timed ticket","status":"Book","note":"Official adult price after 15:00 is ¥3,400; entry slots sell in 20-minute windows.","src":"https://www.shibuya-scramble-square.com/sky/ticket/"},{"time":"17:30","area":"Shibuya","act":"Dinner around Shibuya","jpy":2800,"idr":308000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"One nicer meal of the day.","src":""},{"time":"19:00","area":"Shibuya","act":"MEGA Don Quijote Shibuya shopping","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"No ticket","status":"Flexible","note":"Good place to group drugstore/souvenir purchases instead of spending daytime sightseeing hours.","src":""},{"time":"20:30","area":"Shibuya","act":"Shibuya PARCO / Center-gai / final Tokyo shopping","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Optional","note":"Skip if tired or if Don Quijote takes longer.","src":""},{"time":"22:00","area":"Shibuya","act":"Return to hotel; pack for Fuji","jpy":300,"idr":33000,"mode":"JR / subway","dur":"20–40 min","ticket":"IC card","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-24"},{"title":"Wed 25 Nov • Japan Day 4","route":"Akabane → Shinjuku → Kawaguchiko","stay":"HAOSTAY Eirin • 1 night","theme":"Tokyo → Kawaguchiko; Fuji views + ropeway + lakeside","items":[{"time":"06:30","area":"Miki Hall → Akabane Station","act":"Check out; walk to Akabane Station with luggage","jpy":0,"idr":0,"mode":"Walk","dur":"~5–10 min","ticket":"—","status":"Fixed","note":"Leave enough time for station navigation with luggage.","src":""},{"time":"06:50","area":"Akabane → Shinjuku","act":"JR to Shinjuku Expressway Bus Terminal","jpy":260,"idr":28600,"mode":"JR + walk","dur":"~20–30 min","ticket":"IC card","status":"Fixed-ish","note":"Aim to reach the bus terminal at least 20–30 minutes before departure.","src":""},{"time":"07:45","area":"Shinjuku → Kawaguchiko","act":"Highway bus to Kawaguchiko","jpy":2200,"idr":242000,"mode":"Highway bus","dur":"~2h","ticket":"Reserve bus seat","status":"Book","note":"07:45 is a planning target; choose the nearest practical reserved departure.","src":""},{"time":"09:45","area":"Kawaguchiko Station → HAOSTAY Eirin","act":"Arrive; walk toward Eirin and leave luggage if permitted","jpy":0,"idr":0,"mode":"Walk","dur":"~6–8 min","ticket":"—","status":"Flexible","note":"If Eirin cannot hold luggage before check-in, use Kawaguchiko Station lockers instead.","src":""},{"time":"10:30","area":"Lake Kawaguchi / Ropeway","act":"Mt Fuji Panoramic Ropeway","jpy":1200,"idr":132000,"mode":"Walk / local bus","dur":"~10–20 min","ticket":"Round-trip ticket","status":"Book","note":"25–26 Nov shortened hours: last ascent 15:00, descent 15:20. Do this early.","src":"https://www.mtfujiropeway.jp/en/"},{"time":"12:00","area":"Lake Kawaguchi","act":"Simple lunch near lake / station","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"13:00","area":"North shore / Oishi Park","act":"Oishi Park + north-shore Fuji views","jpy":500,"idr":55000,"mode":"Red Line sightseeing bus","dur":"~25–35 min","ticket":"Local bus","status":"Flexible","note":"Prioritize clear Fuji views; swap stops if cloud forecast changes.","src":""},{"time":"15:00","area":"Lake Kawaguchi","act":"Momiji Corridor / lakeside autumn walk","jpy":0,"idr":0,"mode":"Walk / local bus","dur":"~10–20 min","ticket":"—","status":"Optional","note":"Late-season foliage; keep flexible based on actual leaves/weather.","src":""},{"time":"16:30","area":"HAOSTAY Eirin","act":"Check in / private bath / sunset rest","jpy":0,"idr":0,"mode":"Walk","dur":"~6–8 min from station area","ticket":"—","status":"Fixed-ish","note":"One-night stay; private bathroom chosen for a small premium over Guu.","src":""},{"time":"18:30","area":"Kawaguchiko","act":"Dinner","jpy":3000,"idr":330000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-25"},{"title":"Thu 26 Nov • Japan Day 5","route":"Kawaguchiko → Mishima → Kyoto / Shijo-Karasuma","stay":"WeBase KYOTO • Night 1/4","theme":"Early Fuji viewpoint + transfer to Kyoto","items":[{"time":"06:20","area":"Kawaguchiko / Fujiyoshida","act":"Weather check; leave for Chureito Pagoda if Fuji is clear","jpy":0,"idr":0,"mode":"Fujikyuko train + walk","dur":"30–40 min","ticket":"IC / local ticket","status":"Flexible","note":"Only do this if visibility is good; otherwise sleep longer / lakeside walk.","src":""},{"time":"07:00","area":"Chureito / Arakurayama","act":"Chureito Pagoda / Arakurayama viewpoint","jpy":0,"idr":0,"mode":"Walk / stairs","dur":"~1h","ticket":"—","status":"Optional","note":"Iconic Fuji view; allow enough time to return and collect luggage.","src":""},{"time":"08:45","area":"HAOSTAY Eirin / Kawaguchiko","act":"Breakfast + collect luggage / check out","jpy":800,"idr":88000,"mode":"Walk / local train","dur":"—","ticket":"—","status":"Fixed","note":"","src":""},{"time":"10:00","area":"Kawaguchiko → Mishima","act":"Kawaguchiko → Mishima","jpy":2500,"idr":275000,"mode":"Highway bus","dur":"~1h40","ticket":"Reserve seat","status":"Book","note":"Exact departure TBD; choose a connection with comfortable Shinkansen buffer.","src":""},{"time":"12:15","area":"Mishima → Kyoto","act":"Mishima → Kyoto","jpy":10800,"idr":1188000,"mode":"Tokaido Shinkansen","dur":"~2h","ticket":"Shinkansen ticket","status":"Book later","note":"No need to prebook for visa; reserve after visa / timing is settled.","src":""},{"time":"14:30","area":"Kyoto Station → WeBase KYOTO","act":"Arrive Kyoto → subway to Shijo → walk to WeBase; check in / drop luggage","jpy":300,"idr":33000,"mode":"Kyoto Subway Karasuma Line + walk","dur":"~10–15 min","ticket":"IC card","status":"Flexible","note":"WeBase is 5 min from Shijo Exit 6 / 7 min from Karasuma Station.","src":"https://we-base.jp/kyoto/access/"},{"time":"16:00","area":"Nishiki / Teramachi","act":"Nishiki Market + Teramachi / Shinkyogoku","jpy":1000,"idr":110000,"mode":"Walk / subway","dur":"—","ticket":"—","status":"Flexible","note":"If transfer runs late, move Nishiki shopping to 28 Nov afternoon.","src":""},{"time":"18:00","area":"Gion / Yasaka / Pontocho","act":"Gion / Yasaka / Pontocho evening walk","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Low-pressure orientation evening.","src":""},{"time":"19:00","area":"Central Kyoto","act":"Dinner","jpy":2800,"idr":308000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-26"},{"title":"Fri 27 Nov • Japan Day 6","route":"Shijo-Karasuma → Fushimi Inari → Higashiyama","stay":"WeBase KYOTO • Night 2/4","theme":"Fushimi Inari early + Higashiyama / Kiyomizu autumn evening","items":[{"time":"05:30","area":"WeBase → Fushimi Inari","act":"Leave hotel for Fushimi Inari","jpy":300,"idr":33000,"mode":"JR Nara Line / Keihan","dur":"~30–40 min","ticket":"IC card","status":"Fixed-ish","note":"Early start is intentional to beat crowds.","src":""},{"time":"06:00","area":"Fushimi Inari","act":"Fushimi Inari Taisha + torii trail to Yotsutsuji","jpy":0,"idr":0,"mode":"Walk / hike","dur":"2–2.5h","ticket":"No ticket","status":"Fixed","note":"Shrine grounds are accessible very early; full summit not necessary.","src":"https://inari.jp/en/"},{"time":"08:45","area":"Fushimi → Higashiyama","act":"Breakfast / coffee near Fushimi or Gion","jpy":800,"idr":88000,"mode":"Keihan / walk","dur":"20–30 min","ticket":"—","status":"Flexible","note":"","src":""},{"time":"10:00","area":"Higashiyama","act":"Higashiyama: Yasaka Pagoda, Ninenzaka, Sannenzaka","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Browse slowly; avoid duplicating too many souvenir shops.","src":""},{"time":"12:30","area":"Higashiyama","act":"Lunch","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"13:30","area":"Gion / Maruyama","act":"Gion / Yasaka Shrine / Maruyama Park / café","jpy":800,"idr":88000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Good autumn atmosphere; café break before evening illumination.","src":""},{"time":"17:00","area":"Higashiyama","act":"Early dinner","jpy":2500,"idr":275000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Eat before the night-viewing crowd.","src":""},{"time":"18:00","area":"Kiyomizu-dera","act":"Kiyomizu-dera autumn night illumination","jpy":500,"idr":55000,"mode":"Walk / bus","dur":"20–30 min","ticket":"Entry ticket","status":"Optional","note":"2026 autumn night viewing runs 21–30 Nov until 21:30 (last entry 21:00). If you hate crowds, replace with a 06:00 Kiyomizu visit and use evening for Pontocho.","src":"https://www.kiyomizudera.or.jp/access/"},{"time":"20:15","area":"Kiyomizu → WeBase","act":"Return to hotel","jpy":300,"idr":33000,"mode":"Bus / subway / walk","dur":"~25–35 min","ticket":"IC card","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-27"},{"title":"Sat 28 Nov • Japan Day 7","route":"Shijo-Karasuma → Arashiyama → Central Kyoto","stay":"WeBase KYOTO • Night 3/4","theme":"Arashiyama early + central Kyoto shopping","items":[{"time":"06:15","area":"WeBase → Arashiyama","act":"Travel to Arashiyama","jpy":300,"idr":33000,"mode":"Hankyu via Karasuma/Katsura or JR","dur":"~30–40 min","ticket":"IC card","status":"Fixed-ish","note":"Saturday: arrive early before the main crowd.","src":""},{"time":"07:00","area":"Arashiyama","act":"Arashiyama Bamboo Grove","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"Best before 08:00.","src":""},{"time":"08:15","area":"Arashiyama","act":"Togetsukyo Bridge / riverside","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"08:45","area":"Arashiyama","act":"Tenryu-ji / garden","jpy":500,"idr":55000,"mode":"Walk","dur":"—","ticket":"Entry ticket","status":"Flexible","note":"Confirm exact opening before travel.","src":""},{"time":"10:00","area":"Arashiyama","act":"Okochi Sanso / backstreets / café","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"Entry / café","status":"Optional","note":"Choose one extra experience; do not overpack the morning.","src":""},{"time":"11:45","area":"Arashiyama","act":"Lunch in Arashiyama","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"13:15","area":"Arashiyama → Central Kyoto","act":"Return to central Kyoto","jpy":300,"idr":33000,"mode":"JR / Hankyu","dur":"30–45 min","ticket":"IC card","status":"Flexible","note":"","src":""},{"time":"14:15","area":"Nishiki / Teramachi","act":"Nishiki Market / Teramachi / Shinkyogoku shopping","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Use this slot if Nishiki was skipped on 26 Nov.","src":""},{"time":"17:30","area":"Pontocho / Kamo River","act":"Pontocho / Kamo River evening","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Optional","note":"","src":""},{"time":"18:30","area":"Central Kyoto","act":"Dinner","jpy":2800,"idr":308000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-28"},{"title":"Sun 29 Nov • Japan Day 8","route":"Shijo-Karasuma → Uji → Nara","stay":"WeBase KYOTO • Night 4/4","theme":"Matcha morning in Uji + Nara afternoon","items":[{"time":"07:45","area":"WeBase → Uji","act":"Kyoto → Uji","jpy":300,"idr":33000,"mode":"JR Nara Line","dur":"~40–50 min","ticket":"IC card","status":"Fixed-ish","note":"Leave before the main matcha-shop queues.","src":""},{"time":"08:30","area":"Uji","act":"Uji River / Byodoin area morning walk","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"09:00","area":"Uji","act":"Byodoin + Hoshokan Museum","jpy":700,"idr":77000,"mode":"Walk","dur":"—","ticket":"Entry ticket","status":"Flexible","note":"2026 special exhibition runs through 13 Dec; museum hours 09:00–17:00.","src":"https://www.byodoin.or.jp/en/news/cat2/2026-3/"},{"time":"10:15","area":"Uji","act":"Matcha café / tea shopping on Byodoin Omotesando","jpy":1500,"idr":165000,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"This is one of your priority experiences; allow time rather than rushing.","src":""},{"time":"11:45","area":"Uji → Nara","act":"Uji → Nara","jpy":600,"idr":66000,"mode":"JR Nara Line","dur":"35–50 min","ticket":"IC card","status":"Fixed-ish","note":"","src":""},{"time":"12:45","area":"Nara Park","act":"Nara Park + deer","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"","src":""},{"time":"13:30","area":"Todai-ji","act":"Todai-ji Great Buddha Hall","jpy":800,"idr":88000,"mode":"Walk","dur":"—","ticket":"Cash ticket","status":"Fixed-ish","note":"Nov–Mar hours: 08:00–17:00.","src":"https://www.todaiji.or.jp/information/haikan/"},{"time":"14:45","area":"Nara","act":"Kasuga Taisha / Naramachi / snack","jpy":800,"idr":88000,"mode":"Walk / local bus","dur":"—","ticket":"—","status":"Flexible","note":"Choose based on energy; no need to do every temple.","src":""},{"time":"17:15","area":"Nara → WeBase","act":"Nara → Kyoto","jpy":800,"idr":88000,"mode":"JR / Kintetsu","dur":"~55–70 min","ticket":"IC card","status":"Flexible","note":"","src":""},{"time":"18:30","area":"Central Kyoto","act":"Dinner near hotel","jpy":2500,"idr":275000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-29"},{"title":"Mon 30 Nov • Japan Day 9","route":"WeBase Kyoto → KIX T2 → CTS → Susukino","stay":"Quintessa Hotel Sapporo Susukino • Night 1/4","theme":"Transfer to Hokkaido on selected Peach MM115 option","items":[{"time":"08:00","area":"WeBase KYOTO","act":"Breakfast + pack / luggage check","jpy":700,"idr":77000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"09:00","area":"Shijo-Karasuma","act":"Optional nearby café / final Kyoto shopping","jpy":500,"idr":55000,"mode":"Walk","dur":"—","ticket":"—","status":"Optional","note":"Keep this close to the hotel; no major attraction on flight day.","src":""},{"time":"10:45","area":"WeBase → Kyoto Station","act":"Check out; subway to Kyoto Station","jpy":300,"idr":33000,"mode":"Subway + walk","dur":"~15–20 min","ticket":"IC card","status":"Fixed-ish","note":"WeBase checkout is 11:00. Leave with buffer.","src":"https://we-base.jp/kyoto/access/"},{"time":"11:30","area":"Kyoto Station → KIX Terminal 2","act":"Travel to Kansai Airport","jpy":2400,"idr":264000,"mode":"JR Haruka / airport transfer","dur":"~85–100 min incl. T2 transfer","ticket":"Airport train","status":"Fixed-ish","note":"Peach domestic flights use KIX Terminal 2; arrive well before baggage-drop cutoff.","src":"https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"},{"time":"13:15","area":"KIX Terminal 2","act":"Peach check-in / 20kg bag drop / lunch","jpy":1000,"idr":110000,"mode":"Airport","dur":"~2h45 before flight","ticket":"Peach booking","status":"Fixed-ish","note":"Peach bag drop/check-in is available before departure; keep a generous buffer.","src":"https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"},{"time":"16:15","area":"KIX → CTS","act":"Peach MM115 Osaka Kansai → New Chitose","jpy":12000,"idr":1287301,"mode":"Peach domestic flight","dur":"1h55","ticket":"Selected option","status":"Book","note":"Baggage-inclusive fare shown around Rp1,287,301 pp with 1×20kg checked bag.","src":"User flight-search screenshot"},{"time":"18:10","area":"CTS → Susukino","act":"Arrive CTS; collect bag → JR Rapid Airport to Sapporo → subway to Susukino","jpy":1500,"idr":165000,"mode":"JR + subway + walk","dur":"~70–90 min door-to-door","ticket":"IC / JR ticket","status":"Fixed-ish","note":"Quintessa is 5 min from Susukino / 4 min from Hosui-Susukino.","src":"https://quintessahotels.com/susukino/en/access/"},{"time":"19:45","area":"Susukino","act":"Check in → easy dinner / Tanukikoji-Susukino orientation","jpy":3000,"idr":330000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Keep the first evening easy after the flight.","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-11-30"},{"title":"Tue 1 Dec • Japan Day 10","route":"Susukino / Odori / Tanukikoji","stay":"Quintessa Hotel Sapporo Susukino • Night 2/4","theme":"Sapporo city + thrifting + food","items":[{"time":"08:00","area":"Susukino → Nijo Market","act":"Nijo Market breakfast / seafood bowl","jpy":2000,"idr":220000,"mode":"Walk / subway","dur":"~15–20 min","ticket":"—","status":"Flexible","note":"This can be the day's nicer meal if you choose a premium seafood bowl.","src":""},{"time":"09:30","area":"Odori / Clock Tower","act":"Odori Park / TV Tower area / Clock Tower quick stop","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"Optional admission","status":"Flexible","note":"Keep landmarks brief; shopping/food are higher priorities.","src":""},{"time":"11:00","area":"Tanukikoji","act":"Tanukikoji thrift / vintage / local shopping","jpy":2000,"idr":220000,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"Mix curated vintage with ordinary secondhand stores; do not assume all central shops are cheap.","src":""},{"time":"13:30","area":"Central Sapporo","act":"Budget lunch / café","jpy":1200,"idr":132000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"14:30","area":"Odori / underground shopping","act":"More thrifting / department store / underground shopping","jpy":0,"idr":0,"mode":"Walk / subway","dur":"—","ticket":"—","status":"Flexible","note":"Good weather-proof block if snow/rain starts.","src":""},{"time":"15:15","area":"Susukino → Mt Moiwa","act":"Mt Moiwa sunset viewpoint if skies are clear","jpy":2100,"idr":231000,"mode":"Streetcar / bus + ropeway","dur":"45–60 min each way","ticket":"Ropeway ticket","status":"Optional","note":"Weather-dependent. If cloudy, skip and keep shopping/café time.","src":""},{"time":"18:30","area":"Susukino","act":"Dinner","jpy":2800,"idr":308000,"mode":"Walk / subway","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-12-01"},{"title":"Wed 2 Dec • Japan Day 11","route":"Susukino → Sapporo Station → Otaru","stay":"Quintessa Hotel Sapporo Susukino • Night 3/4","theme":"Otaru canal + sweets + seafood","items":[{"time":"08:15","area":"Quintessa → Otaru","act":"Quintessa → subway to Sapporo Station → JR to Otaru","jpy":1000,"idr":110000,"mode":"Subway + JR","dur":"~55–70 min total","ticket":"IC / JR ticket","status":"Fixed-ish","note":"Direct and easy; leave luggage at Sapporo hotel.","src":""},{"time":"09:15","area":"Otaru Canal","act":"Otaru Canal morning walk","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"","src":""},{"time":"10:15","area":"Sakaimachi","act":"Sakaimachi Street: glass, music boxes, local shops","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""},{"time":"11:30","area":"Otaru","act":"LeTAO / dessert / coffee","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Dessert-focused stop rather than a full café crawl.","src":""},{"time":"12:30","area":"Otaru","act":"Seafood lunch","jpy":3000,"idr":330000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"One nicer meal of the day.","src":""},{"time":"14:00","area":"Otaru","act":"Otaru shopping / optional museum or canal cruise","jpy":1800,"idr":198000,"mode":"Walk","dur":"—","ticket":"Optional ticket","status":"Optional","note":"Choose one paid add-on, not several.","src":""},{"time":"16:30","area":"Otaru Canal","act":"Canal at dusk / lights","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"Early December sunset is early; stay through blue hour if weather is pleasant.","src":""},{"time":"17:30","area":"Otaru → Quintessa","act":"Otaru → Sapporo → Susukino / hotel","jpy":1000,"idr":110000,"mode":"JR + subway","dur":"~55–70 min","ticket":"IC / JR ticket","status":"Flexible","note":"","src":""},{"time":"19:00","area":"Susukino","act":"Light dinner / convenience store if still full","jpy":1000,"idr":110000,"mode":"Walk","dur":"—","ticket":"—","status":"Flexible","note":"","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-12-02"},{"title":"Thu 3 Dec • Japan Day 12","route":"Sapporo / Hokkaido flex","stay":"Quintessa Hotel Sapporo Susukino • Night 4/4","theme":"Snow-chasing day — decide close to travel","items":[{"time":"07:00","area":"Hokkaido flex day","act":"Check live snow / weather / resort opening status","jpy":0,"idr":0,"mode":"Phone / hotel desk","dur":"—","ticket":"—","status":"Flexible","note":"Decision day. Do not prebook a snow excursion months ahead.","src":""},{"time":"08:00","area":"Hokkaido flex day","act":"OPTION A: Sapporo Kokusai / mountain snow day if open and conditions are good","jpy":4500,"idr":495000,"mode":"Seasonal bus / tour","dur":"~1.5h each way","ticket":"Bus / activity","status":"Optional","note":"Best if resort is open with meaningful snow depth; book only after conditions are confirmed.","src":""},{"time":"08:00","area":"Hokkaido flex day","act":"OPTION B: Asahikawa day trip if city snow is much better than Sapporo","jpy":5500,"idr":605000,"mode":"Limited Express train","dur":"~1h25 each way","ticket":"JR ticket","status":"Optional","note":"Use as a snow-city alternative; can add ramen / café rather than forcing a ski resort.","src":""},{"time":"09:00","area":"Hokkaido flex day","act":"OPTION C: Stay in Sapporo if weather is poor","jpy":1500,"idr":165000,"mode":"Subway / walk","dur":"—","ticket":"—","status":"Optional","note":"Moerenuma / café / final shopping / packing. Do not waste money chasing bad weather.","src":""},{"time":"18:00","area":"Hokkaido flex day","act":"Final Hokkaido dinner","jpy":3500,"idr":385000,"mode":"Walk / subway","dur":"—","ticket":"—","status":"Flexible","note":"Make this the last special meal of the trip.","src":""},{"time":"20:00","area":"Hokkaido flex day","act":"Final shopping / pack / weigh luggage","jpy":0,"idr":0,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"PAL fare shown includes 2×23kg checked baggage; organize before airport morning.","src":""}],"subtotalNote":"DAY SUBTOTAL: choose ONE snow option; not additive","date":"2026-12-03"},{"title":"Fri 4 Dec • Japan Day 13 / Departure","route":"Quintessa → CTS → MNL → SIN","stay":"Check out Quintessa • No overnight in Japan","theme":"Sapporo → Singapore","items":[{"time":"07:30","area":"Quintessa / Susukino","act":"Breakfast / final packing","jpy":700,"idr":77000,"mode":"Walk","dur":"—","ticket":"—","status":"Fixed-ish","note":"Weigh luggage and keep transit essentials in carry-on.","src":""},{"time":"09:15","area":"Quintessa → CTS","act":"Check out → Susukino subway → Sapporo Station → JR Rapid Airport","jpy":1500,"idr":165000,"mode":"Subway + JR","dur":"~60–75 min door-to-door","ticket":"IC / JR ticket","status":"Fixed-ish","note":"Quintessa is ~5 min from Susukino Station; target airport arrival around 10:20–10:30.","src":"https://quintessahotels.com/susukino/en/access/"},{"time":"10:30","area":"New Chitose Airport","act":"International check-in / baggage / early lunch","jpy":1500,"idr":165000,"mode":"Airport","dur":"—","ticket":"PAL booking","status":"Fixed-ish","note":"Tell staff about the 1h10 Manila connection; confirm both boarding passes and bags tagged to SIN.","src":""},{"time":"13:30","area":"CTS → MNL","act":"PR405 New Chitose → Manila T1","jpy":0,"idr":5457370,"mode":"Philippine Airlines","dur":"6h10","ticket":"Pending purchase","status":"Book","note":"Working fare shown: Rp5,457,370 pp; fare screen showed 2×23kg checked baggage.","src":""},{"time":"18:40","area":"Manila T1","act":"Arrive MNL; transfer directly to PR509 gate","jpy":0,"idr":0,"mode":"International transfer","dur":"1h10","ticket":"Protected through itinerary","status":"Fixed-ish","note":"Booking screen says no need to collect/recheck baggage. Connection is short — do not stop for food/shopping.","src":""},{"time":"19:50","area":"MNL → SIN","act":"PR509 Manila → Singapore","jpy":0,"idr":0,"mode":"Philippine Airlines","dur":"3h55","ticket":"Same itinerary","status":"Fixed-ish","note":"","src":""},{"time":"23:45","area":"Singapore Changi T2","act":"Arrive Singapore","jpy":0,"idr":0,"mode":"Arrival formalities","dur":"—","ticket":"—","status":"Fixed-ish","note":"Trip ends in Singapore.","src":""}],"subtotalNote":"DAY SUBTOTAL (planning estimate; hotel excluded)","date":"2026-12-04"}],"hotels":[{"Stay":"Haneda arrival","Check-in":"21 Nov*","Check-out":"22 Nov","Nights":0,"Property":"No hotel — rest in HND Terminal 3","Location / access":"Terminal 3 is open 24h","Bathroom":"Airport shower facilities","Luggage plan":"Keep luggage with you overnight","Booking status":"FIXED PLAN","Price / payment":"Hotel cost: ¥0","Cancellation":"—","Notes":"*Arrive HND 01:00 on 22 Nov; rest in T3, shower/breakfast in morning, then travel to Akabane."},{"Stay":"Tokyo","Check-in":"22 Nov","Check-out":"25 Nov","Nights":3,"Property":"Miki Hall Akabane 305","Location / access":"~5 min from Akabane Station; strong JR access","Bathroom":"Private bathroom","Luggage plan":"No early drop / no onsite staff → Akabane Station locker on 22 Nov","Booking status":"LOCKED / PAID","Price / payment":"RM751 total","Cancellation":"Non-refundable","Notes":"Use station locker after leaving Haneda; collect bags before self check-in."},{"Stay":"Kawaguchiko","Check-in":"25 Nov","Check-out":"26 Nov","Nights":1,"Property":"HAOSTAY Eirin","Location / access":"~6–8 min walk from Kawaguchiko Station","Bathroom":"Private bathroom + bathtub","Luggage plan":"Ask for early bag hold; if unavailable use station locker","Booking status":"RESERVED","Price / payment":"Exact final total not recorded","Cancellation":"Per reserved rate","Notes":"Chosen over Guu for only ~Rp100k more and private bathroom."},{"Stay":"Kyoto","Check-in":"26 Nov","Check-out":"30 Nov","Nights":4,"Property":"WeBase KYOTO","Location / access":"5 min from Shijo Sta Exit 6; 7 min from Karasuma Sta","Bathroom":"Room/facility type per booking","Luggage plan":"Front desk / self-cloak available; confirm check-in details","Booking status":"LOCKED","Price / payment":"Final total not recorded","Cancellation":"Per booked rate","Notes":"Excellent base for central Kyoto; Kyoto Station is ~3 min by subway to Shijo + walk."},{"Stay":"Sapporo","Check-in":"30 Nov","Check-out":"4 Dec","Nights":4,"Property":"Quintessa Hotel Sapporo Susukino","Location / access":"5 min Susukino; 4 min Hosui-Susukino","Bathroom":"Private ensuite bathroom","Luggage plan":"Front desk + luggage support","Booking status":"LOCKED","Price / payment":"Rp3.4m total / 4 nights","Cancellation":"Per booked rate","Notes":"Good for food/nightlife; coin laundry available."}],"bookings":[{"Priority":"HIGH","Item":"Haneda overnight plan","Target date":"21–22 Nov","Target time":"01:00 arrival → morning","Current plan":"No hotel; rest in HND T3","Book when":"No booking required","Status":"LOCKED PLAN","What can change?":"Exact rest/shower timing","Decision trigger":"Terminal 3 stays open 24h; leave when trains are running","Source":"https://www.tokyo-haneda.com/en/faq/terminal_details.html"},{"Priority":"HIGH","Item":"Tokyo stay","Target date":"22–25 Nov","Target time":"—","Current plan":"Miki Hall Akabane 305","Book when":"Already paid","Status":"LOCKED","What can change?":"None unless emergency","Decision trigger":"No onsite luggage storage; locker plan required","Source":"User booking"},{"Priority":"HIGH","Item":"SHIBUYA SKY","Target date":"24 Nov","Target time":"Target 15:40–16:00 entry","Current plan":"Sunset visit","Book when":"As soon as 2-week sales window opens","Status":"Not open yet","What can change?":"Entry slot only","Decision trigger":"Sunset 16:29; choose slot early enough to reach roof","Source":"https://www.shibuya-scramble-square.com/sky/ticket/"},{"Priority":"HIGH","Item":"Tokyo → Kawaguchiko highway bus","Target date":"25 Nov","Target time":"Target 07:30–08:00","Current plan":"Shinjuku → Kawaguchiko","Book when":"After visa / once hotel fixed","Status":"TBD","What can change?":"Exact bus departure","Decision trigger":"Earlier is better because ropeway has shortened hours","Source":"https://www.mtfujiropeway.jp/en/"},{"Priority":"MED","Item":"Kawaguchiko stay","Target date":"25–26 Nov","Target time":"—","Current plan":"HAOSTAY Eirin","Book when":"Reserved","Status":"RESERVED","What can change?":"Only if booking changes","Decision trigger":"Private bath; near Kawaguchiko Station","Source":"User reservation"},{"Priority":"MED","Item":"Kawaguchiko → Mishima bus","Target date":"26 Nov","Target time":"Target ~10:00","Current plan":"Bus + Shinkansen to Kyoto","Book when":"After visa / when train timing chosen","Status":"TBD","What can change?":"Exact departure","Decision trigger":"Need comfortable transfer buffer in Mishima","Source":""},{"Priority":"HIGH","Item":"Kyoto stay","Target date":"26–30 Nov","Target time":"—","Current plan":"WeBase KYOTO","Book when":"Locked","Status":"LOCKED","What can change?":"None unless emergency","Decision trigger":"5 min Shijo / 7 min Karasuma","Source":"https://we-base.jp/kyoto/access/"},{"Priority":"MED","Item":"Kiyomizu autumn illumination","Target date":"27 Nov","Target time":"18:00","Current plan":"Optional","Book when":"No advance commitment needed unless ticketing changes","Status":"Flexible","What can change?":"Morning vs night visit","Decision trigger":"Crowd tolerance / weather","Source":"https://www.kiyomizudera.or.jp/access/"},{"Priority":"HIGH","Item":"KIX → New Chitose flight","Target date":"30 Nov","Target time":"16:15 → 18:10","Current plan":"Peach MM115 • KIX T2 → CTS","Book when":"Book when ready","Status":"SELECTED OPTION","What can change?":"Fare / purchase timing","Decision trigger":"Prefer baggage-inclusive 1×20kg option; KIX Peach domestic uses T2","Source":"https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"},{"Priority":"MED","Item":"Sapporo stay","Target date":"30 Nov–4 Dec","Target time":"—","Current plan":"Quintessa Hotel Sapporo Susukino","Book when":"Locked","Status":"LOCKED","What can change?":"None unless emergency","Decision trigger":"5 min Susukino / 4 min Hosui-Susukino; private bath","Source":"https://quintessahotels.com/susukino/en/access/"},{"Priority":"HIGH","Item":"Snow day","Target date":"3 Dec","Target time":"All day","Current plan":"Keep unbooked","Book when":"2–4 days before","Status":"Flexible","What can change?":"Destination","Decision trigger":"Live snow depth + resort opening + weather","Source":""},{"Priority":"HIGH","Item":"PAL CTS → MNL → SIN","Target date":"4 Dec","Target time":"13:30 departure","Current plan":"PR405 + PR509; 1h10 MNL T1 transfer","Book when":"When ready to commit / TripFlex decision made","Status":"Pending purchase","What can change?":"Fare / protection add-on","Decision trigger":"Through-ticket only; booking screen says no bag recheck","Source":"User Trip.com screenshot"}],"tips":[{"Category":"ARRIVAL","When / Where":"Haneda Terminal 3 • 22 Nov 01:00","Practical tip":"Terminal 3 is open 24 hours. International passengers who have used / will use an international flight may stay overnight in the terminal.","Cost / timing":"Rest ~02:30–06:30","Source / note":"https://www.tokyo-haneda.com/en/faq/terminal_details.html"},{"Category":"ARRIVAL","When / Where":"Haneda Terminal 3","Practical tip":"T3 shower room is open 24 hours. Towels, shampoo, conditioner, body soap and hair dryers are provided.","Cost / timing":"¥1,500 / 30 min","Source / note":"https://tokyo-haneda.com/en/service/facilities/shower_room.html"},{"Category":"ARRIVAL","When / Where":"Haneda Terminal 3","Practical tip":"24-hour food options include Tokyo Sky Kitchen food court and Air LAWSON in the general area.","Cost / timing":"Use for early breakfast before leaving HND","Source / note":"https://www.tokyo-haneda.com/site_resource/floor/pdf/floor__pdf_floor_map_t3_en.pdf"},{"Category":"LUGGAGE","When / Where":"Akabane • 22 Nov","Practical tip":"Miki Hall has no onsite staff / early bag drop. Go from HND to Akabane Station and use coin lockers before sightseeing.","Cost / timing":"Large Multi-Ecube lockers typically ~¥700–800; LL ~¥800–1,000","Source / note":"https://www.jre-sl.co.jp/en/ecube/"},{"Category":"LUGGAGE","When / Where":"Akabane Station","Practical tip":"JR East station map confirms coin lockers at Akabane. Reservable Multi-Ecube is useful if you want certainty for large suitcases.","Cost / timing":"Reserve ahead if carrying 2 large cases","Source / note":"https://www.jreast.co.jp/e/stations/e34.html"},{"Category":"TOKYO","When / Where":"24 Nov • Shibuya","Practical tip":"Keep SHIBUYA SKY as the fixed anchor. Target ~15:40–16:00 entry to catch daylight → sunset → blue hour.","Cost / timing":"Tokyo sunset ~16:29","Source / note":"https://www.timeanddate.com/sun/japan/tokyo?month=11"},{"Category":"TOKYO","When / Where":"24 Nov • Shibuya","Practical tip":"MEGA Don Quijote is placed after dinner / SHIBUYA SKY so shopping does not consume prime sightseeing time.","Cost / timing":"Evening block","Source / note":"Itinerary decision"},{"Category":"FUJI","When / Where":"25 Nov","Practical tip":"Mt Fuji Panoramic Ropeway has shortened hours on 25–26 Nov; do it early rather than at the end of the day.","Cost / timing":"Last ascent 15:00; last descent 15:20","Source / note":"https://www.mtfujiropeway.jp/en/"},{"Category":"FUJI","When / Where":"HAOSTAY Eirin","Practical tip":"Property is close enough to Kawaguchiko Station to walk with luggage. If pre-check-in bag hold is unavailable, use station lockers.","Cost / timing":"~6–8 min walk planning estimate","Source / note":"User booking / prior hotel check"},{"Category":"KYOTO","When / Where":"WeBase KYOTO","Practical tip":"WeBase is 5 min from Shijo Station Exit 6 and 7 min from Karasuma Station; Kyoto Station is about 3 min by subway to Shijo.","Cost / timing":"Useful for Fushimi, Uji, Nara and central Kyoto","Source / note":"https://we-base.jp/kyoto/access/"},{"Category":"FLIGHT","When / Where":"30 Nov • KIX","Practical tip":"Selected domestic option: Peach MM115 KIX → CTS 16:15–18:10. Peach domestic flights use KIX Terminal 2.","Cost / timing":"Arrive KIX T2 ~13:15; baggage-inclusive fare preferred","Source / note":"https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"},{"Category":"FLIGHT","When / Where":"Peach baggage","Practical tip":"Carry-on allowance is strict; the baggage-inclusive option discussed includes 1×20kg checked bag.","Cost / timing":"Do not rely on forwarding luggage to Sapporo just to save airfare","Source / note":"User fare screenshot / trip decision"},{"Category":"SAPPORO","When / Where":"Quintessa Hotel Sapporo Susukino","Practical tip":"5 min walk from Susukino Station / 4 min from Hosui-Susukino. Good base for food, nightlife and Tanukikoji; coin laundry available.","Cost / timing":"Private ensuite bathroom","Source / note":"https://quintessahotels.com/susukino/en/access/"},{"Category":"SAPPORO","When / Where":"3 Dec","Practical tip":"Keep snow day flexible. Decide 2–4 days before based on live snow depth, resort openings and weather.","Cost / timing":"Do not prebook months ahead","Source / note":"Itinerary decision"},{"Category":"RETURN","When / Where":"4 Dec • Manila connection","Practical tip":"PAL PR405 + PR509 is a short 1h10 connection. Booking screen says T1 → T1 and no bag recheck; go directly to the next gate.","Cost / timing":"Protected through-ticket only","Source / note":"User Trip.com booking screen"},{"Category":"BUDGET","When / Where":"General","Practical tip":"Spend on experiences that change the trip (Fuji night, one nice meal/day, snow activity); save on simple breakfasts/lunches and unnecessary hotel premiums.","Cost / timing":"Convenience-store / noodle / market meals are fine","Source / note":"Trip budgeting rule"},{"Category":"VISA","When / Where":"Bookings","Practical tip":"Domestic transport does not need to be prepaid solely for visa proof. Keep your current hotel/flight confirmations and the planned itinerary consistent.","Cost / timing":"Update your own records if a hotel changes","Source / note":"Visa planning note"}],"trans":[["2026-11-22","Haneda T3 to Akabane","Kokusai Kogyo Bus/ Tokyo Bus","Not needed\nPurchase ticket at counter",1300,149500,"Store luggage easily","First bus at 8:55","timetable link\n1F bus stop 6","Akabane Station East Exit Bus Stop No 9","around 10am"],["","Akabane station","Coin locker","Maybe but there's a jyp500 fee",800,92000,"","","station map","check availability on the day around 8",""],["","Haneda T3","Welcome suica card","No",3000,345000,"","","","free of charge, top up 3-5000 for few days use",""]],"revisions":[["1","21 Nov = travel only; Japan Day 1 starts Sun 22 Nov."],["2","Tokyo sightseeing reduced to 22–24 Nov; check out 25 Nov."],["3","Don Quijote added to Shibuya evening."],["4","SHIBUYA SKY moved to sunset slot on 24 Nov; sunset ~16:29."],["5","Fushimi Inari added to Kyoto plan."],["6","Shimokitazawa included; Kichijoji omitted unless a specific reason arises."],["7","Return plan changed to end in Sapporo; no repositioning back to Tokyo."],["8","4 Dec PAL route recorded as working return option; 1h10 MNL same-terminal through connection."],["9","Hotels now locked/reserved: Miki Hall Akabane 305, HAOSTAY Eirin, WeBase KYOTO, Quintessa Hotel Sapporo Susukino."]],"swaps":[["Osaka","Not included as an overnight base. If you really want it, swap the 28 Nov central-Kyoto afternoon/evening for Osaka (Amerikamura / Orange Street / Dotonbori)."],["Koenji","Not included because Tokyo is only 3 sightseeing days. Add only by shortening Shimokitazawa; do not jeopardize the Shibuya Sky reservation."],["Kichijoji","Omitted. Nice neighborhood, but lower priority for your first trip than Shimokitazawa / main Tokyo sights."],["Kiyomizu morning","If you dislike the night-illumination crowd, visit Kiyomizu at 06:00 instead and move Fushimi Inari later or to another morning."]],"tripflex":"TripFlex shown on Trip.com is +Rp1,804,300 per person. The terms you shared cover cancellation/change fees, but the TripFlex product itself is generally non-refundable once activated/used. Only buy it if the visa-risk protection is worth that extra cost."}
+{
+"days": [
+{
+"title": "Sat 21 Nov • Travel Day (not Japan Day 1)",
+"route": "KUL → SGN → HND",
+"stay": "No hotel • Overnight flight",
+"theme": "Kuala Lumpur → Tokyo travel only",
+"items": [
+{
+"time": "10:30",
+"area": "Kuala Lumpur",
+"act": "Arrive KUL Terminal 1; check in / baggage drop",
+"jpy": 0,
+"idr": 0,
+"mode": "Airport transfer from KL stay",
+"dur": "—",
+"ticket": "VietJet booking",
+"status": "Fixed",
+"note": "Allow generous buffer for international departure.",
+"src": ""
+},
+{
+"time": "13:35",
+"area": "KUL → SGN",
+"act": "VJ826 KUL → SGN",
+"jpy": 0,
+"idr": 0,
+"mode": "Flight",
+"dur": "1h55",
+"ticket": "Booked",
+"status": "Fixed",
+"note": "Flight departs 13:35; arrives SGN 14:30.",
+"src": ""
+},
+{
+"time": "14:30",
+"area": "SGN Airport",
+"act": "Transit at SGN",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / airport transfer",
+"dur": "2h50",
+"ticket": "Same itinerary",
+"status": "Fixed",
+"note": "Stay airside if instructed; follow transfer signage.",
+"src": ""
+},
+{
+"time": "17:20",
+"area": "SGN → HND",
+"act": "VJ820 SGN → Tokyo Haneda",
+"jpy": 0,
+"idr": 0,
+"mode": "Flight",
+"dur": "5h40",
+"ticket": "Booked",
+"status": "Fixed",
+"note": "Overnight flight; arrival is 01:00 on 22 Nov.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-21"
+},
+{
+"title": "Sun 22 Nov • Japan Day 1",
+"route": "HND T3 → Akabane → Shinjuku / Harajuku",
+"stay": "Miki Hall Akabane 305 • Night 1/3",
+"theme": "Airport rest + gentle first Tokyo day",
+"items": [
+{
+"time": "01:00",
+"area": "Haneda Terminal 3",
+"act": "Land at HND; immigration + baggage",
+"jpy": 0,
+"idr": 0,
+"mode": "Airport procedures",
+"dur": "~45–75 min",
+"ticket": "—",
+"status": "Fixed",
+"note": "No hotel tonight. Keep the first morning intentionally light.",
+"src": ""
+},
+{
+"time": "02:00",
+"area": "Haneda Terminal 3",
+"act": "Finish arrival procedures; find a comfortable public-area rest spot",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk within T3",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "Terminal 3 is open 24h and international passengers may stay overnight after using a flight.",
+"src": "https://www.tokyo-haneda.com/en/faq/terminal_details.html"
+},
+{
+"time": "02:30",
+"area": "Haneda Terminal 3",
+"act": "Rest in Terminal 3 until morning",
+"jpy": 0,
+"idr": 0,
+"mode": "—",
+"dur": "~4h",
+"ticket": "—",
+"status": "Flexible",
+"note": "Public seating is not a hotel bed; expect lights / announcements and prioritize recovery.",
+"src": ""
+},
+{
+"time": "06:30",
+"area": "Haneda Terminal 3",
+"act": "Shower + breakfast before leaving the airport",
+"jpy": 2200,
+"idr": 242000,
+"mode": "Walk within T3",
+"dur": "45–60 min",
+"ticket": "Pay on site",
+"status": "Flexible",
+"note": "T3 shower room is 24h; Tokyo Sky Kitchen food court and Air LAWSON have 24h options.",
+"src": "https://tokyo-haneda.com/en/service/facilities/shower_room.html"
+},
+{
+"time": "07:30",
+"area": "HND T3 → Akabane",
+"act": "Travel to Akabane Station",
+"jpy": 700,
+"idr": 77000,
+"mode": "Keikyu / JR (1–2 transfers)",
+"dur": "~55–70 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Exact route depends on morning service; avoid taxis unless exhausted.",
+"src": ""
+},
+{
+"time": "08:45",
+"area": "Akabane Station",
+"act": "Store suitcases in coin lockers / Multi-Ecube",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk",
+"dur": "10–20 min",
+"ticket": "Locker",
+"status": "Fixed-ish",
+"note": "Host confirmed no early luggage drop. Large lockers are limited; reservable Multi-Ecube is worth considering.",
+"src": "https://www.jreast.co.jp/e/stations/e34.html"
+},
+{
+"time": "09:15",
+"area": "Akabane → Shinjuku",
+"act": "JR to Shinjuku; walk to Shinjuku Gyoen",
+"jpy": 260,
+"idr": 28600,
+"mode": "JR",
+"dur": "~15–20 min + walk",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Akabane is a strong JR base; this is a short direct/near-direct west-Tokyo trip.",
+"src": ""
+},
+{
+"time": "09:45",
+"area": "Shinjuku",
+"act": "Shinjuku Gyoen autumn walk",
+"jpy": 500,
+"idr": 55000,
+"mode": "Walk",
+"dur": "~1h45",
+"ticket": "Entry ticket",
+"status": "Fixed-ish",
+"note": "Open Sun 22 Nov; 24 Nov is a closed day.",
+"src": "https://policies.env.go.jp/national-garden/shinjukugyoen/english/event/calendar/202611.html"
+},
+{
+"time": "12:00",
+"area": "Shinjuku → Meiji Jingu / Harajuku (if energy allows)",
+"act": "Lunch + JINS glasses in Shinjuku; optional Meiji Jingu / Harajuku afternoon",
+"jpy": 1500,
+"idr": 165000,
+"mode": "JR / walk",
+"dur": "~3h",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Tripod bought online and received before trip; NO tripod store needed. JINS first (allow 45–90 min incl. eye test/lenses), then shorten Harajuku if tired. Confirm production/collection timing before paying.",
+"src": ""
+},
+{
+"time": "15:30",
+"area": "Harajuku → Akabane",
+"act": "Return to Akabane → collect luggage → self check-in / rest; local dinner later",
+"jpy": 3000,
+"idr": 330000,
+"mode": "JR + walk",
+"dur": "~25–35 min",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Collect luggage and check in; protect recovery after overnight Haneda arrival. Winter clothing shopping can shift to Nov 23 Ueno if tiring.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-22"
+},
+{
+"title": "Mon 23 Nov • Japan Day 2",
+"route": "Akabane → Asakusa → Ueno/Ameyoko watch & handbag hunt",
+"stay": "Miki Hall Akabane 305 • Night 2/3",
+"theme": "Asakusa classics + serious affordable Japanese watch / leather hobo-bag shopping",
+"items": [
+{
+"time": "07:15",
+"area": "Akabane → Asakusa",
+"act": "Depart hotel for Asakusa",
+"jpy": 300,
+"idr": 33000,
+"mode": "JR / subway",
+"dur": "~35–45 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Labor Thanksgiving Day national holiday; go early to reduce crowds.",
+"src": ""
+},
+{
+"time": "08:00",
+"area": "Asakusa",
+"act": "Senso-ji + Kaminarimon before peak crowds",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Temple grounds are best before tour groups arrive.",
+"src": ""
+},
+{
+"time": "09:30",
+"area": "Asakusa",
+"act": "Nakamise / Asakusa snack & coffee",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Shops open progressively through the morning.",
+"src": ""
+},
+{
+"time": "11:00",
+"area": "Asakusa → Ueno",
+"act": "Ueno / Ameyoko browse: identify pre-owned watch and leather-bag shops",
+"jpy": 300,
+"idr": 33000,
+"mode": "Tokyo Metro Ginza Line / walk",
+"dur": "10–15 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Primary hunting district; compare item condition and price before buying. One-off secondhand stock varies by store; November 23 is a public holiday—confirm opening hours.",
+"src": ""
+},
+{
+"time": "12:30",
+"area": "Ueno",
+"act": "Budget lunch around Ueno",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Ramen / soba / curry / donburi.",
+"src": ""
+},
+{
+"time": "13:30",
+"area": "Ueno / Ameyoko",
+"act": "Father’s automatic watch hunt: Seiko 5, Citizen Eagle 7, Orient Three Star",
+"jpy": 300,
+"idr": 33000,
+"mode": "Walk",
+"dur": "~1.5–2h",
+"ticket": "NOT BOOKED · ¥10,000–¥20,000 target",
+"status": "Shopping · optional",
+"note": "Silver/champagne dial, understated vintage dress watch; ask about service, accuracy, movement, warranty. Avoid junk/untested stock. Buying is optional; shopping budget excluded from daily estimates.",
+"src": ""
+},
+{
+"time": "16:00",
+"area": "Ameyoko / Ueno / Okachimachi",
+"act": "Serious leather shoulder/hobo handbag hunt; optional used-camera comparison",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~1.5h",
+"ticket": "NOT BOOKED · browse and compare",
+"status": "Shopping · optional",
+"note": "Soft black leather, medium slouchy double-strap hobo similar to Vincis Bench reference; quality > brand. Coach optional, not required. Camera only if good deal. Ginza/Marunouchi afternoon displaced.",
+"src": ""
+},
+{
+"time": "18:30",
+"area": "Okachimachi / Ueno",
+"act": "Uniqlo/GU winter essentials if convenient + dinner",
+"jpy": 3000,
+"idr": 330000,
+"mode": "Walk",
+"dur": "~1h30",
+"ticket": "Clothing not paid",
+"status": "Shopping · planned",
+"note": "Heatwear, mittens, warm hat, insulated jacket. Shop sale prices first, compare secondhand only if worthwhile. Shop opening hours and actual sale prices to confirm. Clothing spend excluded from daily budget.",
+"src": ""
+},
+{
+"time": "20:30",
+"area": "Ueno → Akabane",
+"act": "Return to hotel; optional rest after holiday shopping",
+"jpy": 300,
+"idr": 33000,
+"mode": "JR / subway",
+"dur": "~20–30 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-23"
+},
+{
+"title": "Tue 24 Nov • Japan Day 3",
+"route": "Akabane → Warner Bros. Studio Tokyo → optional Shimokitazawa → Shibuya",
+"stay": "Miki Hall Akabane 305 • Night 3/3",
+"theme": "Harry Potter Studio 09:00 + SHIBUYA SKY 18:40 • both booked",
+"items": [
+{
+"time": "07:40",
+"area": "Akabane → Toshimaen",
+"act": "Leave Akabane for Warner Bros. Studio Tokyo",
+"jpy": 350,
+"idr": 38500,
+"mode": "JR / subway",
+"dur": "~40–60 min",
+"ticket": "IC card",
+"status": "Plan",
+"note": "Aim to arrive before the booked 09:00 studio entry.",
+"src": ""
+},
+{
+"time": "08:35",
+"area": "Warner Bros. Studio Tokyo",
+"act": "Arrive, find entrance, ticket check",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~25 min",
+"ticket": "Paid studio ticket",
+"status": "BOOKED & PAID",
+"note": "09:00 ticket for 2 adults, RM339 paid.",
+"src": ""
+},
+{
+"time": "09:00",
+"area": "Warner Bros. Studio Tokyo",
+"act": "Harry Potter Studio Tour Tokyo",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~3–4 hours",
+"ticket": "RM339 paid, 2 adults",
+"status": "BOOKED & PAID",
+"note": "Fixed 09:00 entry; don't rush the studio to fit extra shopping.",
+"src": ""
+},
+{
+"time": "12:45",
+"area": "Toshimaen area",
+"act": "Lunch / quick snack after studio",
+"jpy": 1300,
+"idr": 143000,
+"mode": "Walk",
+"dur": "~45 min",
+"ticket": "—",
+"status": "Flexible",
+"note": "Shift if studio visit runs longer.",
+"src": ""
+},
+{
+"time": "13:45",
+"area": "Toshimaen → Shimokitazawa",
+"act": "Travel to optional afternoon vintage district",
+"jpy": 450,
+"idr": 49500,
+"mode": "Rail",
+"dur": "~50–70 min",
+"ticket": "IC card",
+"status": "Optional",
+"note": "Skip Shimokitazawa if tired or late and head directly to Shibuya.",
+"src": ""
+},
+{
+"time": "14:45",
+"area": "Shimokitazawa",
+"act": "Light thrift / coffee stop (optional)",
+"jpy": 1500,
+"idr": 165000,
+"mode": "Walk",
+"dur": "~1h30",
+"ticket": "—",
+"status": "Optional",
+"note": "Shimokitazawa thrift / coffee remains optional; alternatively compare used cameras near Shinjuku on the way to Shibuya. Do not attempt both. Keep 18:40 Shibuya Sky entry protected.",
+"src": ""
+},
+{
+"time": "16:20",
+"area": "Shimokitazawa → Shibuya",
+"act": "Travel to Shibuya / buffer before evening entry",
+"jpy": 180,
+"idr": 19800,
+"mode": "Keio Inokashira Line",
+"dur": "~10–20 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "If Shimokitazawa skipped, use the extra time for dinner.",
+"src": "https://www.timeanddate.com/sun/japan/tokyo?month=11"
+},
+{
+"time": "16:45",
+"area": "Shibuya",
+"act": "Shibuya crossing, Hachiko, early dinner or café",
+"jpy": 700,
+"idr": 77000,
+"mode": "Walk",
+"dur": "~1h15",
+"ticket": "—",
+"status": "Flexible",
+"note": "The booked Shibuya Sky slot is after sunset, not sunset viewing.",
+"src": "https://www.shibuya-scramble-square.com/sky/ticket/"
+},
+{
+"time": "18:10",
+"area": "Shibuya Scramble Square",
+"act": "Arrive early for SHIBUYA SKY security / entrance",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "20–30 min",
+"ticket": "Paid timed ticket",
+"status": "BOOKED & PAID",
+"note": "18:40 entry for 2 adults; RM181.78 paid.",
+"src": ""
+},
+{
+"time": "18:40",
+"area": "SHIBUYA SKY",
+"act": "SHIBUYA SKY night skyline / observation deck",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / elevator",
+"dur": "~1h15",
+"ticket": "RM181.78 paid, 2 adults",
+"status": "BOOKED & PAID",
+"note": "Entry is 18:40, about two hours after sunset on Nov 24.",
+"src": ""
+},
+{
+"time": "20:00",
+"area": "Shibuya",
+"act": "Dinner / optional MEGA Don Quijote shopping",
+"jpy": 2200,
+"idr": 242000,
+"mode": "Walk",
+"dur": "~1h15",
+"ticket": "—",
+"status": "Flexible",
+"note": "Spend less time shopping if studio day feels long.",
+"src": ""
+},
+{
+"time": "21:30",
+"area": "Shibuya → Akabane",
+"act": "Return to hotel; pack for morning Fuji bus",
+"jpy": 350,
+"idr": 38500,
+"mode": "JR",
+"dur": "~25–40 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Morning Nov 25 bus departs 08:45 Shinjuku; prepare bags tonight.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • future spending estimate per person (paid tickets excluded)",
+"date": "2026-11-24"
+},
+{
+"title": "Wed 25 Nov • Japan Day 4",
+"route": "Akabane → Shinjuku → Kawaguchiko",
+"stay": "HAOSTAY Eirin • 1 night",
+"theme": "Shinjuku bus 08:45 (paid) → Fuji lake / ropeway / autumn views",
+"items": [
+{
+"time": "06:55",
+"area": "Miki Hall → Akabane Station",
+"act": "Check out Miki Hall; walk to Akabane Station",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~5–10 min",
+"ticket": "—",
+"status": "Fixed",
+"note": "Bring both suitcases to the bus terminal; bus seats 8C/8D.",
+"src": ""
+},
+{
+"time": "07:10",
+"area": "Akabane → Shinjuku",
+"act": "JR Akabane → Shinjuku Expressway Bus Terminal",
+"jpy": 260,
+"idr": 28600,
+"mode": "JR + walk",
+"dur": "~25–40 min incl. station navigation",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Aim to reach the terminal at least 30 minutes before 08:45.",
+"src": ""
+},
+{
+"time": "08:45",
+"area": "Shinjuku → Kawaguchiko",
+"act": "CONFIRMED Shinjuku → Kawaguchiko bus",
+"jpy": 0,
+"idr": 0,
+"mode": "Reserved highway bus",
+"dur": "~2–2.5h, traffic-dependent",
+"ticket": "2 adults • seats 8C/8D • ¥4,000 paid",
+"status": "BOOKED & PAID",
+"note": "Arrive late morning, time may vary with traffic.",
+"src": ""
+},
+{
+"time": "~11:00",
+"area": "Kawaguchiko Station → HAOSTAY Eirin",
+"act": "Reach Kawaguchiko; leave luggage at HAOSTAY Eirin if allowed",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~6–8 min",
+"ticket": "—",
+"status": "Flexible",
+"note": "Approximate arrival only; check bus ticket for scheduled arrival.",
+"src": ""
+},
+{
+"time": "11:45",
+"area": "Lake Kawaguchi / Ropeway",
+"act": "Mt Fuji Panoramic Ropeway (if queue permits)",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk / local bus",
+"dur": "~10–20 min",
+"ticket": "Round-trip ticket",
+"status": "Book",
+"note": "Last ascent noted as 15:00; prioritize this early after arrival.",
+"src": "https://www.mtfujiropeway.jp/en/"
+},
+{
+"time": "13:00",
+"area": "Lake Kawaguchi",
+"act": "Lunch near Lake Kawaguchi",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "14:00",
+"area": "North shore / Oishi Park",
+"act": "Oishi Park / lakeside views (weather and travel time permitting)",
+"jpy": 500,
+"idr": 55000,
+"mode": "Red Line sightseeing bus",
+"dur": "~25–35 min",
+"ticket": "Local bus",
+"status": "Flexible",
+"note": "If arrival/ropeway runs late, shorten this excursion.",
+"src": ""
+},
+{
+"time": "15:15",
+"area": "Lake Kawaguchi",
+"act": "Momiji Corridor or lakeside autumn walk (optional)",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / local bus",
+"dur": "~10–20 min",
+"ticket": "—",
+"status": "Optional",
+"note": "Late-season foliage; keep flexible based on actual leaves/weather.",
+"src": ""
+},
+{
+"time": "16:30",
+"area": "HAOSTAY Eirin",
+"act": "Check in, rest / private bathroom",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~6–8 min from station area",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "One-night stay; private bathroom chosen for a small premium over Guu.",
+"src": ""
+},
+{
+"time": "18:30",
+"area": "Kawaguchiko",
+"act": "Dinner",
+"jpy": 3000,
+"idr": 330000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • future spending estimate per person (paid bus excluded)",
+"date": "2026-11-25"
+},
+{
+"title": "Thu 26 Nov • Japan Day 5",
+"route": "Kawaguchiko → Mishima → Kyoto / Shijo-Karasuma",
+"stay": "WeBase KYOTO • Night 1/4",
+"theme": "Morning Fuji views; paid 13:20 bus & 15:46 Hikari to Kyoto",
+"items": [
+{
+"time": "06:30",
+"area": "Kawaguchiko / Fujiyoshida",
+"act": "Weather check; leave for Chureito Pagoda if Fuji is clear",
+"jpy": 0,
+"idr": 0,
+"mode": "Fujikyuko train + walk",
+"dur": "30–40 min",
+"ticket": "IC / local ticket",
+"status": "Flexible",
+"note": "Optional only if weather is clear; ensure return by checkout and no rushing.",
+"src": ""
+},
+{
+"time": "07:15",
+"area": "Chureito / Arakurayama",
+"act": "Chureito Pagoda / Arakurayama viewpoint",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / stairs",
+"dur": "~1h",
+"ticket": "—",
+"status": "Optional",
+"note": "Optional; check local transit and leave enough time to return for luggage.",
+"src": ""
+},
+{
+"time": "09:00",
+"area": "HAOSTAY Eirin / Kawaguchiko",
+"act": "Breakfast, pack/check out; store luggage if permitted",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk / local train",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed",
+"note": "Leave yourself free to reach Kawaguchiko Station by about 12:50.",
+"src": ""
+},
+{
+"time": "13:20",
+"area": "Kawaguchiko Station → Mishima North Exit",
+"act": "Fujikyu Fujiyama Connect 0114 • 13:20–14:50",
+"jpy": 0,
+"idr": 0,
+"mode": "Highway bus • car 2",
+"dur": "1h30 scheduled",
+"ticket": "2 adults • seats 6C/6D • ¥5,000 paid",
+"status": "BOOKED & PAID",
+"note": "Scheduled Mishima arrival 14:50; allow for road traffic delays.",
+"src": ""
+},
+{
+"time": "15:46",
+"area": "Mishima → Kyoto",
+"act": "Hikari 717 Shinkansen • 15:46–17:37",
+"jpy": 0,
+"idr": 0,
+"mode": "Direct Shinkansen • car 13",
+"dur": "1h51",
+"ticket": "2 adults • seats 17A/17B • ¥22,220 paid",
+"status": "BOOKED & PAID",
+"note": "56-minute connection from scheduled 14:50 bus arrival. If late, change SmartEX booking before departure if eligible.",
+"src": ""
+},
+{
+"time": "17:37",
+"area": "Kyoto Station → WeBase KYOTO",
+"act": "Arrive Kyoto; subway to Shijo; check in at WeBase",
+"jpy": 300,
+"idr": 33000,
+"mode": "Kyoto Subway Karasuma Line + walk",
+"dur": "~10–15 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "Allow 30–60 min for station, bags, subway and hotel check-in.",
+"src": "https://we-base.jp/kyoto/access/"
+},
+{
+"time": "18:45",
+"area": "Shijo / Karasuma",
+"act": "Hotel check-in / light central Kyoto evening walk",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "Flexible",
+"ticket": "—",
+"status": "Flexible",
+"note": "Nishiki Market is likely closing by evening; keep it for Nov 28.",
+"src": ""
+},
+{
+"time": "19:15",
+"area": "Pontocho / Gion",
+"act": "Pontocho / Kamo River evening stroll or dinner",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Low-pressure first evening in Kyoto after intercity transit.",
+"src": ""
+},
+{
+"time": "20:00",
+"area": "Central Kyoto",
+"act": "Dinner near Shijo / Pontocho (or rest if tired)",
+"jpy": 2800,
+"idr": 308000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • future spending estimate per person (paid bus/train excluded)",
+"date": "2026-11-26"
+},
+{
+"title": "Fri 27 Nov • Japan Day 6",
+"route": "Shijo-Karasuma → Fushimi Inari → Gion / Higashiyama",
+"stay": "WeBase KYOTO • Night 2/4",
+"theme": "Fushimi Inari early + couple kimono rental / Higashiyama photos + optional evening illumination",
+"items": [
+{
+"time": "05:30",
+"area": "WeBase → Fushimi Inari",
+"act": "Leave hotel for Fushimi Inari",
+"jpy": 300,
+"idr": 33000,
+"mode": "JR Nara Line / Keihan",
+"dur": "~30–40 min",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Early start is intentional to beat crowds.",
+"src": ""
+},
+{
+"time": "06:00",
+"area": "Fushimi Inari",
+"act": "Fushimi Inari Taisha + torii trail to Yotsutsuji",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / hike",
+"dur": "2–2.5h",
+"ticket": "No ticket",
+"status": "Fixed",
+"note": "Early torii trail, preferably back from Yotsutsuji by ~08:15; morning hike can be shortened to avoid the kimono fitting feeling rushed.",
+"src": "https://inari.jp/en/"
+},
+{
+"time": "08:45",
+"area": "Fushimi → Higashiyama",
+"act": "Breakfast / coffee near Fushimi or Gion",
+"jpy": 800,
+"idr": 88000,
+"mode": "Keihan / walk",
+"dur": "20–30 min",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "10:00",
+"area": "Gion / Higashiyama rental shop",
+"act": "Couple kimono rental: select outfits, dress and prepare for photos",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "~60–75 min",
+"ticket": "NOT BOOKED · rental shop to be chosen",
+"status": "Planned · needs reservation",
+"note": "Choose Gion/Higashiyama pickup and verify return deadline, couple price, hair styling, deposit, footwear and cancellation terms. Allow slow walking in kimono.",
+"src": ""
+},
+{
+"time": "11:15",
+"area": "Yasaka Pagoda / Ninenzaka / Sannenzaka",
+"act": "Kimono couple photos through historic Higashiyama lanes + lunch",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk",
+"dur": "~2–2.5h",
+"ticket": "—",
+"status": "Flexible",
+"note": "Replace long unstructured shopping with portraits + a relaxed lunch. Keep 16:00–16:30 in mind for rental return; timing depends on chosen vendor.",
+"src": ""
+},
+{
+"time": "14:00",
+"area": "Gion / Yasaka Shrine / Maruyama",
+"act": "Kimono walk, Yasaka Shrine / Gion and photo stops; return outfit by rental deadline",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk",
+"dur": "~2–2.5h",
+"ticket": "Return time TBC",
+"status": "Planned · flexible",
+"note": "Aim to return by ~16:30 unless rental provides a later return; protect comfort and time for dinner/night Kiyomizu viewing. Café time reduced.",
+"src": ""
+},
+{
+"time": "17:00",
+"area": "Higashiyama",
+"act": "Early dinner",
+"jpy": 2500,
+"idr": 275000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Eat before the night-viewing crowd.",
+"src": ""
+},
+{
+"time": "18:00",
+"area": "Kiyomizu-dera",
+"act": "Kiyomizu-dera autumn night illumination",
+"jpy": 500,
+"idr": 55000,
+"mode": "Walk / bus",
+"dur": "20–30 min",
+"ticket": "Entry ticket",
+"status": "Optional",
+"note": "Night illumination optional after changing out of kimono; skip if tired from early Fushimi hike and long walking day.",
+"src": "https://www.kiyomizudera.or.jp/access/"
+},
+{
+"time": "20:15",
+"area": "Kiyomizu → WeBase",
+"act": "Return to hotel",
+"jpy": 300,
+"idr": 33000,
+"mode": "Bus / subway / walk",
+"dur": "~25–35 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-27"
+},
+{
+"title": "Sat 28 Nov • Japan Day 7",
+"route": "Shijo-Karasuma → Arashiyama → Central Kyoto",
+"stay": "WeBase KYOTO • Night 3/4",
+"theme": "Arashiyama early + central Kyoto shopping",
+"items": [
+{
+"time": "06:15",
+"area": "WeBase → Arashiyama",
+"act": "Travel to Arashiyama",
+"jpy": 300,
+"idr": 33000,
+"mode": "Hankyu via Karasuma/Katsura or JR",
+"dur": "~30–40 min",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Saturday: arrive early before the main crowd.",
+"src": ""
+},
+{
+"time": "07:00",
+"area": "Arashiyama",
+"act": "Arashiyama Bamboo Grove",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "Best before 08:00.",
+"src": ""
+},
+{
+"time": "08:15",
+"area": "Arashiyama",
+"act": "Togetsukyo Bridge / riverside",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "08:45",
+"area": "Arashiyama",
+"act": "Tenryu-ji / garden",
+"jpy": 500,
+"idr": 55000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Entry ticket",
+"status": "Flexible",
+"note": "Confirm exact opening before travel.",
+"src": ""
+},
+{
+"time": "10:00",
+"area": "Arashiyama",
+"act": "Okochi Sanso / backstreets / café",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Entry / café",
+"status": "Optional",
+"note": "Choose one extra experience; do not overpack the morning.",
+"src": ""
+},
+{
+"time": "11:45",
+"area": "Arashiyama",
+"act": "Lunch in Arashiyama",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "13:15",
+"area": "Arashiyama → Central Kyoto",
+"act": "Return to central Kyoto",
+"jpy": 300,
+"idr": 33000,
+"mode": "JR / Hankyu",
+"dur": "30–45 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "14:15",
+"area": "Nishiki / Teramachi",
+"act": "Nishiki Market / Teramachi / Shinkyogoku shopping",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "During existing central-Kyoto shopping, compare leather bags with Tokyo prices; only if you still want to hunt. Do not cut the Arashiyama morning.",
+"src": ""
+},
+{
+"time": "17:30",
+"area": "Pontocho / Kamo River",
+"act": "Pontocho / Kamo River evening",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Optional",
+"note": "",
+"src": ""
+},
+{
+"time": "18:30",
+"area": "Central Kyoto",
+"act": "Dinner",
+"jpy": 2800,
+"idr": 308000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-28"
+},
+{
+"title": "Sun 29 Nov • Japan Day 8",
+"route": "Shijo-Karasuma → Uji → Nara",
+"stay": "WeBase KYOTO • Night 4/4",
+"theme": "Matcha morning in Uji + Nara afternoon",
+"items": [
+{
+"time": "07:45",
+"area": "WeBase → Uji",
+"act": "Kyoto → Uji",
+"jpy": 300,
+"idr": 33000,
+"mode": "JR Nara Line",
+"dur": "~40–50 min",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "Leave before the main matcha-shop queues.",
+"src": ""
+},
+{
+"time": "08:30",
+"area": "Uji",
+"act": "Uji River / Byodoin area morning walk",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "09:00",
+"area": "Uji",
+"act": "Byodoin + Hoshokan Museum",
+"jpy": 700,
+"idr": 77000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Entry ticket",
+"status": "Flexible",
+"note": "2026 special exhibition runs through 13 Dec; museum hours 09:00–17:00.",
+"src": "https://www.byodoin.or.jp/en/news/cat2/2026-3/"
+},
+{
+"time": "10:15",
+"area": "Uji",
+"act": "Matcha café / tea shopping on Byodoin Omotesando",
+"jpy": 1500,
+"idr": 165000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "This is one of your priority experiences; allow time rather than rushing.",
+"src": ""
+},
+{
+"time": "11:45",
+"area": "Uji → Nara",
+"act": "Uji → Nara",
+"jpy": 600,
+"idr": 66000,
+"mode": "JR Nara Line",
+"dur": "35–50 min",
+"ticket": "IC card",
+"status": "Fixed-ish",
+"note": "",
+"src": ""
+},
+{
+"time": "12:45",
+"area": "Nara Park",
+"act": "Nara Park + deer",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "",
+"src": ""
+},
+{
+"time": "13:30",
+"area": "Todai-ji",
+"act": "Todai-ji Great Buddha Hall",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Cash ticket",
+"status": "Fixed-ish",
+"note": "Nov–Mar hours: 08:00–17:00.",
+"src": "https://www.todaiji.or.jp/information/haikan/"
+},
+{
+"time": "14:45",
+"area": "Nara",
+"act": "Kasuga Taisha / Naramachi / snack",
+"jpy": 800,
+"idr": 88000,
+"mode": "Walk / local bus",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Choose based on energy; no need to do every temple.",
+"src": ""
+},
+{
+"time": "17:15",
+"area": "Nara → WeBase",
+"act": "Nara → Kyoto",
+"jpy": 800,
+"idr": 88000,
+"mode": "JR / Kintetsu",
+"dur": "~55–70 min",
+"ticket": "IC card",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "18:30",
+"area": "Central Kyoto",
+"act": "Dinner near hotel",
+"jpy": 2500,
+"idr": 275000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-11-29"
+},
+{
+"title": "Mon 30 Nov • Japan Day 9",
+"route": "WeBase Kyoto → Kyoto Station → KIX T2 → CTS → Susukino",
+"stay": "Quintessa Hotel Sapporo Susukino • Night 1/4",
+"theme": "Early KIX transfer for 08:00 Peach departure (paid); airport bus awaiting reservation",
+"items": [
+{
+"time": "03:15",
+"area": "WeBase KYOTO",
+"act": "Final packing and very early hotel checkout",
+"jpy": 0,
+"idr": 0,
+"mode": "Hotel",
+"dur": "~25 min",
+"ticket": "—",
+"status": "Plan",
+"note": "Discuss early checkout arrangements with hotel; all luggage ready the night before.",
+"src": ""
+},
+{
+"time": "03:45",
+"area": "WeBase → Kyoto Station Hachijo Exit",
+"act": "Taxi transfer to 04:30 airport limousine bus",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Taxi (estimated split 2 travelers)",
+"dur": "~15–25 min",
+"ticket": "Taxi fare not booked",
+"status": "PENDING",
+"note": "Budget estimate ¥2,400 total for taxi; actual fare/time unverified. Leave early.",
+"src": ""
+},
+{
+"time": "04:10",
+"area": "Kyoto Station Hachijo Exit (H2)",
+"act": "Arrive early for 04:30 airport bus",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / boarding",
+"dur": "~20 min predeparture",
+"ticket": "Airport bus not booked",
+"status": "PENDING",
+"note": "WeBase contacted via Agoda; reminder to follow up Nov 19.",
+"src": "https://we-base.jp/kyoto/access/"
+},
+{
+"time": "04:30",
+"area": "Kyoto Station → KIX Terminal 2",
+"act": "04:30 airport limousine bus • scheduled 05:56 arrival",
+"jpy": 0,
+"idr": 0,
+"mode": "Airport limousine bus",
+"dur": "1h26",
+"ticket": "2 seats pending • approx ¥5,600 total",
+"status": "PENDING",
+"note": "Reservation required. Cost estimated in Budget & Payments; not counted here to avoid double-count.",
+"src": "https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"
+},
+{
+"time": "05:56",
+"area": "KIX Terminal 2",
+"act": "Peach domestic check-in, checked baggage, breakfast",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Airport",
+"dur": "~2h04 before flight",
+"ticket": "Peach ticket paid",
+"status": "Fixed, subject to bus",
+"note": "Airline check-in/bag drop deadlines apply. Allow traffic contingency.",
+"src": "https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix"
+},
+{
+"time": "08:00",
+"area": "KIX T2 → CTS",
+"act": "CONFIRMED Peach Osaka Kansai → New Chitose • 08:00–09:55",
+"jpy": 0,
+"idr": 0,
+"mode": "Peach domestic flight",
+"dur": "1h55",
+"ticket": "2 adults • RM848 paid",
+"status": "BOOKED & PAID",
+"note": "Older file listed 16:15 and MM115; confirm flight number/allowance from final e-ticket.",
+"src": "User booking/payment confirmation"
+},
+{
+"time": "10:30",
+"area": "CTS → Sapporo → Susukino",
+"act": "Baggage pickup → JR Rapid Airport → subway to Susukino",
+"jpy": 1500,
+"idr": 165000,
+"mode": "JR + subway + walk",
+"dur": "~70–90 min door-to-door",
+"ticket": "IC / JR ticket",
+"status": "Fixed-ish",
+"note": "Plan ~70–90 min travel from airport after collecting suitcases.",
+"src": "https://quintessahotels.com/susukino/en/access/"
+},
+{
+"time": "12:00",
+"area": "Susukino",
+"act": "Luggage drop, lunch and shop for non-slip waterproof winter shoes in central Sapporo",
+"jpy": 3000,
+"idr": 330000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "After arriving (~noon), allow ~60–90 min to buy snow footwear before substantial outdoor walks. Wear grippy water-resistant shoes for CTS→hotel transfer. Footwear cost not included in daily spend.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • future spending estimate per person (paid flight excluded; airport bus separately estimated)",
+"date": "2026-11-30"
+},
+{
+"title": "Tue 1 Dec • Japan Day 10",
+"route": "Susukino / Odori / Tanukikoji",
+"stay": "Quintessa Hotel Sapporo Susukino • Night 2/4",
+"theme": "Sapporo city + thrifting + food",
+"items": [
+{
+"time": "08:00",
+"area": "Susukino → Nijo Market",
+"act": "Nijo Market breakfast / seafood bowl",
+"jpy": 2000,
+"idr": 220000,
+"mode": "Walk / subway",
+"dur": "~15–20 min",
+"ticket": "—",
+"status": "Flexible",
+"note": "This can be the day's nicer meal if you choose a premium seafood bowl.",
+"src": ""
+},
+{
+"time": "09:30",
+"area": "Odori / Clock Tower",
+"act": "Odori Park / TV Tower area / Clock Tower quick stop",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Optional admission",
+"status": "Flexible",
+"note": "Keep landmarks brief; shopping/food are higher priorities.",
+"src": ""
+},
+{
+"time": "11:00",
+"area": "Tanukikoji",
+"act": "Tanukikoji thrift shopping: final leather-bag / vintage-watch price comparisons",
+"jpy": 2000,
+"idr": 220000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "Optional final bargain search—compare exact model, material, condition and warranty rather than assuming Sapporo is always cheaper. No need to buy if Tokyo choices were better.",
+"src": ""
+},
+{
+"time": "13:30",
+"area": "Central Sapporo",
+"act": "Budget lunch / café",
+"jpy": 1200,
+"idr": 132000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "14:30",
+"area": "Odori / underground shopping",
+"act": "More thrifting / department store / underground shopping",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk / subway",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Good weather-proof block if snow/rain starts.",
+"src": ""
+},
+{
+"time": "15:15",
+"area": "Susukino → Mt Moiwa",
+"act": "Mt Moiwa sunset viewpoint if skies are clear",
+"jpy": 2100,
+"idr": 231000,
+"mode": "Streetcar / bus + ropeway",
+"dur": "45–60 min each way",
+"ticket": "Ropeway ticket",
+"status": "Optional",
+"note": "Weather-dependent. If cloudy, skip and keep shopping/café time.",
+"src": ""
+},
+{
+"time": "18:30",
+"area": "Susukino",
+"act": "Dinner",
+"jpy": 2800,
+"idr": 308000,
+"mode": "Walk / subway",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-12-01"
+},
+{
+"title": "Wed 2 Dec • Japan Day 11",
+"route": "Susukino → Sapporo Station → Otaru",
+"stay": "Quintessa Hotel Sapporo Susukino • Night 3/4",
+"theme": "Otaru canal + sweets + seafood",
+"items": [
+{
+"time": "08:15",
+"area": "Quintessa → Otaru",
+"act": "Quintessa → subway to Sapporo Station → JR to Otaru",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Subway + JR",
+"dur": "~55–70 min total",
+"ticket": "IC / JR ticket",
+"status": "Fixed-ish",
+"note": "Direct and easy; leave luggage at Sapporo hotel.",
+"src": ""
+},
+{
+"time": "09:15",
+"area": "Otaru Canal",
+"act": "Otaru Canal morning walk",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "",
+"src": ""
+},
+{
+"time": "10:15",
+"area": "Sakaimachi",
+"act": "Sakaimachi Street: glass, music boxes, local shops",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "11:30",
+"area": "Otaru",
+"act": "LeTAO / dessert / coffee",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Dessert-focused stop rather than a full café crawl.",
+"src": ""
+},
+{
+"time": "12:30",
+"area": "Otaru",
+"act": "Seafood lunch",
+"jpy": 3000,
+"idr": 330000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "One nicer meal of the day.",
+"src": ""
+},
+{
+"time": "14:00",
+"area": "Otaru",
+"act": "Otaru shopping / optional museum or canal cruise",
+"jpy": 1800,
+"idr": 198000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "Optional ticket",
+"status": "Optional",
+"note": "Choose one paid add-on, not several.",
+"src": ""
+},
+{
+"time": "16:30",
+"area": "Otaru Canal",
+"act": "Canal at dusk / lights",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Early December sunset is early; stay through blue hour if weather is pleasant.",
+"src": ""
+},
+{
+"time": "17:30",
+"area": "Otaru → Quintessa",
+"act": "Otaru → Sapporo → Susukino / hotel",
+"jpy": 1000,
+"idr": 110000,
+"mode": "JR + subway",
+"dur": "~55–70 min",
+"ticket": "IC / JR ticket",
+"status": "Flexible",
+"note": "",
+"src": ""
+},
+{
+"time": "19:00",
+"area": "Susukino",
+"act": "Light dinner / convenience store if still full",
+"jpy": 1000,
+"idr": 110000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL (planning estimate; hotel excluded)",
+"date": "2026-12-02"
+},
+{
+"title": "Thu 3 Dec • Japan Day 12",
+"route": "Sapporo / Hokkaido flex",
+"stay": "Quintessa Hotel Sapporo Susukino • Night 4/4",
+"theme": "Snow-chasing day — decide close to travel",
+"items": [
+{
+"time": "07:00",
+"area": "Hokkaido flex day",
+"act": "Check live snow / weather / resort opening status",
+"jpy": 0,
+"idr": 0,
+"mode": "Phone / hotel desk",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Decision day. Do not prebook a snow excursion months ahead.",
+"src": ""
+},
+{
+"time": "08:00",
+"area": "Hokkaido flex day",
+"act": "OPTION A: Sapporo Kokusai / mountain snow day if open and conditions are good",
+"jpy": 4500,
+"idr": 495000,
+"mode": "Seasonal bus / tour",
+"dur": "~1.5h each way",
+"ticket": "Bus / activity",
+"status": "Optional",
+"note": "Best if resort is open with meaningful snow depth; book only after conditions are confirmed.",
+"src": ""
+},
+{
+"time": "08:00",
+"area": "Hokkaido flex day",
+"act": "OPTION B: Asahikawa day trip if city snow is much better than Sapporo",
+"jpy": 5500,
+"idr": 605000,
+"mode": "Limited Express train",
+"dur": "~1h25 each way",
+"ticket": "JR ticket",
+"status": "Optional",
+"note": "Use as a snow-city alternative; can add ramen / café rather than forcing a ski resort.",
+"src": ""
+},
+{
+"time": "09:00",
+"area": "Hokkaido flex day",
+"act": "OPTION C: Stay in Sapporo if weather is poor",
+"jpy": 1500,
+"idr": 165000,
+"mode": "Subway / walk",
+"dur": "—",
+"ticket": "—",
+"status": "Optional",
+"note": "Moerenuma / café / final shopping / packing. Do not waste money chasing bad weather.",
+"src": ""
+},
+{
+"time": "18:00",
+"area": "Hokkaido flex day",
+"act": "Final Hokkaido dinner",
+"jpy": 3500,
+"idr": 385000,
+"mode": "Walk / subway",
+"dur": "—",
+"ticket": "—",
+"status": "Flexible",
+"note": "Make this the last special meal of the trip.",
+"src": ""
+},
+{
+"time": "20:00",
+"area": "Hokkaido flex day",
+"act": "Final shopping / pack / weigh luggage",
+"jpy": 0,
+"idr": 0,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "PAL fare shown includes 2×23kg checked baggage; organize before airport morning.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • option A snow estimate + dinner (options B/C excluded)",
+"date": "2026-12-03"
+},
+{
+"title": "Fri 4 Dec • Japan Day 13 / Departure",
+"route": "Quintessa → CTS → MNL → SIN",
+"stay": "Check out Quintessa • No overnight in Japan",
+"theme": "PAID CTS→MNL→SIN international return • flight IDs per previous itinerary",
+"items": [
+{
+"time": "07:30",
+"area": "Quintessa / Susukino",
+"act": "Breakfast / final packing",
+"jpy": 700,
+"idr": 77000,
+"mode": "Walk",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "Weigh luggage and keep transit essentials in carry-on.",
+"src": ""
+},
+{
+"time": "09:15",
+"area": "Quintessa → CTS",
+"act": "Check out → Susukino subway → Sapporo Station → JR Rapid Airport",
+"jpy": 1500,
+"idr": 165000,
+"mode": "Subway + JR",
+"dur": "~60–75 min door-to-door",
+"ticket": "IC / JR ticket",
+"status": "Fixed-ish",
+"note": "Quintessa is ~5 min from Susukino Station; target airport arrival around 10:20–10:30.",
+"src": "https://quintessahotels.com/susukino/en/access/"
+},
+{
+"time": "10:30",
+"area": "New Chitose Airport",
+"act": "International check-in / baggage / early lunch",
+"jpy": 1500,
+"idr": 165000,
+"mode": "Airport",
+"dur": "—",
+"ticket": "PAL booking",
+"status": "Fixed-ish",
+"note": "Tell staff about the 1h10 Manila connection; confirm both boarding passes and bags tagged to SIN.",
+"src": ""
+},
+{
+"time": "13:30",
+"area": "CTS → MNL",
+"act": "PAID return flight • CTS → Manila (PR405 per working plan)",
+"jpy": 0,
+"idr": 0,
+"mode": "Philippine Airlines",
+"dur": "6h10",
+"ticket": "Rp10,924,186 route total paid (2 assumed)",
+"status": "BOOKED & PAID",
+"note": "PR405/PR509 and MNL transit timing were in original workbook; reconfirm against actual e-ticket.",
+"src": "User's Nov 17 payment confirmation"
+},
+{
+"time": "18:40",
+"area": "Manila T1",
+"act": "Arrive MNL; transfer directly to PR509 gate",
+"jpy": 0,
+"idr": 0,
+"mode": "International transfer",
+"dur": "1h10",
+"ticket": "Paid through flight (verify final e-ticket)",
+"status": "Fixed-ish",
+"note": "Booking screen says no need to collect/recheck baggage. Connection is short — do not stop for food/shopping.",
+"src": ""
+},
+{
+"time": "19:50",
+"area": "MNL → SIN",
+"act": "PR509 Manila → Singapore",
+"jpy": 0,
+"idr": 0,
+"mode": "Philippine Airlines",
+"dur": "3h55",
+"ticket": "Paid through flight (verify final e-ticket)",
+"status": "Fixed-ish",
+"note": "",
+"src": ""
+},
+{
+"time": "23:45",
+"area": "Singapore Changi T2",
+"act": "Arrive Singapore",
+"jpy": 0,
+"idr": 0,
+"mode": "Arrival formalities",
+"dur": "—",
+"ticket": "—",
+"status": "Fixed-ish",
+"note": "Trip ends in Singapore.",
+"src": ""
+}
+],
+"subtotalNote": "DAY SUBTOTAL • future spending estimate per person (paid flights excluded)",
+"date": "2026-12-04"
+}
+],
+"hotels": [
+{
+"Stay": "Haneda arrival",
+"Check-in": "21 Nov*",
+"Check-out": "22 Nov",
+"Nights": 0,
+"Property": "No hotel — rest in HND Terminal 3",
+"Location / access": "Terminal 3 is open 24h",
+"Bathroom": "Airport shower facilities",
+"Luggage plan": "Keep luggage with you overnight",
+"Booking status": "FIXED PLAN",
+"Price / payment": "Hotel cost: ¥0",
+"Cancellation": "—",
+"Notes": "*Arrive HND 01:00 on 22 Nov; rest in T3, shower/breakfast in morning, then travel to Akabane."
+},
+{
+"Stay": "Tokyo",
+"Check-in": "22 Nov",
+"Check-out": "25 Nov",
+"Nights": 3,
+"Property": "Miki Hall Akabane 305",
+"Location / access": "~5 min from Akabane Station; strong JR access",
+"Bathroom": "Private bathroom",
+"Luggage plan": "No early drop / no onsite staff → Akabane Station locker on 22 Nov",
+"Booking status": "LOCKED / PAID",
+"Price / payment": "MYR 751 total paid",
+"Cancellation": "Non-refundable",
+"Notes": "Use station locker after leaving Haneda; collect bags before self check-in."
+},
+{
+"Stay": "Kawaguchiko",
+"Check-in": "25 Nov",
+"Check-out": "26 Nov",
+"Nights": 1,
+"Property": "HAOSTAY Eirin",
+"Location / access": "~6–8 min walk from Kawaguchiko Station",
+"Bathroom": "Private bathroom + bathtub",
+"Luggage plan": "Ask for early bag hold; if unavailable use station locker",
+"Booking status": "PAID / CONFIRMED",
+"Price / payment": "MYR 339.79 total paid",
+"Cancellation": "Per reserved rate",
+"Notes": "1-night stay; private bath; exact cancellation terms per confirmation."
+},
+{
+"Stay": "Kyoto",
+"Check-in": "26 Nov",
+"Check-out": "30 Nov",
+"Nights": 4,
+"Property": "WeBase KYOTO",
+"Location / access": "5 min from Shijo Sta Exit 6; 7 min from Karasuma Sta",
+"Bathroom": "Room/facility type per booking",
+"Luggage plan": "Front desk / self-cloak available; confirm check-in details",
+"Booking status": "PAID / CONFIRMED",
+"Price / payment": "MYR 1,439.80 total paid",
+"Cancellation": "Per booked rate",
+"Notes": "4-night Kyoto stay; November 30 very early checkout, pending 04:30 bus."
+},
+{
+"Stay": "Sapporo",
+"Check-in": "30 Nov",
+"Check-out": "4 Dec",
+"Nights": 4,
+"Property": "Quintessa Hotel Sapporo Susukino",
+"Location / access": "5 min Susukino; 4 min Hosui-Susukino",
+"Bathroom": "Private ensuite bathroom",
+"Luggage plan": "Front desk + luggage support",
+"Booking status": "PAID / CONFIRMED",
+"Price / payment": "MYR 833.31 total paid",
+"Cancellation": "Per booked rate",
+"Notes": "4-night Sapporo stay; replace outdated Rp3.4m planning price."
+}
+],
+"bookings": [
+{
+"Priority": "HIGH",
+"Item": "Haneda overnight plan",
+"Target date": "21–22 Nov",
+"Target time": "01:00 arrival → morning",
+"Current plan": "No hotel; rest in HND T3",
+"Book when": "No booking required",
+"Status": "LOCKED PLAN",
+"What can change?": "Exact rest/shower timing",
+"Decision trigger": "Terminal 3 stays open 24h; leave when trains are running",
+"Source": "https://www.tokyo-haneda.com/en/faq/terminal_details.html"
+},
+{
+"Priority": "HIGH",
+"Item": "Tokyo stay",
+"Target date": "22–25 Nov",
+"Target time": "—",
+"Current plan": "Miki Hall Akabane 305",
+"Book when": "Already paid",
+"Status": "LOCKED",
+"What can change?": "None unless emergency",
+"Decision trigger": "No onsite luggage storage; locker plan required",
+"Source": "User booking"
+},
+{
+"Priority": "HIGH",
+"Item": "SHIBUYA SKY",
+"Target date": "24 Nov",
+"Target time": "18:40 entry",
+"Current plan": "Timed entry, 2 adults • RM181.78 paid",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "No change to 18:40 ticket",
+"Decision trigger": "After sunset; keep Harry Potter Studio at 09:00",
+"Source": "User paid ticket confirmation"
+},
+{
+"Priority": "HIGH",
+"Item": "Tokyo → Kawaguchiko highway bus",
+"Target date": "25 Nov",
+"Target time": "08:45",
+"Current plan": "Shinjuku → Kawaguchiko • seats 8C/8D • ¥4,000 total",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "Bus departure is fixed",
+"Decision trigger": "Leave Akabane with luggage before 07:15",
+"Source": "User paid bus confirmation"
+},
+{
+"Priority": "MED",
+"Item": "Kawaguchiko stay",
+"Target date": "25–26 Nov",
+"Target time": "—",
+"Current plan": "HAOSTAY Eirin • MYR 339.79 paid",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "No change unless booking changes",
+"Decision trigger": "Private bath; near Kawaguchiko Station",
+"Source": "User final amount"
+},
+{
+"Priority": "MED",
+"Item": "Kawaguchiko → Mishima → Kyoto",
+"Target date": "26 Nov",
+"Target time": "13:20 bus / 15:46 train",
+"Current plan": "Bus ¥5,000 • seats 6C/6D; Hikari 717 ¥22,220 • car 13 seats 17A/17B",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "56-min bus/train transfer is traffic-sensitive",
+"Decision trigger": "Bus expected at Mishima North Exit 14:50",
+"Source": "User paid confirmations"
+},
+{
+"Priority": "HIGH",
+"Item": "Kyoto stay",
+"Target date": "26–30 Nov",
+"Target time": "—",
+"Current plan": "WeBase KYOTO • MYR 1,439.80 paid",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "4-night Kyoto stay",
+"Decision trigger": "5 min Shijo / 7 min Karasuma",
+"Source": "User final amount"
+},
+{
+"Priority": "MED",
+"Item": "Kiyomizu autumn illumination",
+"Target date": "27 Nov",
+"Target time": "18:00",
+"Current plan": "Optional",
+"Book when": "No advance commitment needed unless ticketing changes",
+"Status": "Flexible",
+"What can change?": "Morning vs night visit",
+"Decision trigger": "Crowd tolerance / weather",
+"Source": "https://www.kiyomizudera.or.jp/access/"
+},
+{
+"Priority": "HIGH",
+"Item": "Peach KIX → New Chitose",
+"Target date": "30 Nov",
+"Target time": "08:00–09:55",
+"Current plan": "Peach KIX T2 → CTS • RM848 paid for 2",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "Early airport connection required",
+"Decision trigger": "Secure Kyoto 04:30 airport bus; check Peach e-ticket baggage rules",
+"Source": "User final payment"
+},
+{
+"Priority": "MED",
+"Item": "Sapporo stay",
+"Target date": "30 Nov–4 Dec",
+"Target time": "—",
+"Current plan": "Quintessa Hotel Sapporo Susukino • MYR 833.31 paid",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "4-night Sapporo stay",
+"Decision trigger": "5 min Susukino / 4 min Hosui-Susukino; private bath",
+"Source": "User final amount"
+},
+{
+"Priority": "HIGH",
+"Item": "Snow day",
+"Target date": "3 Dec",
+"Target time": "All day",
+"Current plan": "Keep unbooked",
+"Book when": "2–4 days before",
+"Status": "Flexible",
+"What can change?": "Destination",
+"Decision trigger": "Live snow depth + resort opening + weather",
+"Source": ""
+},
+{
+"Priority": "HIGH",
+"Item": "CTS → MNL → SIN international flight",
+"Target date": "4 Dec",
+"Target time": "13:30–23:45",
+"Current plan": "CTS→SIN paid Rp10,924,186 (2 assumed); PR405 + PR509 per prior working file",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "Verify flight numbers/baggage on receipt",
+"Decision trigger": "Through-ticket and Manila transfer per originally selected schedule",
+"Source": "User final payment confirmation"
+},
+{
+"Priority": "HIGH",
+"Item": "Harry Potter Studio Tokyo",
+"Target date": "24 Nov",
+"Target time": "09:00",
+"Current plan": "2 tickets RM339 total",
+"Book when": "Already paid",
+"Status": "BOOKED & PAID",
+"What can change?": "Fixed entry time",
+"Decision trigger": "Plan transit from Akabane ~07:40",
+"Source": "User confirmed paid"
+},
+{
+"Priority": "HIGH",
+"Item": "Kyoto Station → KIX airport limousine",
+"Target date": "30 Nov",
+"Target time": "04:30–05:56",
+"Current plan": "Hachijo Exit → KIX Terminal 2 • 2 adults",
+"Book when": "Reserve ASAP",
+"Status": "PENDING — NOT PAID",
+"What can change?": "Capacity / bus traffic",
+"Decision trigger": "Await WeBase Agoda reply; follow-up reminder 19 Nov",
+"Source": "User contacted WeBase Kyoto via Agoda"
+}
+],
+"tips": [
+{
+"Category": "ARRIVAL",
+"When / Where": "Haneda Terminal 3 • 22 Nov 01:00",
+"Practical tip": "Terminal 3 is open 24 hours. International passengers who have used / will use an international flight may stay overnight in the terminal.",
+"Cost / timing": "Rest ~02:30–06:30",
+"Source / note": "https://www.tokyo-haneda.com/en/faq/terminal_details.html"
+},
+{
+"Category": "ARRIVAL",
+"When / Where": "Haneda Terminal 3",
+"Practical tip": "T3 shower room is open 24 hours. Towels, shampoo, conditioner, body soap and hair dryers are provided.",
+"Cost / timing": "¥1,500 / 30 min",
+"Source / note": "https://tokyo-haneda.com/en/service/facilities/shower_room.html"
+},
+{
+"Category": "ARRIVAL",
+"When / Where": "Haneda Terminal 3",
+"Practical tip": "24-hour food options include Tokyo Sky Kitchen food court and Air LAWSON in the general area.",
+"Cost / timing": "Use for early breakfast before leaving HND",
+"Source / note": "https://www.tokyo-haneda.com/site_resource/floor/pdf/floor__pdf_floor_map_t3_en.pdf"
+},
+{
+"Category": "LUGGAGE",
+"When / Where": "Akabane • 22 Nov",
+"Practical tip": "Miki Hall has no onsite staff / early bag drop. Go from HND to Akabane Station and use coin lockers before sightseeing.",
+"Cost / timing": "Large Multi-Ecube lockers typically ~¥700–800; LL ~¥800–1,000",
+"Source / note": "https://www.jre-sl.co.jp/en/ecube/"
+},
+{
+"Category": "LUGGAGE",
+"When / Where": "Akabane Station",
+"Practical tip": "JR East station map confirms coin lockers at Akabane. Reservable Multi-Ecube is useful if you want certainty for large suitcases.",
+"Cost / timing": "Reserve ahead if carrying 2 large cases",
+"Source / note": "https://www.jreast.co.jp/e/stations/e34.html"
+},
+{
+"Category": "TOKYO",
+"When / Where": "24 Nov • Shibuya",
+"Practical tip": "SHIBUYA SKY entry booked for 18:40, after sunset (~16:29). Do NOT plan sunset entry. Harry Potter Studio is 09:00 that morning.",
+"Cost / timing": "RM181.78 paid / 2; entry 18:40",
+"Source / note": "User paid booking"
+},
+{
+"Category": "TOKYO",
+"When / Where": "24 Nov • Shibuya",
+"Practical tip": "MEGA Don Quijote optional after SHIBUYA SKY; save energy if Harry Potter tour runs long.",
+"Cost / timing": "Evening block",
+"Source / note": "Itinerary decision"
+},
+{
+"Category": "FUJI",
+"When / Where": "25 Nov • after ~11:00 bus arrival",
+"Practical tip": "Shinjuku→Kawaguchiko 08:45 bus paid (seats 8C/8D). Ropeway shortened last ascent 15:00; prioritize on arrival.",
+"Cost / timing": "Last ascent 15:00; last descent 15:20",
+"Source / note": "https://www.mtfujiropeway.jp/en/"
+},
+{
+"Category": "FUJI",
+"When / Where": "HAOSTAY Eirin",
+"Practical tip": "Property is close enough to Kawaguchiko Station to walk with luggage. If pre-check-in bag hold is unavailable, use station lockers.",
+"Cost / timing": "~6–8 min walk planning estimate",
+"Source / note": "User booking / prior hotel check"
+},
+{
+"Category": "KYOTO",
+"When / Where": "WeBase KYOTO",
+"Practical tip": "WeBase is 5 min from Shijo Station Exit 6 and 7 min from Karasuma Station; Kyoto Station is about 3 min by subway to Shijo.",
+"Cost / timing": "Useful for Fushimi, Uji, Nara and central Kyoto",
+"Source / note": "https://we-base.jp/kyoto/access/"
+},
+{
+"Category": "FLIGHT",
+"When / Where": "30 Nov • 04:30 airport bus pending / 08:00 flight paid",
+"Practical tip": "Kyoto Station Hachijo Exit 04:30 → KIX T2 05:56 is intended; NOT YET BOOKED. Peach KIX→CTS 08:00–09:55 paid RM848 for 2.",
+"Cost / timing": "Airport bus estimate ¥5,600 / 2; Peach paid RM848 / 2",
+"Source / note": "User confirmation; operator timetable previously discussed"
+},
+{
+"Category": "FLIGHT",
+"When / Where": "Peach baggage",
+"Practical tip": "Recheck checked-luggage allowances on the actual paid Peach e-ticket; do not rely on the old 16:15 fare quote.",
+"Cost / timing": "Do not rely on forwarding luggage to Sapporo just to save airfare",
+"Source / note": "User fare screenshot / trip decision"
+},
+{
+"Category": "SAPPORO",
+"When / Where": "Quintessa Hotel Sapporo Susukino",
+"Practical tip": "5 min walk from Susukino Station / 4 min from Hosui-Susukino. Good base for food, nightlife and Tanukikoji; coin laundry available.",
+"Cost / timing": "Private ensuite bathroom",
+"Source / note": "https://quintessahotels.com/susukino/en/access/"
+},
+{
+"Category": "SAPPORO",
+"When / Where": "3 Dec",
+"Practical tip": "Keep snow day flexible. Decide 2–4 days before based on live snow depth, resort openings and weather.",
+"Cost / timing": "Do not prebook months ahead",
+"Source / note": "Itinerary decision"
+},
+{
+"Category": "RETURN",
+"When / Where": "4 Dec • Manila connection",
+"Practical tip": "CTS→MNL→SIN paid Rp10,924,186 for the route (assumed both travelers); confirm PR405/PR509 and luggage on final e-ticket.",
+"Cost / timing": "13:30 CTS • 23:45 SIN; PAID",
+"Source / note": "User final payment confirmation"
+},
+{
+"Category": "BUDGET",
+"When / Where": "General",
+"Practical tip": "Spend on experiences that change the trip (Fuji night, one nice meal/day, snow activity); save on simple breakfasts/lunches and unnecessary hotel premiums.",
+"Cost / timing": "Convenience-store / noodle / market meals are fine",
+"Source / note": "Trip budgeting rule"
+},
+{
+"Category": "VISA",
+"When / Where": "Bookings",
+"Practical tip": "Domestic transport does not need to be prepaid solely for visa proof. Keep your current hotel/flight confirmations and the planned itinerary consistent.",
+"Cost / timing": "Update your own records if a hotel changes",
+"Source / note": "Visa planning note"
+},
+{
+"Category": "SHOPPING",
+"When / Where": "Nov 22 • Shinjuku",
+"Practical tip": "Tripod ordered online already arrived. Do NOT spend trip time or additional Japan budget on tripod. JINS can be first-day glasses stop; confirm lens turnaround.",
+"Cost / timing": "Tripod: already owned",
+"Source / note": "User Nov 19; JINS plan"
+},
+{
+"Category": "SHOPPING",
+"When / Where": "Nov 23 • Ueno / Ameyoko",
+"Practical tip": "Serious father gift hunt: automatic (not merely mechanical), slim silver/champagne dial, ¥10–20k target. Check movement, service history, timekeeping and warranty.",
+"Cost / timing": "¥10,000–¥20,000 watch ceiling",
+"Source / note": "User reference photo and preference"
+},
+{
+"Category": "SHOPPING",
+"When / Where": "Nov 23 • Ueno / Okachimachi",
+"Practical tip": "Secondhand leather hobo bag, soft black medium silhouette; brand secondary to leather/stitching/strap condition. Cameras only if exceptional deal. Winter gear from GU/Uniqlo if convenient.",
+"Cost / timing": "Shopping purchases UNBUDGETED until paid",
+"Source / note": "User reference photo and itinerary preference"
+},
+{
+"Category": "KYOTO",
+"When / Where": "Nov 27 • Gion / Higashiyama",
+"Practical tip": "Couple kimono rental planned but NOT booked. Confirm pickup/return cutoff and allow time for outfits/photos; shorten café wandering.",
+"Cost / timing": "Provisional example quote ¥7,700/2; verify",
+"Source / note": "Planning price only; user has not booked"
+},
+{
+"Category": "STAMPS",
+"When / Where": "Throughout Tokyo, Kyoto, Nara, Sapporo",
+"Practical tip": "Carry stamp notebook for station eki stamps; dedicated goshuincho for shrine/temple goshuin. Don’t detour during Mishima train transfer.",
+"Cost / timing": "Optional small cash offerings",
+"Source / note": "Trip interest"
+},
+{
+"Category": "WINTER",
+"When / Where": "Nov 30 • Sapporo",
+"Practical tip": "Buy grippy waterproof snow shoes after hotel luggage drop; travel from CTS already wearing shoes with reliable grip.",
+"Cost / timing": "Footwear not paid; shopping budget TBD",
+"Source / note": "Trip interest"
+},
+{
+"Category": "BUDGET",
+"When / Where": "Shopping tracker",
+"Practical tip": "Prices shown for watches/kimono are targets/estimates, not paid bookings. Do not add to paid totals; compare item-specific prices across Tokyo/Kyoto/Sapporo.",
+"Cost / timing": "Paid totals stay unchanged",
+"Source / note": "User instruction"
+}
+],
+"trans": [
+[
+"2026-11-22",
+"Haneda T3 to Akabane",
+"Kokusai Kogyo Bus/ Tokyo Bus",
+"Not needed\nPurchase ticket at counter",
+1300,
+149500,
+"Store luggage easily",
+"First bus at 8:55",
+"timetable link\n1F bus stop 6",
+"Akabane Station East Exit Bus Stop No 9",
+"around 10am"
+],
+[
+"",
+"Akabane station",
+"Coin locker",
+"Maybe but there's a jyp500 fee",
+800,
+92000,
+"",
+"",
+"station map",
+"check availability on the day around 8",
+""
+],
+[
+"",
+"Haneda T3",
+"Welcome suica card",
+"No",
+3000,
+345000,
+"",
+"",
+"",
+"free of charge, top up 3-5000 for few days use",
+""
+]
+],
+"revisions": [
+[
+"1",
+"21 Nov = travel only; Japan Day 1 starts Sun 22 Nov."
+],
+[
+"2",
+"Tokyo sightseeing reduced to 22–24 Nov; check out 25 Nov."
+],
+[
+"3",
+"Don Quijote added to Shibuya evening."
+],
+[
+"4",
+"SHIBUYA SKY updated to PAID Nov 24 18:40 entry (evening, after sunset)."
+],
+[
+"5",
+"Fushimi Inari added to Kyoto plan."
+],
+[
+"6",
+"Shimokitazawa remains an optional Nov 24 thrift stop; camera hunting can replace it, but paid Shibuya Sky time cannot move."
+],
+[
+"7",
+"Return plan changed to end in Sapporo; no repositioning back to Tokyo."
+],
+[
+"8",
+"4 Dec return now paid Rp10,924,186; PAL flight IDs from old working file to verify."
+],
+[
+"9",
+"Hotels all paid at latest MYR totals; bus/rail confirmations added."
+],
+[
+"10",
+"Tripod purchased online and received before trip — REMOVE Japan buying stop."
+],
+[
+"11",
+"Nov 22 JINS; Nov 23 Ueno watch, handbag and winter gear; Nov 27 couple kimono; Nov 30 Sapporo snow shoes; stamps along current stops."
+]
+],
+"swaps": [
+[
+"Osaka",
+"Not included as an overnight base. If you really want it, swap the 28 Nov central-Kyoto afternoon/evening for Osaka (Amerikamura / Orange Street / Dotonbori)."
+],
+[
+"Koenji",
+"Not included because Tokyo is only 3 sightseeing days. Add only by shortening Shimokitazawa; do not jeopardize the Shibuya Sky reservation."
+],
+[
+"Kichijoji",
+"Omitted. Nice neighborhood, but lower priority for your first trip than Shimokitazawa / main Tokyo sights."
+],
+[
+"Kiyomizu morning",
+"If you dislike the night-illumination crowd, visit Kiyomizu at 06:00 instead and move Fushimi Inari later or to another morning."
+]
+],
+"tripflex": "TripFlex shown on Trip.com is +Rp1,804,300 per person. The terms you shared cover cancellation/change fees, but the TripFlex product itself is generally non-refundable once activated/used. Only buy it if the visa-risk protection is worth that extra cost.",
+"recon": [
+[
+"PAID JPY total",
+"¥31,220 (Shinjuku bus ¥4,000; Mishima bus ¥5,000; Hikari ¥22,220)"
+],
+[
+"PAID MYR total",
+"RM4,732.68 (4 hotels, 2 Tokyo attractions, Peach domestic flight)"
+],
+[
+"PAID IDR total",
+"Rp17,804,186 (KUL→HND + CTS→SIN international flights)"
+],
+[
+"NEXT URGENT TASK",
+"Kyoto 04:30 airport bus for Nov 30 • awaiting WeBase KYOTO via Agoda"
+],
+[
+"DETAIL",
+"See Budget & Payments for transaction-level ledger and conversion assumptions"
+]
+],
+"major": [
+{
+"date": "21 Nov",
+"route": "KUL → SGN → HND",
+"mode": "VietJet flight",
+"resv": "Confirmed paid",
+"paid": "Rp6,880,000",
+"dep": "13:35 KUL",
+"arr": "01:00 HND, 22 Nov",
+"seats": "VJ826 / VJ820 per file",
+"status": "PAID",
+"note": "Assumed both travelers; confirm e-ticket"
+},
+{
+"date": "25 Nov",
+"route": "Shinjuku → Kawaguchiko",
+"mode": "Highway bus",
+"resv": "2 adult tickets",
+"paid": "¥4,000",
+"dep": "08:45",
+"arr": "Late morning (check ticket)",
+"seats": "8C / 8D",
+"status": "PAID",
+"note": "Traffic-dependent arrival"
+},
+{
+"date": "26 Nov",
+"route": "Kawaguchiko → Mishima North",
+"mode": "Fujikyu bus",
+"resv": "0114 • car 2",
+"paid": "¥5,000",
+"dep": "13:20",
+"arr": "14:50",
+"seats": "6C / 6D",
+"status": "PAID",
+"note": "Mishima Shinkansen connection 56 min"
+},
+{
+"date": "26 Nov",
+"route": "Mishima → Kyoto",
+"mode": "Hikari 717",
+"resv": "Car 13 reserved",
+"paid": "¥22,220",
+"dep": "15:46",
+"arr": "17:37",
+"seats": "17A / 17B",
+"status": "PAID",
+"note": "2 adults • SmartEX"
+},
+{
+"date": "30 Nov",
+"route": "WeBase → Kyoto Stn Hachijo",
+"mode": "Taxi (planned)",
+"resv": "Not booked; approx estimate",
+"paid": "~¥2,400",
+"dep": "~03:45",
+"arr": "~04:10",
+"seats": "—",
+"status": "PENDING",
+"note": "Estimate only; get to H2 before bus"
+},
+{
+"date": "30 Nov",
+"route": "Kyoto Hachijo → KIX T2",
+"mode": "Limousine bus",
+"resv": "WeBase contacted, awaiting reply",
+"paid": "~¥5,600",
+"dep": "04:30",
+"arr": "05:56",
+"seats": "2 adults needed",
+"status": "PENDING",
+"note": "Bus seats not reserved / paid"
+},
+{
+"date": "30 Nov",
+"route": "KIX T2 → CTS",
+"mode": "Peach flight",
+"resv": "Paid for 2 adults",
+"paid": "RM848",
+"dep": "08:00",
+"arr": "09:55",
+"seats": "Verify flight #",
+"status": "PAID",
+"note": "Check luggage entitlement"
+},
+{
+"date": "4 Dec",
+"route": "CTS → MNL → SIN",
+"mode": "International flight",
+"resv": "Paid booking",
+"paid": "Rp10,924,186",
+"dep": "13:30 CTS",
+"arr": "23:45 SIN",
+"seats": "PR405 / PR509 per file",
+"status": "PAID",
+"note": "Verify flight numbers on ticket"
+}
+],
+"payments": [
+{
+"date": "21 thg 11 2026",
+"type": "International flight",
+"item": "Kuala Lumpur → Tokyo Haneda",
+"detail": "KUL 13:35 • SGN transit • HND 01:00 on 22 Nov",
+"pax": 2,
+"cur": "IDR",
+"amt": 6880000,
+"note": "Assumed combined price for 2 people; verify if per-person"
+},
+{
+"date": "22 thg 11 2026",
+"type": "Hotel",
+"item": "Miki Hall Akabane 305",
+"detail": "Tokyo • Nov 22–25 (3 nights)",
+"pax": 2,
+"cur": "MYR",
+"amt": 751,
+"note": "Coin lockers at Akabane, no early bag storage"
+},
+{
+"date": "24 thg 11 2026",
+"type": "Attraction",
+"item": "Warner Bros. Studio Tour Tokyo",
+"detail": "Entry 09:00",
+"pax": 2,
+"cur": "MYR",
+"amt": 339,
+"note": "Allow 3–4 h; Tokyo morning"
+},
+{
+"date": "24 thg 11 2026",
+"type": "Attraction",
+"item": "SHIBUYA SKY",
+"detail": "Entry 18:40",
+"pax": 2,
+"cur": "MYR",
+"amt": 181.78,
+"note": "Evening after sunset; not 15:40 sunset entry"
+},
+{
+"date": "25 thg 11 2026",
+"type": "Highway bus",
+"item": "Shinjuku → Kawaguchiko",
+"detail": "Departure 08:45 • seats 8C & 8D",
+"pax": 2,
+"cur": "JPY",
+"amt": 4000,
+"note": "Scheduled arrival not supplied in final confirmation"
+},
+{
+"date": "25 thg 11 2026",
+"type": "Hotel",
+"item": "HAOSTAY Eirin",
+"detail": "Kawaguchiko • Nov 25–26 (1 night)",
+"pax": 2,
+"cur": "MYR",
+"amt": 339.79,
+"note": "Private bathroom, near Kawaguchiko Station"
+},
+{
+"date": "26 thg 11 2026",
+"type": "Highway bus",
+"item": "Kawaguchiko → Mishima North Exit",
+"detail": "13:20–14:50 • 0114 / car 2 • seats 6C & 6D",
+"pax": 2,
+"cur": "JPY",
+"amt": 5000,
+"note": "Highway traffic may delay connection"
+},
+{
+"date": "26 thg 11 2026",
+"type": "Shinkansen",
+"item": "Mishima → Kyoto • Hikari 717",
+"detail": "15:46–17:37 • car 13 • seats 17A & 17B",
+"pax": 2,
+"cur": "JPY",
+"amt": 22220,
+"note": "56-min transfer on scheduled bus arrival"
+},
+{
+"date": "26 thg 11 2026",
+"type": "Hotel",
+"item": "WeBase KYOTO",
+"detail": "Kyoto • Nov 26–30 (4 nights)",
+"pax": 2,
+"cur": "MYR",
+"amt": 1439.8,
+"note": "Airport bus Nov 30 still pending via WeBase"
+},
+{
+"date": "30 thg 11 2026",
+"type": "Domestic flight",
+"item": "Peach KIX → CTS",
+"detail": "08:00–09:55 • KIX Terminal 2",
+"pax": 2,
+"cur": "MYR",
+"amt": 848,
+"note": "RM848 replaces obsolete RM484; verify bag allowance"
+},
+{
+"date": "30 thg 11 2026",
+"type": "Hotel",
+"item": "Quintessa Hotel Sapporo Susukino",
+"detail": "Sapporo • Nov 30–Dec 4 (4 nights)",
+"pax": 2,
+"cur": "MYR",
+"amt": 833.31,
+"note": "Replace outdated Rp3.4m budget figure"
+},
+{
+"date": "04 thg 12 2026",
+"type": "International flight",
+"item": "CTS → SIN (via Manila per old plan)",
+"detail": "13:30 departure • 23:45 Singapore arrival",
+"pax": 2,
+"cur": "IDR",
+"amt": 10924186,
+"note": "Assumed total for 2; verify flight IDs PR405/PR509"
+}
+],
+"pending": [
+{
+"item": "Kyoto Station → KIX T2 04:30 bus",
+"date": "30 thg 11 2026",
+"cur": "JPY",
+"amt": 5600,
+"status": "PENDING",
+"note": "2 adults. WeBase contacted on Agoda. Not reserved / paid yet."
+},
+{
+"item": "Hozugawa River Boat",
+"date": "",
+"cur": "JPY",
+"amt": 0,
+"status": "OPTIONAL",
+"note": "Not booked; price not included in estimate unless purchased"
+},
+{
+"item": "Sagano Romantic Train",
+"date": "",
+"cur": "JPY",
+"amt": 0,
+"status": "OPTIONAL",
+"note": "Preferred date previously sold out; not booked"
+},
+{
+"item": "Extra shopping / tax-refund purchases",
+"date": "",
+"cur": "IDR",
+"amt": 0,
+"status": "UNBUDGETED",
+"note": "Enter your own shopping ceiling to add to overall trip budget"
+}
+],
+"sheetRates": {
+"JPY": 110,
+"MYR": 3850
+},
+"shopping": [
+{
+"Date": "Before trip",
+"City / area": "Home",
+"Purchase / activity": "Phone + DJI Pocket 3 tripod",
+"Priority": "DONE",
+"Shopping focus / specification": "Ordered online, delivered before departure",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "RECEIVED",
+"Trade-off / verification": "No Japan store visit or Japan shopping charge."
+},
+{
+"Date": "22 Nov",
+"City / area": "Tokyo · Shinjuku",
+"Purchase / activity": "JINS glasses",
+"Priority": "HIGH",
+"Shopping focus / specification": "Choose frames; confirm prescription, lens stock, completion / collection",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "TO SHOP",
+"Trade-off / verification": "Use saved first-day Shinjuku time; shorten Harajuku if necessary."
+},
+{
+"Date": "23 Nov",
+"City / area": "Tokyo · Ueno/Ameyoko",
+"Purchase / activity": "Father automatic vintage-style watch",
+"Priority": "HIGH",
+"Shopping focus / specification": "Seiko 5 / Citizen Eagle 7 / Orient Three Star, silver/champagne, tested, warranty",
+"Target cap JPY": "20.000",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "TO SHOP",
+"Trade-off / verification": "¥10k–20k target; avoid unserviced or junk watch, compare before buying."
+},
+{
+"Date": "23 Nov",
+"City / area": "Tokyo · Ueno/Ameyoko",
+"Purchase / activity": "Leather hobo / shoulder handbag",
+"Priority": "HIGH",
+"Shopping focus / specification": "Soft medium black leather, rounded silhouette, good seams/straps; Coach optional",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "TO SHOP",
+"Trade-off / verification": "Compare with Kyoto and Sapporo; non-designer is fine."
+},
+{
+"Date": "23 Nov",
+"City / area": "Tokyo · Ueno/Okachimachi",
+"Purchase / activity": "Winter layers / hat / gloves / jacket",
+"Priority": "HIGH",
+"Shopping focus / specification": "GU/Uniqlo heatwear; compare sale and secondhand quality",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "TO SHOP",
+"Trade-off / verification": "Buying in Tokyo before Sapporo; allow return stop if sold out."
+},
+{
+"Date": "23–24 Nov",
+"City / area": "Tokyo · Ueno/Shinjuku",
+"Purchase / activity": "Used camera (optional)",
+"Priority": "MED",
+"Shopping focus / specification": "Purchase only with clear model/condition/warranty and better price than comparisons",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "BROWSE",
+"Trade-off / verification": "Secondary to watch/bag; optional replacement for Shimokitazawa."
+},
+{
+"Date": "27 Nov",
+"City / area": "Kyoto · Gion/Higashiyama",
+"Purchase / activity": "Couple kimono rental",
+"Priority": "HIGH",
+"Shopping focus / specification": "Two outfits; easy return; consider hair and accessories",
+"Target cap JPY": "",
+"Quote / estimate JPY": "7.700",
+"Paid JPY": "",
+"Status": "NOT BOOKED",
+"Trade-off / verification": "¥7,700 is example starting quote, not a guaranteed or paid price."
+},
+{
+"Date": "28 Nov",
+"City / area": "Kyoto · Teramachi",
+"Purchase / activity": "Handbag price comparison",
+"Priority": "MED",
+"Shopping focus / specification": "Secondhand leather hobo bag; compare exact condition vs Tokyo",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "OPTIONAL",
+"Trade-off / verification": "Use only existing Nishiki/Teramachi block."
+},
+{
+"Date": "30 Nov",
+"City / area": "Sapporo · station/central",
+"Purchase / activity": "Snow-ready footwear",
+"Priority": "HIGH",
+"Shopping focus / specification": "Waterproof and grippy for icy pavement; insulated if needed",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "TO SHOP",
+"Trade-off / verification": "Before extended outdoor exploration; must have safe travel shoes already."
+},
+{
+"Date": "1 Dec",
+"City / area": "Sapporo · Tanukikoji",
+"Purchase / activity": "Final watch/bag comparison",
+"Priority": "MED",
+"Shopping focus / specification": "Look for excellent value rather than buying from obligation",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "OPTIONAL",
+"Trade-off / verification": "Existing thrift day, no special detour."
+},
+{
+"Date": "Throughout",
+"City / area": "Multiple cities",
+"Purchase / activity": "Eki stamp notebook / goshuincho",
+"Priority": "MED",
+"Shopping focus / specification": "Station souvenir stamps and separately shrine/temple goshuin",
+"Target cap JPY": "",
+"Quote / estimate JPY": "",
+"Paid JPY": "",
+"Status": "OPTIONAL",
+"Trade-off / verification": "Never squeeze stamp stops into the Mishima Shinkansen transfer."
+}
+],
+"changelog": [
+{
+"Date": "2026-11-19",
+"What changed": "Tripod delivered before departure; all planned Japan tripod shopping removed",
+"What stays fixed": "Tokyo 22 Nov arrival and Shinjuku Gyoen",
+"Cost / booking impact": "No Japan tripod charge; earlier online purchase cost not supplied"
+},
+{
+"Date": "2026-11-19",
+"What changed": "JINS glasses moved into existing Nov 22 Shinjuku activity",
+"What stays fixed": "Tokyo hotel, sightseeing if energy permits",
+"Cost / booking impact": "Glasses not bought; no amount assumed"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Nov 23 Ueno / Ameyoko refocused on vintage automatic watch + leather shoulder bag",
+"What stays fixed": "Asakusa morning retained",
+"Cost / booking impact": "Ginza / Marunouchi afternoon replaced; watch target ¥10–20k"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Warm clothes in Ueno/Okachimachi; used camera only if time and good offer",
+"What stays fixed": "Harry Potter Studio 24 Nov at 09:00, SHIBUYA SKY at 18:40",
+"Cost / booking impact": "Discretionary shopping not counted as paid"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Nov 27 couple kimono rental incorporated into Higashiyama",
+"What stays fixed": "Fushimi Inari early, Kiyomizu optional evening",
+"Cost / booking impact": "Less cafe wandering; rental not booked, sample quote ¥7,700 / 2"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Nov 30 snow footwear shopping after Sapporo hotel luggage drop",
+"What stays fixed": "Peach 08:00–09:55, hotel booking",
+"Cost / booking impact": "Shoes not bought; no invented amount"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Stamp collection along existing sightseeing, Kyoto/Sapporo bag comparisons",
+"What stays fixed": "All confirmed flights, buses, Hikari and hotels",
+"Cost / booking impact": "Only optional stops; no prepaid amount changed"
+},
+{
+"Date": "2026-11-19",
+"What changed": "Pending Kyoto 04:30 limousine bus remains under follow-up with WeBase on Agoda",
+"What stays fixed": "Nov 30 Peach flight at KIX T2",
+"Cost / booking impact": "Not booked/paid, original ¥5,600 estimate retained"
+}
+]
+}

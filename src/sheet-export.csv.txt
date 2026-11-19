@@ -1,0 +1,411 @@
+## Sheet name: Trip Overview
+JAPAN FINAL WORKING ITINERARY • 21 NOV – 4 DEC 2026
+
+Planning field,Current plan,,Editable input,Value
+Calendar dates,21 Nov – 4 Dec 2026 (14 calendar days),,JPY → IDR,110
+Japan sightseeing days,22 Nov – 3 Dec (12 sightseeing days); 4 Dec = departure day,,People,2
+Route,Kuala Lumpur → Tokyo (Akabane) → Kawaguchiko → Kyoto → Sapporo → Singapore,,Hotel style,Private room; private bathroom where practical; shared facilities acceptable when value/location clearly wins
+Hotel nights,"12 hotel nights total (21 Nov overnight = flight + Haneda T3 rest, no hotel)"
+Planning FX,1 JPY = 110 IDR (planning only); MYR rate editable in Budget & Payments
+
+FIXED / HIGH-CONFIDENCE TRAVEL INPUTS
+Date,Segment,Flight / transport,Depart,Arrive,Status,Important note,Source / proof
+21 Nov,KUL → SGN,VietJet VJ826 • KUL–SGN,13:35 KUL T1,14:30 SGN,PAID / CONFIRMED,"Part of KUL→HND booking; Rp6,880,000 paid total (assumed 2 travelers)",User's Nov 17 payment confirmation + working flight schedule
+21–22 Nov,SGN → HND,VietJet VJ820,17:20 SGN,01:00+1 HND,PAID / CONFIRMED,"Overnight SGN→HND; arrival 01:00 Sun 22 Nov; included in Rp6,880,000 paid route",User's Nov 17 payment confirmation + working flight schedule
+30 Nov,KIX → CTS,Peach • KIX→CTS (verify flight number),08:00 KIX T2,09:55 CTS,PAID / CONFIRMED,RM848 total paid for 2; early-morning 04:30 airport bus still pending,User's latest paid confirmation; 08:00–09:55 schedule previously confirmed
+4 Dec,CTS → MNL → SIN,PAL PR405 + PR509,13:30 CTS,23:45 SIN,PAID / CONFIRMED,"Rp10,924,186 total paid for CTS→SIN (assumed 2); PAL connection shown in original working plan","User's Nov 17 payment confirmation; flight IDs from working file, verify receipt"
+
+Base / stay,Nights,Hotel status,,KEY ADJUSTMENT RULES
+Haneda T3 overnight rest,0,No hotel — airport rest,,Priority,Item,HND T3 overnight rest (no hotel),Adjustment rule
+Tokyo / Akabane,3,Miki Hall Akabane 305 • LOCKED,,High,Arrival night,Stay in Haneda Terminal 3 until morning,Use Akabane Station coin lockers because host cannot accept early luggage
+Kawaguchiko,1,HAOSTAY Eirin • RESERVED,,High,SHIBUYA SKY,"24 Nov 18:40 (booked, paid RM181.78)",Evening view after sunset (~16:29); Harry Potter Studio at 09:00 earlier that day
+Kyoto,4,WeBase KYOTO • LOCKED,,High,Kawaguchiko ropeway,"25 Nov, aim midday before 15:00 last ascent",Arrive Kawaguchiko after booked 08:45 Shinjuku bus; account for traffic
+Sapporo,4,Quintessa Hotel Sapporo Susukino • LOCKED,,Medium,Kyoto night illumination,Optional 27 Nov,Kiyomizu-dera night viewing 21–30 Nov; swap if crowd/weather is poor
+TOTAL,12,,,High,Sapporo snow day,3 Dec kept flexible,Choose snow location 2–4 days before based on live conditions
+,,,,Medium,Return flight,"PAID Rp10,924,186 for 2 (assumed)",Keep only as a protected through-ticket; no self-transfer
+,,,,Medium,Shopping priority: Ueno watch + bag hunt,"23 Nov · vintage automatic watch ¥10k–20k, leather hobo bag; cameras secondary",Tripod already received before trip; do not schedule any Japan purchase. Keep all paid reservations fixed.
+14,13,4,1
+Calendar days,Japan calendar days incl. departure,Main regions,Flexible snow day
+
+VISA / DOCUMENT NOTE
+Topic,Working note
+Hotels,The itinerary can use the hotel planned at application time; normal hotel changes later are generally fine. Keep updated booking confirmations.
+Domestic transport,Do not prepay domestic flights / Shinkansen solely for visa proof. List the planned route clearly; book once timing and visa are comfortable.
+Kuala Lumpur departure,If useful in a cover note: husband is in Kuala Lumpur for his final actuarial exam before the Japan trip; therefore the Japan flight departs KUL.
+
+## Sheet name: Detailed Itinerary
+DETAILED ITINERARY • FINAL WORKING PLAN (HOTELS LOCKED; FLEX ITEMS MARKED)
+
+Date,Japan Day,Time,Area / Route,Overnight / Stay,Activity / Place,Est. JPY / pp,Est. IDR / pp,Transport,Travel time,Ticket / Booking,Status,Notes / Flex rule,Source
+Sat 21 Nov • Travel Day (not Japan Day 1),,,KUL → SGN → HND,No hotel • Overnight flight,Kuala Lumpur → Tokyo travel only
+,,10:30,Kuala Lumpur,,Arrive KUL Terminal 1; check in / baggage drop,0,0,Airport transfer from KL stay,—,VietJet booking,Fixed,Allow generous buffer for international departure.
+,,13:35,KUL → SGN,,VJ826 KUL → SGN,,0,Flight,1h55,Booked,Fixed,Flight departs 13:35; arrives SGN 14:30.
+,,14:30,SGN Airport,,Transit at SGN,0,0,Walk / airport transfer,2h50,Same itinerary,Fixed,Stay airside if instructed; follow transfer signage.
+,,17:20,SGN → HND,,VJ820 SGN → Tokyo Haneda,,0,Flight,5h40,Booked,Fixed,Overnight flight; arrival is 01:00 on 22 Nov.
+,,,Travel day,,DAY SUBTOTAL (planning estimate; hotel excluded),0,0
+
+Sun 22 Nov • Japan Day 1,,,HND T3 → Akabane → Shinjuku / Harajuku,Miki Hall Akabane 305 • Night 1/3,Airport rest + gentle first Tokyo day
+,,01:00,Haneda Terminal 3,,Land at HND; immigration + baggage,0,0,Airport procedures,~45–75 min,—,Fixed,No hotel tonight. Keep the first morning intentionally light.
+,,02:00,Haneda Terminal 3,,Finish arrival procedures; find a comfortable public-area rest spot,0,0,Walk within T3,—,—,Fixed-ish,Terminal 3 is open 24h and international passengers may stay overnight after using a flight.,https://www.tokyo-haneda.com/en/faq/terminal_details.html
+,,02:30,Haneda Terminal 3,,Rest in Terminal 3 until morning,0,0,—,~4h,—,Flexible,Public seating is not a hotel bed; expect lights / announcements and prioritize recovery.
+,,06:30,Haneda Terminal 3,,Shower + breakfast before leaving the airport,2.200,242.000,Walk within T3,45–60 min,Pay on site,Flexible,T3 shower room is 24h; Tokyo Sky Kitchen food court and Air LAWSON have 24h options.,https://tokyo-haneda.com/en/service/facilities/shower_room.html
+,,07:30,HND T3 → Akabane,,Travel to Akabane Station,700,77.000,Keikyu / JR (1–2 transfers),~55–70 min,IC card,Flexible,Exact route depends on morning service; avoid taxis unless exhausted.
+,,08:45,Akabane Station,,Store suitcases in coin lockers / Multi-Ecube,800,88.000,Walk,10–20 min,Locker,Fixed-ish,Host confirmed no early luggage drop. Large lockers are limited; reservable Multi-Ecube is worth considering.,https://www.jreast.co.jp/e/stations/e34.html
+,,09:15,Akabane → Shinjuku,,JR to Shinjuku; walk to Shinjuku Gyoen,260,28.600,JR,~15–20 min + walk,IC card,Fixed-ish,Akabane is a strong JR base; this is a short direct/near-direct west-Tokyo trip.
+,,09:45,Shinjuku,,Shinjuku Gyoen autumn walk,500,55.000,Walk,~1h45,Entry ticket,Fixed-ish,Open Sun 22 Nov; 24 Nov is a closed day.,https://policies.env.go.jp/national-garden/shinjukugyoen/english/event/calendar/202611.html
+,,12:00,Shinjuku → Meiji Jingu / Harajuku (if energy allows),,Lunch + JINS glasses in Shinjuku; optional Meiji Jingu / Harajuku afternoon,1.500,165.000,JR / walk,~3h,IC card,Flexible,"Tripod bought online and received before trip; NO tripod store needed. JINS first (allow 45–90 min incl. eye test/lenses), then shorten Harajuku if tired. Confirm production/collection timing before paying."
+,,15:30,Harajuku → Akabane,Miki Hall Akabane 305,Return to Akabane → collect luggage → self check-in / rest; local dinner later,3.000,330.000,JR + walk,~25–35 min,IC card,Fixed-ish,Collect luggage and check in; protect recovery after overnight Haneda arrival. Winter clothing shopping can shift to Nov 23 Ueno if tiring.
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),8.960,985.600
+
+Mon 23 Nov • Japan Day 2,,,Akabane → Asakusa → Ueno/Ameyoko watch & handbag hunt,Miki Hall Akabane 305 • Night 2/3,Asakusa classics + serious affordable Japanese watch / leather hobo-bag shopping
+,,07:15,Akabane → Asakusa,,Depart hotel for Asakusa,300,33.000,JR / subway,~35–45 min,IC card,Flexible,Labor Thanksgiving Day national holiday; go early to reduce crowds.
+,,08:00,Asakusa,,Senso-ji + Kaminarimon before peak crowds,0,0,Walk,—,—,Flexible,Temple grounds are best before tour groups arrive.
+,,09:30,Asakusa,,Nakamise / Asakusa snack & coffee,800,88.000,Walk,—,—,Flexible,Shops open progressively through the morning.
+,,11:00,Asakusa → Ueno,,Ueno / Ameyoko browse: identify pre-owned watch and leather-bag shops,300,33.000,Tokyo Metro Ginza Line / walk,10–15 min,IC card,Flexible,Primary hunting district; compare item condition and price before buying. One-off secondhand stock varies by store; November 23 is a public holiday—confirm opening hours.
+,,12:30,Ueno,,Budget lunch around Ueno,1.000,110.000,Walk,—,—,Flexible,Ramen / soba / curry / donburi.
+,,13:30,Ueno / Ameyoko,,"Father’s automatic watch hunt: Seiko 5, Citizen Eagle 7, Orient Three Star",300,33.000,Walk,~1.5–2h,"NOT BOOKED · ¥10,000–¥20,000 target",Shopping · optional,"Silver/champagne dial, understated vintage dress watch; ask about service, accuracy, movement, warranty. Avoid junk/untested stock. Buying is optional; shopping budget excluded from daily estimates."
+,,16:00,Ameyoko / Ueno / Okachimachi,,Serious leather shoulder/hobo handbag hunt; optional used-camera comparison,0,0,Walk,~1.5h,NOT BOOKED · browse and compare,Shopping · optional,"Soft black leather, medium slouchy double-strap hobo similar to Vincis Bench reference; quality > brand. Coach optional, not required. Camera only if good deal. Ginza/Marunouchi afternoon displaced."
+,,18:30,Okachimachi / Ueno,,Uniqlo/GU winter essentials if convenient + dinner,3.000,330.000,Walk,~1h30,Clothing not paid,Shopping · planned,"Heatwear, mittens, warm hat, insulated jacket. Shop sale prices first, compare secondhand only if worthwhile. Shop opening hours and actual sale prices to confirm. Clothing spend excluded from daily budget."
+,,20:30,Ueno → Akabane,,Return to hotel; optional rest after holiday shopping,300,33.000,JR / subway,~20–30 min,IC card,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),6.000,660.000
+
+Tue 24 Nov • Japan Day 3,,,Akabane → Warner Bros. Studio Tokyo → optional Shimokitazawa → Shibuya,Miki Hall Akabane 305 • Night 3/3,Harry Potter Studio 09:00 + SHIBUYA SKY 18:40 • both booked
+,,07:40,Akabane → Toshimaen,,Leave Akabane for Warner Bros. Studio Tokyo,350,38.500,JR / subway,~40–60 min,IC card,Plan,Aim to arrive before the booked 09:00 studio entry.
+,,08:35,Warner Bros. Studio Tokyo,,"Arrive, find entrance, ticket check",0,0,Walk,~25 min,Paid studio ticket,BOOKED & PAID,"09:00 ticket for 2 adults, RM339 paid."
+,,09:00,Warner Bros. Studio Tokyo,,Harry Potter Studio Tour Tokyo,0,0,Walk,~3–4 hours,"RM339 paid, 2 adults",BOOKED & PAID,Fixed 09:00 entry; don't rush the studio to fit extra shopping.
+,,12:45,Toshimaen area,,Lunch / quick snack after studio,1.300,143.000,Walk,~45 min,—,Flexible,Shift if studio visit runs longer.
+,,13:45,Toshimaen → Shimokitazawa,,Travel to optional afternoon vintage district,450,49.500,Rail,~50–70 min,IC card,Optional,Skip Shimokitazawa if tired or late and head directly to Shibuya.
+,,14:45,Shimokitazawa,,Light thrift / coffee stop (optional),1.500,165.000,Walk,~1h30,—,Optional,Shimokitazawa thrift / coffee remains optional; alternatively compare used cameras near Shinjuku on the way to Shibuya. Do not attempt both. Keep 18:40 Shibuya Sky entry protected.
+,,16:20,Shimokitazawa → Shibuya,,Travel to Shibuya / buffer before evening entry,180,19.800,Keio Inokashira Line,~10–20 min,IC card,Flexible,"If Shimokitazawa skipped, use the extra time for dinner.",https://www.timeanddate.com/sun/japan/tokyo?month=11
+,,16:45,Shibuya,,"Shibuya crossing, Hachiko, early dinner or café",700,77.000,Walk,~1h15,—,Flexible,"The booked Shibuya Sky slot is after sunset, not sunset viewing.",https://www.shibuya-scramble-square.com/sky/ticket/
+,,18:10,Shibuya Scramble Square,,Arrive early for SHIBUYA SKY security / entrance,0,0,Walk,20–30 min,Paid timed ticket,BOOKED & PAID,18:40 entry for 2 adults; RM181.78 paid.
+,,18:40,SHIBUYA SKY,,SHIBUYA SKY night skyline / observation deck,0,0,Walk / elevator,~1h15,"RM181.78 paid, 2 adults",BOOKED & PAID,"Entry is 18:40, about two hours after sunset on Nov 24."
+,,20:00,Shibuya,,Dinner / optional MEGA Don Quijote shopping,2.200,242.000,Walk,~1h15,—,Flexible,Spend less time shopping if studio day feels long.
+,,21:30,Shibuya → Akabane,,Return to hotel; pack for morning Fuji bus,350,38.500,JR,~25–40 min,IC card,Flexible,Morning Nov 25 bus departs 08:45 Shinjuku; prepare bags tonight.
+,,,Day total,,DAY SUBTOTAL • future spending estimate per person (paid tickets excluded),7.030,773.300,,~25–30 min,,,JR Saikyo/Shonan-Shinjuku options make the return to Akabane straightforward.
+,,,Day total
+Wed 25 Nov • Japan Day 4,,,Akabane → Shinjuku → Kawaguchiko,HAOSTAY Eirin • 1 night,Shinjuku bus 08:45 (paid) → Fuji lake / ropeway / autumn views
+,,06:55,Miki Hall → Akabane Station,,Check out Miki Hall; walk to Akabane Station,0,0,Walk,~5–10 min,—,Fixed,Bring both suitcases to the bus terminal; bus seats 8C/8D.
+,,07:10,Akabane → Shinjuku,,JR Akabane → Shinjuku Expressway Bus Terminal,260,28.600,JR + walk,~25–40 min incl. station navigation,IC card,Fixed-ish,Aim to reach the terminal at least 30 minutes before 08:45.
+,,08:45,Shinjuku → Kawaguchiko,,CONFIRMED Shinjuku → Kawaguchiko bus,0,0,Reserved highway bus,"~2–2.5h, traffic-dependent","2 adults • seats 8C/8D • ¥4,000 paid",BOOKED & PAID,"Arrive late morning, time may vary with traffic."
+,,~11:00,Kawaguchiko Station → HAOSTAY Eirin,,Reach Kawaguchiko; leave luggage at HAOSTAY Eirin if allowed,0,0,Walk,~6–8 min,—,Flexible,Approximate arrival only; check bus ticket for scheduled arrival.
+,,11:45,Lake Kawaguchi / Ropeway,,Mt Fuji Panoramic Ropeway (if queue permits),1.200,132.000,Walk / local bus,~10–20 min,Round-trip ticket,Book,Last ascent noted as 15:00; prioritize this early after arrival.,https://www.mtfujiropeway.jp/en/
+,,13:00,Lake Kawaguchi,,Lunch near Lake Kawaguchi,1.200,132.000,Walk,—,—,Flexible
+,,14:00,North shore / Oishi Park,,Oishi Park / lakeside views (weather and travel time permitting),500,55.000,Red Line sightseeing bus,~25–35 min,Local bus,Flexible,"If arrival/ropeway runs late, shorten this excursion."
+,,15:15,Lake Kawaguchi,,Momiji Corridor or lakeside autumn walk (optional),0,0,Walk / local bus,~10–20 min,—,Optional,Late-season foliage; keep flexible based on actual leaves/weather.
+,,16:30,HAOSTAY Eirin,HAOSTAY Eirin,"Check in, rest / private bathroom",0,0,Walk,~6–8 min from station area,—,Fixed-ish,One-night stay; private bathroom chosen for a small premium over Guu.
+,,18:30,Kawaguchiko,,Dinner,3.000,330.000,Walk,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL • future spending estimate per person (paid bus excluded),6.160,677.600
+Thu 26 Nov • Japan Day 5,,,Kawaguchiko → Mishima → Kyoto / Shijo-Karasuma,WeBase KYOTO • Night 1/4,Morning Fuji views; paid 13:20 bus & 15:46 Hikari to Kyoto
+,,06:30,Kawaguchiko / Fujiyoshida,,Weather check; leave for Chureito Pagoda if Fuji is clear,0,0,Fujikyuko train + walk,30–40 min,IC / local ticket,Flexible,Optional only if weather is clear; ensure return by checkout and no rushing.
+,,07:15,Chureito / Arakurayama,,Chureito Pagoda / Arakurayama viewpoint,0,0,Walk / stairs,~1h,—,Optional,Optional; check local transit and leave enough time to return for luggage.
+,,09:00,HAOSTAY Eirin / Kawaguchiko,,"Breakfast, pack/check out; store luggage if permitted",800,88.000,Walk / local train,—,—,Fixed,Leave yourself free to reach Kawaguchiko Station by about 12:50.
+,,13:20,Kawaguchiko Station → Mishima North Exit,,Fujikyu Fujiyama Connect 0114 • 13:20–14:50,0,0,Highway bus • car 2,1h30 scheduled,"2 adults • seats 6C/6D • ¥5,000 paid",BOOKED & PAID,Scheduled Mishima arrival 14:50; allow for road traffic delays.
+,,15:46,Mishima → Kyoto,,Hikari 717 Shinkansen • 15:46–17:37,0,0,Direct Shinkansen • car 13,1h51,"2 adults • seats 17A/17B • ¥22,220 paid",BOOKED & PAID,"56-minute connection from scheduled 14:50 bus arrival. If late, change SmartEX booking before departure if eligible."
+,,17:37,Kyoto Station → WeBase KYOTO,WeBase KYOTO,Arrive Kyoto; subway to Shijo; check in at WeBase,300,33.000,Kyoto Subway Karasuma Line + walk,~10–15 min,IC card,Flexible,"Allow 30–60 min for station, bags, subway and hotel check-in.",https://we-base.jp/kyoto/access/
+,,18:45,Shijo / Karasuma,,Hotel check-in / light central Kyoto evening walk,0,0,Walk,Flexible,—,Flexible,Nishiki Market is likely closing by evening; keep it for Nov 28.
+,,19:15,Pontocho / Gion,,Pontocho / Kamo River evening stroll or dinner,0,0,Walk,—,—,Flexible,Low-pressure first evening in Kyoto after intercity transit.
+,,20:00,Central Kyoto,,Dinner near Shijo / Pontocho (or rest if tired),2.800,308.000,Walk,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL • future spending estimate per person (paid bus/train excluded),3.900,429.000
+
+Fri 27 Nov • Japan Day 6,,,Shijo-Karasuma → Fushimi Inari → Gion / Higashiyama,WeBase KYOTO • Night 2/4,Fushimi Inari early + couple kimono rental / Higashiyama photos + optional evening illumination
+,,05:30,WeBase → Fushimi Inari,,Leave hotel for Fushimi Inari,300,33.000,JR Nara Line / Keihan,~30–40 min,IC card,Fixed-ish,Early start is intentional to beat crowds.
+,,06:00,Fushimi Inari,,Fushimi Inari Taisha + torii trail to Yotsutsuji,0,0,Walk / hike,2–2.5h,No ticket,Fixed,"Early torii trail, preferably back from Yotsutsuji by ~08:15; morning hike can be shortened to avoid the kimono fitting feeling rushed.",https://inari.jp/en/
+,,08:45,Fushimi → Higashiyama,,Breakfast / coffee near Fushimi or Gion,800,88.000,Keihan / walk,20–30 min,—,Flexible
+,,10:00,Gion / Higashiyama rental shop,,"Couple kimono rental: select outfits, dress and prepare for photos",0,0,Walk,~60–75 min,NOT BOOKED · rental shop to be chosen,Planned · needs reservation,"Choose Gion/Higashiyama pickup and verify return deadline, couple price, hair styling, deposit, footwear and cancellation terms. Allow slow walking in kimono."
+,,11:15,Yasaka Pagoda / Ninenzaka / Sannenzaka,,Kimono couple photos through historic Higashiyama lanes + lunch,1.200,132.000,Walk,~2–2.5h,—,Flexible,Replace long unstructured shopping with portraits + a relaxed lunch. Keep 16:00–16:30 in mind for rental return; timing depends on chosen vendor.
+,,14:00,Gion / Yasaka Shrine / Maruyama,,"Kimono walk, Yasaka Shrine / Gion and photo stops; return outfit by rental deadline",800,88.000,Walk,~2–2.5h,Return time TBC,Planned · flexible,Aim to return by ~16:30 unless rental provides a later return; protect comfort and time for dinner/night Kiyomizu viewing. Café time reduced.
+,,17:00,Higashiyama,,Early dinner,2.500,275.000,Walk,—,—,Flexible,Eat before the night-viewing crowd.
+,,18:00,Kiyomizu-dera,,Kiyomizu-dera autumn night illumination,500,55.000,Walk / bus,20–30 min,Entry ticket,Optional,Night illumination optional after changing out of kimono; skip if tired from early Fushimi hike and long walking day.,https://www.kiyomizudera.or.jp/access/
+,,20:15,Kiyomizu → WeBase,,Return to hotel,300,33.000,Bus / subway / walk,~25–35 min,IC card,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),6.400,704.000
+
+Sat 28 Nov • Japan Day 7,,,Shijo-Karasuma → Arashiyama → Central Kyoto,WeBase KYOTO • Night 3/4,Arashiyama early + central Kyoto shopping
+,,06:15,WeBase → Arashiyama,,Travel to Arashiyama,300,33.000,Hankyu via Karasuma/Katsura or JR,~30–40 min,IC card,Fixed-ish,Saturday: arrive early before the main crowd.
+,,07:00,Arashiyama,,Arashiyama Bamboo Grove,0,0,Walk,—,—,Fixed-ish,Best before 08:00.
+,,08:15,Arashiyama,,Togetsukyo Bridge / riverside,0,0,Walk,—,—,Flexible
+,,08:45,Arashiyama,,Tenryu-ji / garden,500,55.000,Walk,—,Entry ticket,Flexible,Confirm exact opening before travel.
+,,10:00,Arashiyama,,Okochi Sanso / backstreets / café,1.200,132.000,Walk,—,Entry / café,Optional,Choose one extra experience; do not overpack the morning.
+,,11:45,Arashiyama,,Lunch in Arashiyama,1.200,132.000,Walk,—,—,Flexible
+,,13:15,Arashiyama → Central Kyoto,,Return to central Kyoto,300,33.000,JR / Hankyu,30–45 min,IC card,Flexible
+,,14:15,Nishiki / Teramachi,,Nishiki Market / Teramachi / Shinkyogoku shopping,1.000,110.000,Walk,—,—,Flexible,"During existing central-Kyoto shopping, compare leather bags with Tokyo prices; only if you still want to hunt. Do not cut the Arashiyama morning."
+,,17:30,Pontocho / Kamo River,,Pontocho / Kamo River evening,0,0,Walk,—,—,Optional
+,,18:30,Central Kyoto,,Dinner,2.800,308.000,Walk,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),7.300,803.000
+
+Sun 29 Nov • Japan Day 8,,,Shijo-Karasuma → Uji → Nara,WeBase KYOTO • Night 4/4,Matcha morning in Uji + Nara afternoon
+,,07:45,WeBase → Uji,,Kyoto → Uji,300,33.000,JR Nara Line,~40–50 min,IC card,Fixed-ish,Leave before the main matcha-shop queues.
+,,08:30,Uji,,Uji River / Byodoin area morning walk,0,0,Walk,—,—,Flexible
+,,09:00,Uji,,Byodoin + Hoshokan Museum,700,77.000,Walk,—,Entry ticket,Flexible,2026 special exhibition runs through 13 Dec; museum hours 09:00–17:00.,https://www.byodoin.or.jp/en/news/cat2/2026-3/
+,,10:15,Uji,,Matcha café / tea shopping on Byodoin Omotesando,1.500,165.000,Walk,—,—,Fixed-ish,This is one of your priority experiences; allow time rather than rushing.
+,,11:45,Uji → Nara,,Uji → Nara,600,66.000,JR Nara Line,35–50 min,IC card,Fixed-ish
+,,12:45,Nara Park,,Nara Park + deer,0,0,Walk,—,—,Fixed-ish
+,,13:30,Todai-ji,,Todai-ji Great Buddha Hall,800,88.000,Walk,—,Cash ticket,Fixed-ish,Nov–Mar hours: 08:00–17:00.,https://www.todaiji.or.jp/information/haikan/
+,,14:45,Nara,,Kasuga Taisha / Naramachi / snack,800,88.000,Walk / local bus,—,—,Flexible,Choose based on energy; no need to do every temple.
+,,17:15,Nara → WeBase,,Nara → Kyoto,800,88.000,JR / Kintetsu,~55–70 min,IC card,Flexible
+,,18:30,Central Kyoto,,Dinner near hotel,2.500,275.000,Walk,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),8.000,880.000
+
+Mon 30 Nov • Japan Day 9,,,WeBase Kyoto → Kyoto Station → KIX T2 → CTS → Susukino,Quintessa Hotel Sapporo Susukino • Night 1/4,Early KIX transfer for 08:00 Peach departure (paid); airport bus awaiting reservation
+,,03:15,WeBase KYOTO,,Final packing and very early hotel checkout,0,0,Hotel,~25 min,—,Plan,Discuss early checkout arrangements with hotel; all luggage ready the night before.
+,,03:45,WeBase → Kyoto Station Hachijo Exit,,Taxi transfer to 04:30 airport limousine bus,1.200,132.000,Taxi (estimated split 2 travelers),~15–25 min,Taxi fare not booked,PENDING,"Budget estimate ¥2,400 total for taxi; actual fare/time unverified. Leave early."
+,,04:10,Kyoto Station Hachijo Exit (H2),,Arrive early for 04:30 airport bus,0,0,Walk / boarding,~20 min predeparture,Airport bus not booked,PENDING,WeBase contacted via Agoda; reminder to follow up Nov 19.,https://we-base.jp/kyoto/access/
+,,04:30,Kyoto Station → KIX Terminal 2,,04:30 airport limousine bus • scheduled 05:56 arrival,0,0,Airport limousine bus,1h26,"2 seats pending • approx ¥5,600 total",PENDING,Reservation required. Cost estimated in Budget & Payments; not counted here to avoid double-count.,https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix
+,,05:56,KIX Terminal 2,,"Peach domestic check-in, checked baggage, breakfast",1.200,132.000,Airport,~2h04 before flight,Peach ticket paid,"Fixed, subject to bus",Airline check-in/bag drop deadlines apply. Allow traffic contingency.,https://www.flypeach.com/sg/lm/ai/airports/airportguide_domestic/kix
+,,08:00,KIX T2 → CTS,,CONFIRMED Peach Osaka Kansai → New Chitose • 08:00–09:55,0,0,Peach domestic flight,1h55,2 adults • RM848 paid,BOOKED & PAID,Older file listed 16:15 and MM115; confirm flight number/allowance from final e-ticket.,User booking/payment confirmation
+,,10:30,CTS → Sapporo → Susukino,,Baggage pickup → JR Rapid Airport → subway to Susukino,1.500,165.000,JR + subway + walk,~70–90 min door-to-door,IC / JR ticket,Fixed-ish,Plan ~70–90 min travel from airport after collecting suitcases.,https://quintessahotels.com/susukino/en/access/
+,,12:00,Susukino,Quintessa Hotel Sapporo Susukino,"Luggage drop, lunch and shop for non-slip waterproof winter shoes in central Sapporo",3.000,330.000,Walk,—,—,Flexible,"After arriving (~noon), allow ~60–90 min to buy snow footwear before substantial outdoor walks. Wear grippy water-resistant shoes for CTS→hotel transfer. Footwear cost not included in daily spend."
+,,,Day total,,DAY SUBTOTAL • future spending estimate per person (paid flight excluded; airport bus separately estimated),6.900,759.000
+
+Tue 1 Dec • Japan Day 10,,,Susukino / Odori / Tanukikoji,Quintessa Hotel Sapporo Susukino • Night 2/4,Sapporo city + thrifting + food
+,,08:00,Susukino → Nijo Market,,Nijo Market breakfast / seafood bowl,2.000,220.000,Walk / subway,~15–20 min,—,Flexible,This can be the day's nicer meal if you choose a premium seafood bowl.
+,,09:30,Odori / Clock Tower,,Odori Park / TV Tower area / Clock Tower quick stop,1.000,110.000,Walk,—,Optional admission,Flexible,Keep landmarks brief; shopping/food are higher priorities.
+,,11:00,Tanukikoji,,Tanukikoji thrift shopping: final leather-bag / vintage-watch price comparisons,2.000,220.000,Walk,—,—,Fixed-ish,"Optional final bargain search—compare exact model, material, condition and warranty rather than assuming Sapporo is always cheaper. No need to buy if Tokyo choices were better."
+,,13:30,Central Sapporo,,Budget lunch / café,1.200,132.000,Walk,—,—,Flexible
+,,14:30,Odori / underground shopping,,More thrifting / department store / underground shopping,0,0,Walk / subway,—,—,Flexible,Good weather-proof block if snow/rain starts.
+,,15:15,Susukino → Mt Moiwa,,Mt Moiwa sunset viewpoint if skies are clear,2.100,231.000,Streetcar / bus + ropeway,45–60 min each way,Ropeway ticket,Optional,"Weather-dependent. If cloudy, skip and keep shopping/café time."
+,,18:30,Susukino,,Dinner,2.800,308.000,Walk / subway,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),11.100,1.221.000
+
+Wed 2 Dec • Japan Day 11,,,Susukino → Sapporo Station → Otaru,Quintessa Hotel Sapporo Susukino • Night 3/4,Otaru canal + sweets + seafood
+,,08:15,Quintessa → Otaru,,Quintessa → subway to Sapporo Station → JR to Otaru,1.000,110.000,Subway + JR,~55–70 min total,IC / JR ticket,Fixed-ish,Direct and easy; leave luggage at Sapporo hotel.
+,,09:15,Otaru Canal,,Otaru Canal morning walk,0,0,Walk,—,—,Fixed-ish
+,,10:15,Sakaimachi,,"Sakaimachi Street: glass, music boxes, local shops",1.000,110.000,Walk,—,—,Flexible
+,,11:30,Otaru,,LeTAO / dessert / coffee,1.000,110.000,Walk,—,—,Flexible,Dessert-focused stop rather than a full café crawl.
+,,12:30,Otaru,,Seafood lunch,3.000,330.000,Walk,—,—,Flexible,One nicer meal of the day.
+,,14:00,Otaru,,Otaru shopping / optional museum or canal cruise,1.800,198.000,Walk,—,Optional ticket,Optional,"Choose one paid add-on, not several."
+,,16:30,Otaru Canal,,Canal at dusk / lights,0,0,Walk,—,—,Flexible,Early December sunset is early; stay through blue hour if weather is pleasant.
+,,17:30,Otaru → Quintessa,,Otaru → Sapporo → Susukino / hotel,1.000,110.000,JR + subway,~55–70 min,IC / JR ticket,Flexible
+,,19:00,Susukino,,Light dinner / convenience store if still full,1.000,110.000,Walk,—,—,Flexible
+,,,Day total,,DAY SUBTOTAL (planning estimate; hotel excluded),9.800,1.078.000
+
+Thu 3 Dec • Japan Day 12,,,Sapporo / Hokkaido flex,Quintessa Hotel Sapporo Susukino • Night 4/4,Snow-chasing day — decide close to travel
+,,07:00,Hokkaido flex day,,Check live snow / weather / resort opening status,0,0,Phone / hotel desk,—,—,Flexible,Decision day. Do not prebook a snow excursion months ahead.
+,,08:00,Hokkaido flex day,,OPTION A: Sapporo Kokusai / mountain snow day if open and conditions are good,4.500,495.000,Seasonal bus / tour,~1.5h each way,Bus / activity,Optional,Best if resort is open with meaningful snow depth; book only after conditions are confirmed.
+,,08:00,Hokkaido flex day,,OPTION B: Asahikawa day trip if city snow is much better than Sapporo,5.500,605.000,Limited Express train,~1h25 each way,JR ticket,Optional,Use as a snow-city alternative; can add ramen / café rather than forcing a ski resort.
+,,09:00,Hokkaido flex day,,OPTION C: Stay in Sapporo if weather is poor,1.500,165.000,Subway / walk,—,—,Optional,Moerenuma / café / final shopping / packing. Do not waste money chasing bad weather.
+,,18:00,Hokkaido flex day,,Final Hokkaido dinner,3.500,385.000,Walk / subway,—,—,Flexible,Make this the last special meal of the trip.
+,,20:00,Hokkaido flex day,,Final shopping / pack / weigh luggage,0,0,Walk,—,—,Fixed-ish,PAL fare shown includes 2×23kg checked baggage; organize before airport morning.
+,,,Hokkaido flex day,,DAY SUBTOTAL • option A snow estimate + dinner (options B/C excluded),8.000,880.000,,,,,"For all-inclusive planning: count one snow option only, not alternatives cumulatively."
+
+Fri 4 Dec • Japan Day 13 / Departure,,,Quintessa → CTS → MNL → SIN,Check out Quintessa • No overnight in Japan,PAID CTS→MNL→SIN international return • flight IDs per previous itinerary
+,,07:30,Quintessa / Susukino,,Breakfast / final packing,700,77.000,Walk,—,—,Fixed-ish,Weigh luggage and keep transit essentials in carry-on.
+,,09:15,Quintessa → CTS,,Check out → Susukino subway → Sapporo Station → JR Rapid Airport,1.500,165.000,Subway + JR,~60–75 min door-to-door,IC / JR ticket,Fixed-ish,Quintessa is ~5 min from Susukino Station; target airport arrival around 10:20–10:30.,https://quintessahotels.com/susukino/en/access/
+,,10:30,New Chitose Airport,,International check-in / baggage / early lunch,1.500,165.000,Airport,—,PAL booking,Fixed-ish,Tell staff about the 1h10 Manila connection; confirm both boarding passes and bags tagged to SIN.
+,,13:30,CTS → MNL,,PAID return flight • CTS → Manila (PR405 per working plan),0,0,Philippine Airlines,6h10,"Rp10,924,186 route total paid (2 assumed)",BOOKED & PAID,PR405/PR509 and MNL transit timing were in original workbook; reconfirm against actual e-ticket.,User's Nov 17 payment confirmation
+,,18:40,Manila T1,,Arrive MNL; transfer directly to PR509 gate,0,0,International transfer,1h10,Paid through flight (verify final e-ticket),Fixed-ish,Booking screen says no need to collect/recheck baggage. Connection is short — do not stop for food/shopping.
+,,19:50,MNL → SIN,,PR509 Manila → Singapore,0,0,Philippine Airlines,3h55,Paid through flight (verify final e-ticket),Fixed-ish
+,,23:45,Singapore Changi T2,,Arrive Singapore,0,0,Arrival formalities,—,—,Fixed-ish,Trip ends in Singapore.
+,,,Day total,,DAY SUBTOTAL • future spending estimate per person (paid flights excluded),3.700,407.000
+
+## Sheet name: Hotels & Stays
+HOTELS & STAYS • CURRENT LOCKED / RESERVED PLAN
+
+Stay,Check-in,Check-out,Nights,Property,Location / access,Bathroom,Luggage plan,Booking status,Price / payment,Cancellation,Notes
+Haneda arrival,21 Nov*,22 Nov,0,No hotel — rest in HND Terminal 3,Terminal 3 is open 24h,Airport shower facilities,Keep luggage with you overnight,FIXED PLAN,Hotel cost: ¥0,—,"*Arrive HND 01:00 on 22 Nov; rest in T3, shower/breakfast in morning, then travel to Akabane."
+Tokyo,22 Nov,25 Nov,3,Miki Hall Akabane 305,~5 min from Akabane Station; strong JR access,Private bathroom,No early drop / no onsite staff → Akabane Station locker on 22 Nov,LOCKED / PAID,MYR 751 total paid,Non-refundable,Use station locker after leaving Haneda; collect bags before self check-in.
+Kawaguchiko,25 Nov,26 Nov,1,HAOSTAY Eirin,~6–8 min walk from Kawaguchiko Station,Private bathroom + bathtub,Ask for early bag hold; if unavailable use station locker,PAID / CONFIRMED,MYR 339.79 total paid,Per reserved rate,1-night stay; private bath; exact cancellation terms per confirmation.
+Kyoto,26 Nov,30 Nov,4,WeBase KYOTO,5 min from Shijo Sta Exit 6; 7 min from Karasuma Sta,Room/facility type per booking,Front desk / self-cloak available; confirm check-in details,PAID / CONFIRMED,"MYR 1,439.80 total paid",Per booked rate,"4-night Kyoto stay; November 30 very early checkout, pending 04:30 bus."
+Sapporo,30 Nov,4 Dec,4,Quintessa Hotel Sapporo Susukino,5 min Susukino; 4 min Hosui-Susukino,Private ensuite bathroom,Front desk + luggage support,PAID / CONFIRMED,MYR 833.31 total paid,Per booked rate,4-night Sapporo stay; replace outdated Rp3.4m planning price.
+
+STAY LOGISTICS RULES
+Rule,Guidance
+1,"22 Nov: do not pay for an airport hotel. Rest at HND T3, then go to Akabane after morning transport starts."
+2,Miki Hall cannot take luggage early; use Akabane Station coin lockers / Multi-Ecube. Reserve a large locker if you want certainty.
+3,"For all later stays, keep hotel check-in/out times in the itinerary but avoid unnecessary hotel detours before sightseeing."
+
+## Sheet name: Bookings & Adjustments
+BOOKING CHECKLIST + REMAINING FLEX ITEMS
+
+Priority,Item,Target date,Target time,Current plan,Book when,Status,What can change?,Decision trigger,Source
+HIGH,Haneda overnight plan,21–22 Nov,01:00 arrival → morning,No hotel; rest in HND T3,No booking required,LOCKED PLAN,Exact rest/shower timing,Terminal 3 stays open 24h; leave when trains are running,https://www.tokyo-haneda.com/en/faq/terminal_details.html
+HIGH,Tokyo stay,22–25 Nov,—,Miki Hall Akabane 305,Already paid,LOCKED,None unless emergency,No onsite luggage storage; locker plan required,User booking
+HIGH,SHIBUYA SKY,24 Nov,18:40 entry,"Timed entry, 2 adults • RM181.78 paid",Already paid,BOOKED & PAID,No change to 18:40 ticket,After sunset; keep Harry Potter Studio at 09:00,User paid ticket confirmation
+HIGH,Tokyo → Kawaguchiko highway bus,25 Nov,08:45,"Shinjuku → Kawaguchiko • seats 8C/8D • ¥4,000 total",Already paid,BOOKED & PAID,Bus departure is fixed,Leave Akabane with luggage before 07:15,User paid bus confirmation
+MED,Kawaguchiko stay,25–26 Nov,—,HAOSTAY Eirin • MYR 339.79 paid,Already paid,BOOKED & PAID,No change unless booking changes,Private bath; near Kawaguchiko Station,User final amount
+MED,Kawaguchiko → Mishima → Kyoto,26 Nov,13:20 bus / 15:46 train,"Bus ¥5,000 • seats 6C/6D; Hikari 717 ¥22,220 • car 13 seats 17A/17B",Already paid,BOOKED & PAID,56-min bus/train transfer is traffic-sensitive,Bus expected at Mishima North Exit 14:50,User paid confirmations
+HIGH,Kyoto stay,26–30 Nov,—,"WeBase KYOTO • MYR 1,439.80 paid",Already paid,BOOKED & PAID,4-night Kyoto stay,5 min Shijo / 7 min Karasuma,User final amount
+MED,Kiyomizu autumn illumination,27 Nov,18:00,Optional,No advance commitment needed unless ticketing changes,Flexible,Morning vs night visit,Crowd tolerance / weather,https://www.kiyomizudera.or.jp/access/
+HIGH,Peach KIX → New Chitose,30 Nov,08:00–09:55,Peach KIX T2 → CTS • RM848 paid for 2,Already paid,BOOKED & PAID,Early airport connection required,Secure Kyoto 04:30 airport bus; check Peach e-ticket baggage rules,User final payment
+MED,Sapporo stay,30 Nov–4 Dec,—,Quintessa Hotel Sapporo Susukino • MYR 833.31 paid,Already paid,BOOKED & PAID,4-night Sapporo stay,5 min Susukino / 4 min Hosui-Susukino; private bath,User final amount
+HIGH,Snow day,3 Dec,All day,Keep unbooked,2–4 days before,Flexible,Destination,Live snow depth + resort opening + weather
+HIGH,CTS → MNL → SIN international flight,4 Dec,13:30–23:45,"CTS→SIN paid Rp10,924,186 (2 assumed); PR405 + PR509 per prior working file",Already paid,BOOKED & PAID,Verify flight numbers/baggage on receipt,Through-ticket and Manila transfer per originally selected schedule,User final payment confirmation
+HIGH,Harry Potter Studio Tokyo,24 Nov,09:00,2 tickets RM339 total,Already paid,BOOKED & PAID,Fixed entry time,Plan transit from Akabane ~07:40,User confirmed paid
+HIGH,Kyoto Station → KIX airport limousine,30 Nov,04:30–05:56,Hachijo Exit → KIX Terminal 2 • 2 adults,Reserve ASAP,PENDING — NOT PAID,Capacity / bus traffic,Await WeBase Agoda reply; follow-up reminder 19 Nov,User contacted WeBase Kyoto via Agoda
+REVISION POINTS ALREADY INCORPORATED
+1,21 Nov = travel only; Japan Day 1 starts Sun 22 Nov.
+2,Tokyo sightseeing reduced to 22–24 Nov; check out 25 Nov.
+3,Don Quijote added to Shibuya evening.
+4,"SHIBUYA SKY updated to PAID Nov 24 18:40 entry (evening, after sunset)."
+5,Fushimi Inari added to Kyoto plan.
+6,"Shimokitazawa remains an optional Nov 24 thrift stop; camera hunting can replace it, but paid Shibuya Sky time cannot move."
+7,Return plan changed to end in Sapporo; no repositioning back to Tokyo.
+8,"4 Dec return now paid Rp10,924,186; PAL flight IDs from old working file to verify."
+9,Hotels all paid at latest MYR totals; bus/rail confirmations added.
+10,Tripod purchased online and received before trip — REMOVE Japan buying stop.
+11,"Nov 22 JINS; Nov 23 Ueno watch, handbag and winter gear; Nov 27 couple kimono; Nov 30 Sapporo snow shoes; stamps along current stops."
+OPTIONAL SWAPS (DO NOT ADD UNLESS THEY IMPROVE THE TRIP)
+Osaka,"Not included as an overnight base. If you really want it, swap the 28 Nov central-Kyoto afternoon/evening for Osaka (Amerikamura / Orange Street / Dotonbori)."
+Koenji,Not included because Tokyo is only 3 sightseeing days. Add only by shortening Shimokitazawa; do not jeopardize the Shibuya Sky reservation.
+Kichijoji,"Omitted. Nice neighborhood, but lower priority for your first trip than Shimokitazawa / main Tokyo sights."
+Kiyomizu morning,"If you dislike the night-illumination crowd, visit Kiyomizu at 06:00 instead and move Fushimi Inari later or to another morning."
+
+RETURN-FLIGHT FLEXIBILITY NOTE
+"TripFlex shown on Trip.com is +Rp1,804,300 per person. The terms you shared cover cancellation/change fees, but the TripFlex product itself is generally non-refundable once activated/used. Only buy it if the visa-risk protection is worth that extra cost."
+
+LATEST BOOKING RECONCILIATION • 19 NOV 2026
+PAID JPY total,"¥31,220 (Shinjuku bus ¥4,000; Mishima bus ¥5,000; Hikari ¥22,220)"
+PAID MYR total,"RM4,732.68 (4 hotels, 2 Tokyo attractions, Peach domestic flight)"
+PAID IDR total,"Rp17,804,186 (KUL→HND + CTS→SIN international flights)"
+NEXT URGENT TASK,Kyoto 04:30 airport bus for Nov 30 • awaiting WeBase KYOTO via Agoda
+DETAIL,See Budget & Payments for transaction-level ledger and conversion assumptions
+
+## Sheet name: Tips & Notes
+TIPS & NOTES • PRACTICAL TRIP REFERENCE
+
+Category,When / Where,Practical tip,Cost / timing,Source / note
+ARRIVAL,Haneda Terminal 3 • 22 Nov 01:00,Terminal 3 is open 24 hours. International passengers who have used / will use an international flight may stay overnight in the terminal.,Rest ~02:30–06:30,https://www.tokyo-haneda.com/en/faq/terminal_details.html
+ARRIVAL,Haneda Terminal 3,"T3 shower room is open 24 hours. Towels, shampoo, conditioner, body soap and hair dryers are provided.","¥1,500 / 30 min",https://tokyo-haneda.com/en/service/facilities/shower_room.html
+ARRIVAL,Haneda Terminal 3,24-hour food options include Tokyo Sky Kitchen food court and Air LAWSON in the general area.,Use for early breakfast before leaving HND,https://www.tokyo-haneda.com/site_resource/floor/pdf/floor__pdf_floor_map_t3_en.pdf
+LUGGAGE,Akabane • 22 Nov,Miki Hall has no onsite staff / early bag drop. Go from HND to Akabane Station and use coin lockers before sightseeing.,"Large Multi-Ecube lockers typically ~¥700–800; LL ~¥800–1,000",https://www.jre-sl.co.jp/en/ecube/
+LUGGAGE,Akabane Station,JR East station map confirms coin lockers at Akabane. Reservable Multi-Ecube is useful if you want certainty for large suitcases.,Reserve ahead if carrying 2 large cases,https://www.jreast.co.jp/e/stations/e34.html
+TOKYO,24 Nov • Shibuya,"SHIBUYA SKY entry booked for 18:40, after sunset (~16:29). Do NOT plan sunset entry. Harry Potter Studio is 09:00 that morning.",RM181.78 paid / 2; entry 18:40,User paid booking
+TOKYO,24 Nov • Shibuya,MEGA Don Quijote optional after SHIBUYA SKY; save energy if Harry Potter tour runs long.,Evening block,Itinerary decision
+FUJI,25 Nov • after ~11:00 bus arrival,Shinjuku→Kawaguchiko 08:45 bus paid (seats 8C/8D). Ropeway shortened last ascent 15:00; prioritize on arrival.,Last ascent 15:00; last descent 15:20,https://www.mtfujiropeway.jp/en/
+FUJI,HAOSTAY Eirin,"Property is close enough to Kawaguchiko Station to walk with luggage. If pre-check-in bag hold is unavailable, use station lockers.",~6–8 min walk planning estimate,User booking / prior hotel check
+KYOTO,WeBase KYOTO,WeBase is 5 min from Shijo Station Exit 6 and 7 min from Karasuma Station; Kyoto Station is about 3 min by subway to Shijo.,"Useful for Fushimi, Uji, Nara and central Kyoto",https://we-base.jp/kyoto/access/
+FLIGHT,30 Nov • 04:30 airport bus pending / 08:00 flight paid,Kyoto Station Hachijo Exit 04:30 → KIX T2 05:56 is intended; NOT YET BOOKED. Peach KIX→CTS 08:00–09:55 paid RM848 for 2.,"Airport bus estimate ¥5,600 / 2; Peach paid RM848 / 2",User confirmation; operator timetable previously discussed
+FLIGHT,Peach baggage,Recheck checked-luggage allowances on the actual paid Peach e-ticket; do not rely on the old 16:15 fare quote.,Do not rely on forwarding luggage to Sapporo just to save airfare,User fare screenshot / trip decision
+SAPPORO,Quintessa Hotel Sapporo Susukino,"5 min walk from Susukino Station / 4 min from Hosui-Susukino. Good base for food, nightlife and Tanukikoji; coin laundry available.",Private ensuite bathroom,https://quintessahotels.com/susukino/en/access/
+SAPPORO,3 Dec,"Keep snow day flexible. Decide 2–4 days before based on live snow depth, resort openings and weather.",Do not prebook months ahead,Itinerary decision
+RETURN,4 Dec • Manila connection,"CTS→MNL→SIN paid Rp10,924,186 for the route (assumed both travelers); confirm PR405/PR509 and luggage on final e-ticket.",13:30 CTS • 23:45 SIN; PAID,User final payment confirmation
+BUDGET,General,"Spend on experiences that change the trip (Fuji night, one nice meal/day, snow activity); save on simple breakfasts/lunches and unnecessary hotel premiums.",Convenience-store / noodle / market meals are fine,Trip budgeting rule
+VISA,Bookings,Domestic transport does not need to be prepaid solely for visa proof. Keep your current hotel/flight confirmations and the planned itinerary consistent.,Update your own records if a hotel changes,Visa planning note
+SHOPPING,Nov 22 • Shinjuku,Tripod ordered online already arrived. Do NOT spend trip time or additional Japan budget on tripod. JINS can be first-day glasses stop; confirm lens turnaround.,Tripod: already owned,User Nov 19; JINS plan
+SHOPPING,Nov 23 • Ueno / Ameyoko,"Serious father gift hunt: automatic (not merely mechanical), slim silver/champagne dial, ¥10–20k target. Check movement, service history, timekeeping and warranty.","¥10,000–¥20,000 watch ceiling",User reference photo and preference
+SHOPPING,Nov 23 • Ueno / Okachimachi,"Secondhand leather hobo bag, soft black medium silhouette; brand secondary to leather/stitching/strap condition. Cameras only if exceptional deal. Winter gear from GU/Uniqlo if convenient.",Shopping purchases UNBUDGETED until paid,User reference photo and itinerary preference
+KYOTO,Nov 27 • Gion / Higashiyama,Couple kimono rental planned but NOT booked. Confirm pickup/return cutoff and allow time for outfits/photos; shorten café wandering.,"Provisional example quote ¥7,700/2; verify",Planning price only; user has not booked
+STAMPS,"Throughout Tokyo, Kyoto, Nara, Sapporo",Carry stamp notebook for station eki stamps; dedicated goshuincho for shrine/temple goshuin. Don’t detour during Mishima train transfer.,Optional small cash offerings,Trip interest
+WINTER,Nov 30 • Sapporo,Buy grippy waterproof snow shoes after hotel luggage drop; travel from CTS already wearing shoes with reliable grip.,Footwear not paid; shopping budget TBD,Trip interest
+BUDGET,Shopping tracker,"Prices shown for watches/kimono are targets/estimates, not paid bookings. Do not add to paid totals; compare item-specific prices across Tokyo/Kyoto/Sapporo.",Paid totals stay unchanged,User instruction
+
+## Sheet name: Transportation
+,Date,From - To,Use,Reservation,Fee (per pax),In rupiah,Pros,Cons,Note,arrive at,Column 1
+,22 thg 11,Haneda T3 to Akabane ,Kokusai Kogyo Bus/ Tokyo Bus,"Not needed
+Purchase ticket at counter",¥1.300,Rp149.500,Store luggage easily,First bus at 8:55,"timetable link
+1F bus stop 6",Akabane Station East Exit Bus Stop No 9,around 10am
+,,Akabane station,Coin locker,Maybe but there's a jyp500 fee,¥800,Rp92.000,,,station map,check availability on the day around 8
+,,Haneda T3,Welcome suica card,No ,¥3.000,Rp345.000,,,,"free of charge, top up 3-5000 for few days use"
+
+,MAJOR TRANSFERS | NEW CONFIRMED BOOKINGS AND NEXT ACTION
+,Date,Route,Mode,Reservation / payment,Paid total,IDR equiv. plan,Departure,Arrival,Seats / flight,Status,Notes
+,21 Nov,KUL → SGN → HND,VietJet flight,Confirmed paid,"Rp6,880,000","Rp6,880,000",13:35 KUL,"01:00 HND, 22 Nov",VJ826 / VJ820 per file,PAID,Assumed both travelers; confirm e-ticket
+,25 Nov,Shinjuku → Kawaguchiko,Highway bus,2 adult tickets,"¥4,000",Rp440.000,08:45,Late morning (check ticket),8C / 8D,PAID,Traffic-dependent arrival
+,26 Nov,Kawaguchiko → Mishima North,Fujikyu bus,0114 • car 2,"¥5,000",Rp550.000,13:20,14:50,6C / 6D,PAID,Mishima Shinkansen connection 56 min
+,26 Nov,Mishima → Kyoto,Hikari 717,Car 13 reserved,"¥22,220",Rp2.444.200,15:46,17:37,17A / 17B,PAID,2 adults • SmartEX
+,30 Nov,WeBase → Kyoto Stn Hachijo,Taxi (planned),Not booked; approx estimate,"~¥2,400",Rp264.000,~03:45,~04:10,—,PENDING,Estimate only; get to H2 before bus
+,30 Nov,Kyoto Hachijo → KIX T2,Limousine bus,"WeBase contacted, awaiting reply","~¥5,600",616000,04:30,05:56,2 adults needed,PENDING,Bus seats not reserved / paid
+,30 Nov,KIX T2 → CTS,Peach flight,Paid for 2 adults,RM848,3264800,08:00,09:55,Verify flight #,PAID,Check luggage entitlement
+,4 Dec,CTS → MNL → SIN,International flight,Paid booking,"Rp10,924,186","Rp10,924,186",13:30 CTS,23:45 SIN,PR405 / PR509 per file,PAID,Verify flight numbers on ticket
+
+## Sheet name: Budget & Payments
+JAPAN 2026  |  CONFIRMED PAYMENTS & LIVE PLANNING BUDGET
+21 NOV–4 DEC 2026   •   2 TRAVELERS   •   Original payment currencies retained; conversions are planning estimates
+Currency,IDR per 1 unit,Rate basis,Notes
+JPY,"110,00",Existing workbook estimate,Editable — rate is not a live quote
+MYR,"3.850,00",Illustrative planning assumption,Editable — replace with your actual card conversion if known
+IDR,"1,00",Original currency,No conversion required
+
+BUDGET SNAPSHOT  |  for 2 travelers,,,,ACTUAL AMOUNTS PAID  |  original currencies
+Confirmed paid bookings • converted to IDR,,,Rp 39.459.204,JPY,"31.220,00"
+Expected daily spending • not yet paid,,,Rp 20.515.000,MYR,"4.732,68"
+Pending Kyoto → KIX airport bus • estimate,,,Rp 616.000,IDR,"17.804.186,00"
+PROJECTED TOTAL • excludes unbudgeted extras,,,Rp 60.590.204,Paid booking count,12
+Optional cushion (15% of remaining spending),,,Rp 3.169.650
+PLANNING GUIDELINE incl. optional cushion,,,Rp 63.759.854
+PAID BOOKINGS  |  all figures are totals for the party unless noted
+
+Travel date,Type,Booked item,Times / seats / route,Pax,CCY,Paid amount,Planning IDR equiv.,Payment,Source,Notes / verification
+21 thg 11 2026,International flight,Kuala Lumpur → Tokyo Haneda,KUL 13:35 • SGN transit • HND 01:00 on 22 Nov,2,IDR,"6.880.000,00","6.880.000,00",PAID,User Nov 17,Assumed combined price for 2 people; verify if per-person
+22 thg 11 2026,Hotel,Miki Hall Akabane 305,Tokyo • Nov 22–25 (3 nights),2,MYR,"751,00","2.891.350,00",PAID,User previous confirmation,"Coin lockers at Akabane, no early bag storage"
+24 thg 11 2026,Attraction,Warner Bros. Studio Tour Tokyo,Entry 09:00,2,MYR,"339,00","1.305.150,00",PAID,User Nov 17,Allow 3–4 h; Tokyo morning
+24 thg 11 2026,Attraction,SHIBUYA SKY,Entry 18:40,2,MYR,"181,78","699.853,00",PAID,User Nov 17,Evening after sunset; not 15:40 sunset entry
+25 thg 11 2026,Highway bus,Shinjuku → Kawaguchiko,Departure 08:45 • seats 8C & 8D,2,JPY,"4.000,00","440.000,00",PAID,User booking,Scheduled arrival not supplied in final confirmation
+25 thg 11 2026,Hotel,HAOSTAY Eirin,Kawaguchiko • Nov 25–26 (1 night),2,MYR,"339,79","1.308.191,50",PAID,User Nov 17,"Private bathroom, near Kawaguchiko Station"
+26 thg 11 2026,Highway bus,Kawaguchiko → Mishima North Exit,13:20–14:50 • 0114 / car 2 • seats 6C & 6D,2,JPY,"5.000,00","550.000,00",PAID,User paid confirmation,Highway traffic may delay connection
+26 thg 11 2026,Shinkansen,Mishima → Kyoto • Hikari 717,15:46–17:37 • car 13 • seats 17A & 17B,2,JPY,"22.220,00","2.444.200,00",PAID,User paid confirmation,56-min transfer on scheduled bus arrival
+26 thg 11 2026,Hotel,WeBase KYOTO,Kyoto • Nov 26–30 (4 nights),2,MYR,"1.439,80","5.543.230,00",PAID,User Nov 17,Airport bus Nov 30 still pending via WeBase
+30 thg 11 2026,Domestic flight,Peach KIX → CTS,08:00–09:55 • KIX Terminal 2,2,MYR,"848,00","3.264.800,00",PAID,User final correction,RM848 replaces obsolete RM484; verify bag allowance
+30 thg 11 2026,Hotel,Quintessa Hotel Sapporo Susukino,Sapporo • Nov 30–Dec 4 (4 nights),2,MYR,"833,31","3.208.243,50",PAID,User Nov 17,Replace outdated Rp3.4m budget figure
+04 thg 12 2026,International flight,CTS → SIN (via Manila per old plan),13:30 departure • 23:45 Singapore arrival,2,IDR,"10.924.186,00","10.924.186,00",PAID,User Nov 17,Assumed total for 2; verify flight IDs PR405/PR509
+
+"PENDING / NOT PAID  |  estimated separately, no double-counting"
+
+Item,Travel date,CCY,Expected total,Est. IDR,Status,Notes
+
+Kyoto Station → KIX T2 04:30 bus,30 thg 11 2026,JPY,5.600,616.000,PENDING,2 adults. WeBase contacted on Agoda. Not reserved / paid yet.
+Hozugawa River Boat,,JPY,,,OPTIONAL,Not booked; price not included in estimate unless purchased
+Sagano Romantic Train,,JPY,,,OPTIONAL,Preferred date previously sold out; not booked
+Extra shopping / tax-refund purchases,,IDR,,,UNBUDGETED,Enter your own shopping ceiling to add to overall trip budget
+
+READ ME  |  PAID = purchased; PENDING = not booked; ON-GROUND = day-to-day estimates in Daily Budget.
+"IDR totals are estimates using adjustable JPY/MYR rates at B4:B5, not the actual settlement amounts. Paid flight totals assumed to cover 2."
+All dates are Japanese local calendar dates. Early 30 Nov airport bus is a dependency for the booked Peach flight.
+Note: projected spend excludes discretionary shopping and unpriced attractions; contingency is optional.
+
+## Sheet name: Daily Budget
+JAPAN 2026  |  EXPECTED DAILY SPEND
+2 travelers • not yet paid • estimates exclude all prepaid bookings and the separately estimated Nov 30 airport bus
+
+Date,Region / focus,JPY per traveler,IDR for 2 travelers,Notes
+Thứ 7 21 thg 11,KUL transit / flight,0,Rp 0,Travel day; no hotel
+CN 22 thg 11,"Tokyo – arrival, JINS & Shinjuku",8.960,Rp 1.971.200,"Haneda shower, food, IC and lockers only. Tripod already received; glasses/shopping excluded."
+Thứ 2 23 thg 11,"Tokyo – Asakusa, Ueno & Ameyoko hunt",6.000,Rp 1.320.000,"Watch ¥10–20k target; bag, camera, heatwear purchases excluded from daily allowance."
+Thứ 3 24 thg 11,Tokyo – Studio & Shibuya Sky,7.030,Rp 1.546.600,Prepaid Studio/Shibuya Sky excluded; Shimokitazawa optional
+Thứ 4 25 thg 11,Kawaguchiko,6.160,Rp 1.355.200,Prepaid Shinjuku bus & hotel excluded
+Thứ 5 26 thg 11,Kawaguchiko → Kyoto,3.900,Rp 858.000,"Prepaid bus, Hikari & hotel excluded"
+Thứ 6 27 thg 11,"Kyoto – Fushimi, couple kimono & Higashiyama",6.400,Rp 1.408.000,Kimono rental not booked; extra rental cost excluded until confirmed.
+Thứ 7 28 thg 11,Kyoto – Arashiyama,7.300,Rp 1.606.000,Kyoto afternoon: optional handbag comparison; Hozugawa/Sagano not included.
+CN 29 thg 11,Kyoto – Uji & Nara,8.000,Rp 1.760.000,"Trains, food, possible entrances"
+Thứ 2 30 thg 11,KIX → Sapporo,6.900,Rp 1.518.000,"After hotel luggage drop, shop winter shoes; shoes excluded. Peach prepaid; airport bus pending."
+Thứ 3 01 thg 12,Sapporo – shopping,11.100,Rp 2.442.000,Tanukikoji optional final bag/watch hunt; purchase costs excluded.
+Thứ 4 02 thg 12,Otaru day trip,9.800,Rp 2.156.000,Optional canal cruise
+Thứ 5 03 thg 12,Hokkaido flexible snow day,8.000,Rp 1.760.000,Assumes option A + dinner only; not options B/C
+Thứ 6 04 thg 12,CTS departure,3.700,Rp 814.000,Return flight prepaid; food and local rail only
+TOTAL EXPECTED,,93.250,Rp 20.515.000
+
+Note: the two alternative snow-day options on Dec 3 are not added together.
+Prepaid tickets are shown in Budget & Payments and have ¥0 future-spend entries in the itinerary.
+
+## Sheet name: Shopping & Gear
+SHOPPING & GEAR  |  JAPAN 2026
+Planning only. Paid bookings remain in Budget & Payments. Do not count discretionary purchases twice.
+
+Date,City / area,Purchase / activity,Priority,Shopping focus / specification,Target cap JPY,Quote / estimate JPY,Paid JPY,Status,Trade-off / verification
+Before trip,Home,Phone + DJI Pocket 3 tripod,DONE,"Ordered online, delivered before departure",,,,RECEIVED,No Japan store visit or Japan shopping charge.
+22 Nov,Tokyo · Shinjuku,JINS glasses,HIGH,"Choose frames; confirm prescription, lens stock, completion / collection",,,,TO SHOP,Use saved first-day Shinjuku time; shorten Harajuku if necessary.
+23 Nov,Tokyo · Ueno/Ameyoko,Father automatic vintage-style watch,HIGH,"Seiko 5 / Citizen Eagle 7 / Orient Three Star, silver/champagne, tested, warranty",20.000,,,TO SHOP,"¥10k–20k target; avoid unserviced or junk watch, compare before buying."
+23 Nov,Tokyo · Ueno/Ameyoko,Leather hobo / shoulder handbag,HIGH,"Soft medium black leather, rounded silhouette, good seams/straps; Coach optional",,,,TO SHOP,Compare with Kyoto and Sapporo; non-designer is fine.
+23 Nov,Tokyo · Ueno/Okachimachi,Winter layers / hat / gloves / jacket,HIGH,GU/Uniqlo heatwear; compare sale and secondhand quality,,,,TO SHOP,Buying in Tokyo before Sapporo; allow return stop if sold out.
+23–24 Nov,Tokyo · Ueno/Shinjuku,Used camera (optional),MED,Purchase only with clear model/condition/warranty and better price than comparisons,,,,BROWSE,Secondary to watch/bag; optional replacement for Shimokitazawa.
+27 Nov,Kyoto · Gion/Higashiyama,Couple kimono rental,HIGH,Two outfits; easy return; consider hair and accessories,,7.700,,NOT BOOKED,"¥7,700 is example starting quote, not a guaranteed or paid price."
+28 Nov,Kyoto · Teramachi,Handbag price comparison,MED,Secondhand leather hobo bag; compare exact condition vs Tokyo,,,,OPTIONAL,Use only existing Nishiki/Teramachi block.
+30 Nov,Sapporo · station/central,Snow-ready footwear,HIGH,Waterproof and grippy for icy pavement; insulated if needed,,,,TO SHOP,Before extended outdoor exploration; must have safe travel shoes already.
+1 Dec,Sapporo · Tanukikoji,Final watch/bag comparison,MED,Look for excellent value rather than buying from obligation,,,,OPTIONAL,"Existing thrift day, no special detour."
+Throughout,Multiple cities,Eki stamp notebook / goshuincho,MED,Station souvenir stamps and separately shrine/temple goshuin,,,,OPTIONAL,Never squeeze stamp stops into the Mishima Shinkansen transfer.
+
+"Entered totals are optional shopping targets, not confirmed spend",,,,,20.000,7.700,0
+,,,,,Target caps JPY,Provisional quotes JPY,Recorded paid JPY
+
+IMPORTANT: Only enter payment in column H after purchase. Update Budget & Payments separately for every confirmed expense.
+
+## Sheet name: Change Log
+Date,What changed,What stays fixed,Cost / booking impact
+2026-11-19,Tripod delivered before departure; all planned Japan tripod shopping removed,Tokyo 22 Nov arrival and Shinjuku Gyoen,No Japan tripod charge; earlier online purchase cost not supplied
+2026-11-19,JINS glasses moved into existing Nov 22 Shinjuku activity,"Tokyo hotel, sightseeing if energy permits",Glasses not bought; no amount assumed
+2026-11-19,Nov 23 Ueno / Ameyoko refocused on vintage automatic watch + leather shoulder bag,Asakusa morning retained,Ginza / Marunouchi afternoon replaced; watch target ¥10–20k
+2026-11-19,Warm clothes in Ueno/Okachimachi; used camera only if time and good offer,"Harry Potter Studio 24 Nov at 09:00, SHIBUYA SKY at 18:40",Discretionary shopping not counted as paid
+2026-11-19,Nov 27 couple kimono rental incorporated into Higashiyama,"Fushimi Inari early, Kiyomizu optional evening","Less cafe wandering; rental not booked, sample quote ¥7,700 / 2"
+2026-11-19,Nov 30 snow footwear shopping after Sapporo hotel luggage drop,"Peach 08:00–09:55, hotel booking",Shoes not bought; no invented amount
+2026-11-19,"Stamp collection along existing sightseeing, Kyoto/Sapporo bag comparisons","All confirmed flights, buses, Hikari and hotels",Only optional stops; no prepaid amount changed
+2026-11-19,Pending Kyoto 04:30 limousine bus remains under follow-up with WeBase on Agoda,Nov 30 Peach flight at KIX T2,"Not booked/paid, original ¥5,600 estimate retained"
