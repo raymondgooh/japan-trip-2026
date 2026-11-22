@@ -3798,25 +3798,48 @@ function vPhrases(){
 function vShop(){
   const list = DATA.shopping || [], pend = (DATA.pending||[]).filter(p=>p.status==='PENDING');
   const tone = st => /DONE|RECEIVED|BOOKED|PAID/.test(st) ? 'var(--green)' : /BOOK|SHOP/.test(st) ? 'var(--accent)' : 'var(--muted)';
-  return `<h2>Shopping &amp; gear</h2><p class="small muted" style="margin:-6px 0 4px">Planning list from the sheet. Prices are targets or example quotes, not spending.</p>
+  return `<a class="card" href="#ps5" style="display:block;border-left:2px solid var(--accent)"><h3>🎮 Used PS5 guide →</h3><div class="small muted">Models, prices, checklist and shops</div></a><h2>Shopping &amp; gear</h2><p class="small muted" style="margin:-6px 0 4px">Planning list from the sheet. Prices are targets or example quotes, not spending.</p>
     ${list.map(x=>`<div class="card"><div class="row sp" style="align-items:baseline"><span class="lbl">${esc(x.Date)} · ${esc(x['City / area'])}</span><span class="lbl" style="color:${tone(x.Status)}">${esc(x.Status)}</span></div>
       <h3 style="margin-top:4px">${esc(x['Purchase / activity'])}</h3><div class="small">${esc(x['Shopping focus / specification'])}</div>
       ${x['Target cap JPY']||x['Quote / estimate JPY']?`<div class="small" style="margin-top:6px;font-family:var(--mono)">${x['Target cap JPY']?'Target up to ¥'+esc(x['Target cap JPY']).replace(/\./g,','):''}${x['Quote / estimate JPY']?' Quote ¥'+esc(x['Quote / estimate JPY']).replace(/\./g,','):''}</div>`:''}
       ${x['Trade-off / verification']?`<div class="small muted" style="margin-top:6px">${esc(x['Trade-off / verification'])}</div>`:''}</div>`).join('')}
     ${pend.length?`<h2>Still to book</h2>${pend.map(p=>`<div class="card" style="border-left:2px solid var(--accent)"><h3>${esc(p.item)}</h3><div class="small">${esc(p.note)}</div><div class="small" style="margin-top:6px;font-family:var(--mono)">about ${p.cur==='JPY'?fmtJ(p.amt):fmtR(p.amt)}</div></div>`).join('')}`:''}`;
 }
+function vPS5(){
+  const M=(q)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+  const models=[['1','CFI-1200A01','Standard, disc · 825GB · ~3.2 kg','¥52k–66k','¥55,000'],['2','CFI-1100A01','Standard, disc · 825GB · ~3.9 kg','¥50k–66k','¥55,000'],['3','CFI-2000A01 / 2100A01','Slim, disc · 1TB · ~3.2 kg','¥59k–72k','¥60,000'],['4','CFI-1000A01','Launch model, disc · 825GB · ~4.5 kg','¥48k–64k','¥50,000'],['5','CFI-2000B01 / 1200B01','Digital (no disc)','¥49k–66k','¥48,000']];
+  const ak=[['Surugaya game shop','駿河屋 秋葉原 ゲーム館','Often the cheapest. Its listings had a CFI-1000A01 from ~¥47,900 and a CFI-1100A01 from ~¥50,270. Check suruga-ya.jp for which store has the model.'],['Trader main store','トレーダー 秋葉原本店','Big used stock and fair prices. 4-2-1 Sotokanda, 11:00–20:30.'],['Sofmap used games','ソフマップ 秋葉原 中古ゲーム','By the big Sega arcade. Graded A/B, slightly pricier. Use it as your benchmark.'],['Hard Off Akihabara 2','ハードオフ 秋葉原2号店','Low prices; PS5 units are hit or miss.'],['Book Off station front','BOOKOFF 秋葉原駅前店','Quick look.'],['Janpara','じゃんぱら 秋葉原','Used-electronics chain; condition listed.']];
+  const sp=[['Sofmap Sapporo','ソフマップ 札幌'],['Surugaya Sapporo','駿河屋 札幌'],['Book Off Tanukikoji','BOOKOFF 札幌 狸小路'],['Geo Susukino','ゲオ 札幌 すすきの'],['Hard Off Sapporo','ハードオフ 札幌']];
+  const cb=a=>a.map(x=>`<label class="row" style="gap:8px;align-items:flex-start;margin:5px 0"><input type="checkbox" style="margin-top:3px"><span class="small">${x}</span></label>`).join('');
+  return `<h2>Used PS5 guide</h2>
+  <div class="card" style="border-left:2px solid var(--green)"><div class="small"><b>Plan:</b> Check prices in Akihabara (23 Nov) and buy only if it's a clear bargain. Otherwise buy in Sapporo, where you'll carry it less. Prices are about the same nationwide.<br><b>Rule:</b> English-capable disc model, <b>≤ ¥55,000</b>, with controller and cables. Shipping Tokyo → Sapporo costs about ¥2,500–4,000.</div></div>
+  <h2>Models, best first</h2>
+  ${models.map(m=>`<div class="card"><div class="row sp" style="align-items:baseline"><h3>${m[0]}. ${m[1]}</h3><span class="lbl" style="color:var(--accent)">max ${m[4]}</span></div><div class="small">${m[2]}</div><div class="small muted" style="font-family:var(--mono)">used ${m[3]}</div></div>`).join('')}
+  <p class="small muted">A01 = disc 「ディスクドライブ搭載モデル」 · B01 = digital 「デジタル・エディション」. ¥55,000 ≈ Rp 6.0 m; a used PS5 in Indonesia costs Rp 8.5–10 m.</p>
+  <div class="card" style="border-left:2px solid var(--accent)"><h3>Never buy: CFI-2200B01 「日本語専用」</h3><div class="small">Japanese menus only. Reportedly works only with Japan PSN accounts, even though it's the cheapest at about ¥48–50k. The PS5 Pro (CFI-7000/7100) is about ¥150k, over budget.</div></div>
+  <div class="card"><h3>English · online · own PSN</h3><div class="small">CFI-1000 / 1100 / 1200 / 2000 / 2100 support all three. You can sign in with your account or create a new one set to Indonesia, Singapore or Malaysia. Discs are generally region-free.</div></div>
+  <h2>Counter checklist</h2>
+  <div class="card"><div class="lbl">Console</div>${cb(['Model is 1000 / 1100 / 1200 / 2000 / 2100, <b>not 2200</b>','Rank A or B on the tag (美品 = excellent)','Test it: 「動作確認できますか？」 ("Can I see it working?")','Disc drive reads and ejects','Reset and the account removed: 「初期化済みですか？」 ("Has it been reset?")','Shop warranty: 「保証はありますか？」 ("Is there a warranty?")'])}
+  <div class="lbl" style="margin-top:8px">Controller: DualSense, CFI-ZCT1J</div>${cb(['Included in the box','No stick drift','Buttons, touchpad and vibration work','L2/R2 triggers push back','Charges over USB-C','If there\'s no controller, the price should be ≥ ¥8,000 lower'])}
+  <div class="lbl" style="margin-top:8px">Accessories and paying</div>${cb(['HDMI cable · power cord (bring a plug adapter) · USB cable','Stand (original model) or feet (slim)','Passports with you: 「免税できますか？」 ("Can I buy this tax-free?")','Final price ≤ your buy max','Luggage space, and the Peach baggage limit'])}</div>
+  <h2>Akihabara shops</h2><p class="small muted" style="margin-top:-6px">Ueno → Akihabara: 1 stop on the JR. Use the Electric Town exit (電気街口).</p>
+  ${ak.map((a,i)=>`<div class="card"><div class="row sp" style="align-items:baseline"><h3>${i+1}. ${a[0]}</h3><a class="lbl" href="${M(a[1])}" target="_blank" rel="noopener">Map ↗</a></div><div class="small">${a[2]}</div></div>`).join('')}
+  <h2>Sapporo backup</h2><p class="small muted" style="margin-top:-6px">These are map searches, not confirmed branches. Check stock online first (suruga-ya.jp, sofmap.com, Book Off, Hard Off netmall).</p>
+  <div class="card">${sp.map(a=>`<div class="row sp" style="margin:6px 0"><span class="small">${a[0]}</span><a class="lbl" href="${M(a[1])}" target="_blank" rel="noopener">Map ↗</a></div>`).join('')}</div>`;
+}
 function vMore(){
   return `<h2>More</h2><div class="more">
     <a href="#stays"><span class="kanji">宿 · 便</span><span>Stays &amp; flights</span></a>
     <a href="#tips"><span class="kanji">心得</span><span>Tips</span></a>
     <a href="#shop"><span class="kanji">買物</span><span>Shopping</span></a>
+    <a href="#ps5"><span class="kanji">中古</span><span>PS5 guide</span></a>
     <a href="#convert"><span class="kanji">両替</span><span>Converter</span></a>
     <a href="#phrases"><span class="kanji">会話</span><span>Phrases</span></a>
     <a href="#facts"><span class="kanji">豆知識</span><span>Fun facts</span></a>
     <a href="#settings"><span class="kanji">設定</span><span>Settings</span></a></div>`;
 }
-const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, convert:vConv, phrases:vPhrases, shop:vShop, settings:vSettings, more:vMore};
-const TAB_OF = {stays:'more', tips:'more', facts:'more', convert:'more', phrases:'more', shop:'more', settings:'more'};
+const views = {today:vToday, itinerary:vItin, bookings:vBookings, stays:vStays, budget:vBudget, tips:vTips, facts:vFacts, convert:vConv, phrases:vPhrases, shop:vShop, ps5:vPS5, settings:vSettings, more:vMore};
+const TAB_OF = {stays:'more', tips:'more', facts:'more', convert:'more', phrases:'more', shop:'more', ps5:'more', settings:'more'};
 /* ---------- day moods ---------- */
 const VIBES = [
  {n:'Sky miles',k:'streak',c:['#9db6d1','#b8c9dc'],L:['#eff2f5','#3b6ea5'],D:['#12161b','#7fa6d4'],cnt:9},
