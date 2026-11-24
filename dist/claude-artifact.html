@@ -237,6 +237,16 @@ header,main,.foot{position:relative;z-index:1}
 .phr{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line2);padding:13px 0;cursor:pointer}
 .phr .en{display:block;font-size:14px}.phr .ja{display:block;font-size:17px;margin-top:2px;color:var(--ink2)}.phr .ro{display:block;font-size:12px;color:var(--muted);margin-top:1px}
 .phr.on{background:var(--raise);border:1px solid var(--ink);padding:18px 14px;margin:8px 0}.phr.on .ja{font-size:34px;line-height:1.35;font-weight:500;color:var(--ink);margin:10px 0 8px}
+.pace{border-left:4px solid var(--green)}
+.pace .pc-clock{font-family:var(--mono);font-size:18px}
+.pace .pc-state{margin-top:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--green)}
+.pace .pc-big{font-family:var(--mono);font-size:52px;line-height:1.05;margin:2px 0 4px;color:var(--green)}
+.pace .pc-bar{height:6px;background:var(--line2);border-radius:3px;margin-top:10px;overflow:hidden}
+.pace .pc-bar i{display:block;height:100%;background:var(--green)}
+.pace .pc-hard{margin-top:10px;padding-top:8px;border-top:1px solid var(--line2);font-size:13px}
+.pace.pc-wrap{border-left-color:var(--amber)} .pc-wrap .pc-state,.pc-wrap .pc-big{color:var(--amber)} .pc-wrap .pc-bar i{background:var(--amber)}
+.pace.pc-go{border-left-color:var(--accent);background:var(--accent-soft)} .pc-go .pc-state,.pc-go .pc-big{color:var(--accent)} .pc-go .pc-bar i{background:var(--accent)}
+.pc-go .pc-big{animation:pcpulse 1s ease-in-out infinite} @keyframes pcpulse{50%{opacity:.55}}
 </style>
 </head>
 <body>
@@ -3386,6 +3396,47 @@ function region(d){
   return ['旅','Japan'];
 }
 
+
+/* ---------- pace countdown ---------- */
+function jpSecs(){
+  const p = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(new Date());
+  const g = t => +p.find(x=>x.type===t).value;
+  return (g('hour')%24)*3600 + g('minute')*60 + g('second');
+}
+const fmtCD = s => { const a=Math.abs(s), h=Math.floor(a/3600), m=Math.floor(a%3600/60), x=a%60; return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0'); };
+function paceHTML(idx){
+  const list = items(idx).filter(it => toMin(it.time) !== null);
+  if (!list.length) return '';
+  const now = jpSecs(), hms = `${String(Math.floor(now/3600)).padStart(2,'0')}:${String(Math.floor(now%3600/60)).padStart(2,'0')}:${String(now%60).padStart(2,'0')}`;
+  // the stop you are on = last stop whose start has passed; the next = the one after
+  let ci = -1; list.forEach((it,n)=>{ if (toMin(it.time)*60 <= now) ci = n; });
+  const cur = ci>=0 ? list[ci] : null, nxt = list[ci+1] || null;
+  const hard = list.slice(ci+1).find(it => /BOOKED|PAID/i.test(it.status||''));
+  let state='relax', label='Relax', big='', sub='';
+  if (!nxt){ state='relax'; label='Last stop'; big='—'; sub='Nothing else after this today.'; }
+  else {
+    const left = toMin(nxt.time)*60 - now;
+    big = fmtCD(left);
+    if (left > 15*60){ state='relax'; label='Plenty of time'; }
+    else if (left > 5*60){ state='wrap'; label='Start wrapping up'; }
+    else { state='go'; label='Leave now'; }
+    sub = `until <b>${esc(nxt.time)}</b> · ${esc(nxt.act)}`;
+  }
+  const hardTxt = hard ? (()=>{ const l = toMin(hard.time)*60 - now; return `<div class="pc-hard"><span class="lbl">Can't miss</span> ${esc(hard.time)} · ${esc(hard.act.slice(0,46))} <b>${l>0?'in '+fmtCD(l):'now'}</b></div>`; })() : '';
+  const span = cur && nxt ? (toMin(nxt.time)-toMin(cur.time))*60 : 0;
+  const pct = span>0 ? Math.min(100, Math.max(0, 100*(now - toMin(cur.time)*60)/span)) : 0;
+  return `<div class="card pace pc-${state}">
+    <div class="row sp" style="align-items:baseline"><span class="lbl">Japan time</span><span class="pc-clock">${hms}</span></div>
+    ${cur?`<div class="small" style="margin-top:6px"><span class="lbl">Now</span>${esc(cur.time)} · ${esc(cur.act)}</div>`:''}
+    <div class="pc-state">${label}</div>
+    <div class="pc-big">${big}</div>
+    <div class="small">${sub}</div>
+    ${span?`<div class="pc-bar"><i style="width:${pct}%"></i></div>`:''}
+    ${hardTxt}
+  </div>`;
+}
+setInterval(()=>{ const el=document.getElementById('pace'); if (el && el.dataset.day) el.innerHTML = paceHTML(+el.dataset.day); }, 1000);
+
 /* ---------- views ---------- */
 function vToday(){
   const now = jpNow(), idx = dayIndexForDate(now.date);
@@ -3412,6 +3463,7 @@ function vToday(){
       <div class="row" style="align-items:baseline;gap:14px;margin-top:8px"><span class="kanji" style="font-size:40px;line-height:1.1">${kj}</span><span class="lbl">${rom}</span></div>
       <div class="theme" style="font-size:16px;margin-top:6px">${esc(d.theme)}</div>
       <div class="small muted" style="margin-top:8px"><span class="lbl">Stay</span>${esc(d.stay)}</div></div>
+    <div id="pace" data-day="${idx}">${paceHTML(idx)}</div>
     ${nxt ? `<div class="card next"><div class="lbl">Next · ${inTxt}</div>
       <div class="row" style="align-items:baseline;gap:16px;margin-top:6px"><span class="when">${esc(nxt.time)}</span>${badge(nxt.status)}</div>
       <h3>${esc(nxt.act)}</h3><div class="meta">${esc([nxt.area, nxt.mode].filter(x=>x && x!=='—').join(' · '))}</div>
