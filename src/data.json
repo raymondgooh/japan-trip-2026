@@ -1156,6 +1156,19 @@
      "src": ""
     },
     {
+     "time": "16:30",
+     "area": "Sanjo-Kawaramachi",
+     "act": "Book Off Kyoto Sanjo Ekimae building: used PS5 / games check",
+     "jpy": 0,
+     "idr": 0,
+     "mode": "Walk ~5 min from Teramachi/Shinkyogoku",
+     "dur": "~30 min",
+     "ticket": "Buy only English-capable disc ≤ ¥55,000",
+     "status": "Optional",
+     "note": "Open 10:00–23:00. CFI-1000/1100/1200/2000 only, NOT 2200 (Japanese-only). Main PS5 option is still Sapporo on Dec 1.",
+     "src": "https://www.google.com/maps/search/?api=1&query=BOOKOFF+京都三条駅ビル店"
+    },
+    {
      "time": "17:30",
      "area": "Pontocho / Kamo River",
      "act": "Pontocho / Kamo River evening",
